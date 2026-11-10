@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How we estimate the time you’ll get back · lanes</title>
+  <meta name="description" content="Where the time estimate comes from: touch time, frequency and waiting, a worked example, ranges instead of promises, and how we check afterwards." />
+  <meta property="og:title" content="How we estimate the time you’ll get back" />
+  <meta property="og:description" content="If the low end isn’t worth it, the lane isn’t worth building." />
+  <meta name="theme-color" content="#141413" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141413'/%3E%3Crect x='5' y='7.5' width='16' height='4' rx='2' fill='%23FAF9F5'/%3E%3Crect x='10' y='14' width='16' height='4' rx='2' fill='%23D97757'/%3E%3Crect x='5' y='20.5' width='11' height='4' rx='2' fill='%23FAF9F5'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+</head>
+<body class="page-article">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header on-dark" id="top">
+    <div class="wrap header-inner">
+      <nav class="nav-left" aria-label="Main">
+        <a class="pill" href="index.html#how">How it works</a>
+        <a class="pill" href="index.html#services">Services</a>
+        <a class="pill" href="index.html#about">About</a>
+        <a class="pill" href="method.html">Method</a>
+      </nav>
+
+      <a class="brand" href="index.html" aria-label="lanes, home">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+
+      <div class="nav-right">
+        <a class="pill" href="articles.html">Articles</a>
+        <a class="pill pill-dark" href="#contact">Book a call</a>
+        <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h9" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <div class="wrap">
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="method.html">Method</a>
+        <a href="articles.html">Articles</a>
+        <a href="#contact">Book a call</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ ARTICLE HERO ============ -->
+    <section class="article-hero grain" data-header-dark>
+      <svg class="est-hero" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <radialGradient id="eh-glow" cx="50%" cy="105%" r="70%">
+            <stop offset="0" stop-color="#D97757" stop-opacity=".24" />
+            <stop offset=".6" stop-color="#D97757" stop-opacity=".05" />
+            <stop offset="1" stop-color="#D97757" stop-opacity="0" />
+          </radialGradient>
+          <pattern id="eh-hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V9" stroke="#D97757" stroke-opacity=".5" stroke-width="2" /></pattern>
+        </defs>
+        <rect width="1440" height="900" fill="url(#eh-glow)" />
+        <g transform="translate(1110 300)">
+          <circle r="250" fill="none" stroke="#FAF9F5" stroke-opacity=".14" stroke-width="2" />
+          <path d="M0 0L0 -250A250 250 0 0 1 250 0Z" fill="url(#eh-hatch)" />
+          <g id="eh-ticks" stroke="#FAF9F5" stroke-opacity=".22" stroke-linecap="round"></g>
+          <g class="eh-hand"><path d="M0 18L0 -215" stroke="#FAF9F5" stroke-opacity=".55" stroke-width="3" stroke-linecap="round" /></g>
+          <circle r="9" fill="#D97757" />
+        </g>
+      </svg>
+
+      <div class="article-hero-inner wrap">
+        <p class="kicker">Writing · Danni Dahl</p>
+        <h1 class="stagger">
+          <span>How we estimate</span>
+          <span>the time you’ll get back.</span>
+        </h1>
+
+        <nav class="toc toc-hero" aria-label="Contents">
+          <ol>
+            <li><a href="#introduction"><span class="n">1</span><span class="leader" aria-hidden="true"></span><span class="t">Introduction</span></a></li>
+            <li><a href="#count"><span class="n">2</span><span class="leader" aria-hidden="true"></span><span class="t">What we count</span></a></li>
+            <li><a href="#example"><span class="n">3</span><span class="leader" aria-hidden="true"></span><span class="t">A worked example</span></a></li>
+            <li><a href="#ranges"><span class="n">4</span><span class="leader" aria-hidden="true"></span><span class="t">Ranges, not promises</span></a></li>
+            <li><a href="#cost"><span class="n">5</span><span class="leader" aria-hidden="true"></span><span class="t">What it costs to get there</span></a></li>
+            <li><a href="#after"><span class="n">6</span><span class="leader" aria-hidden="true"></span><span class="t">Checking afterwards</span></a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="wrap article-grid">
+      <aside class="article-side">
+        <dl class="article-meta">
+          <div><dt>Written by</dt><dd>Danni Dahl</dd></div>
+          <div><dt>Category</dt><dd>Writing</dd></div>
+          <div><dt>Reading time</dt><dd>5 min</dd></div>
+        </dl>
+        <nav class="side-toc" aria-label="On this page">
+          <a href="#introduction">Introduction</a>
+          <a href="#count">What we count</a>
+          <a href="#example">A worked example</a>
+          <a href="#ranges">Ranges, not promises</a>
+          <a href="#cost">What it costs to get there</a>
+          <a href="#after">Checking afterwards</a>
+        </nav>
+      </aside>
+
+      <article class="prose">
+        <section id="introduction">
+          <h2 class="sr-only">Introduction</h2>
+          <p class="prose-lede">The time estimate is the number people care about most. So it should be the number you can check most easily.</p>
+          <p>Most estimates in this industry come from somewhere else: a vendor’s case study, an industry report, a slide that says “save up to 40%”. They might be true for someone. They tell you very little about your team.</p>
+          <p>Ours come from what we see during the two days, in your process, with your people. And we show the working, so you can follow every step from what we observed to the number at the bottom.</p>
+        </section>
+
+        <section id="count">
+          <h2><span class="h-num">2</span> What we count</h2>
+          <p>For every step in the as-is swimlane, we write down four things. None of them need special tools. They need someone to ask, watch and write it down.</p>
+
+          <div class="split-table st-3 st-plain" role="table" aria-label="What we measure for each step">
+            <div class="st-row st-head" role="row"><span role="columnheader">Measure</span><span role="columnheader">What it means</span><span role="columnheader">How we get it</span></div>
+            <div class="st-row" role="row"><span role="cell">Touch time</span><span role="cell">Minutes someone actually works on the step</span><span role="cell">Watching real cases, then asking</span></div>
+            <div class="st-row" role="row"><span role="cell">Frequency</span><span role="cell">How often the step happens</span><span role="cell">Counts from your CRM or inbox</span></div>
+            <div class="st-row" role="row"><span role="cell">Waiting time</span><span role="cell">How long the work sits before the next step</span><span role="cell">Timestamps on recent cases</span></div>
+            <div class="st-row" role="row"><span role="cell">Rework</span><span role="cell">How often it has to be done again</span><span role="cell">Asking the people who fix it</span></div>
+          </div>
+
+          <p>Touch time is what turns into hours saved. Waiting time is what turns into faster answers for your customers. We keep them apart, because they’re worth different things to you and they’re easy to mix up.</p>
+        </section>
+
+        <section id="example">
+          <h2><span class="h-num">3</span> A worked example</h2>
+          <p>Here’s how the numbers come together for a typical quote process. The figures are an example, not a client’s, but they’re the kind of numbers we usually see in a small sales team sending around 25 quotes a week.</p>
+
+          <div class="split-table st-3" role="table" aria-label="Minutes of work per quote, as-is and to-be">
+            <div class="st-row st-head" role="row"><span role="columnheader">Step</span><span role="columnheader">As-is, minutes</span><span role="columnheader">To-be, minutes</span></div>
+            <div class="st-row" role="row"><span role="cell">Email the request to the pricing owner</span><span role="cell">5</span><span role="cell">0, read automatically</span></div>
+            <div class="st-row" role="row"><span role="cell">Work out the price</span><span role="cell">20</span><span role="cell">0, from the price rules</span></div>
+            <div class="st-row" role="row"><span role="cell">Chase the price</span><span role="cell">5</span><span role="cell">0, no longer needed</span></div>
+            <div class="st-row" role="row"><span role="cell">Copy everything into Word</span><span role="cell">15</span><span role="cell">0, drafted automatically</span></div>
+            <div class="st-row" role="row"><span role="cell">Check and send</span><span role="cell">10</span><span role="cell">10</span></div>
+            <div class="st-row st-total" role="row"><span role="cell">Per quote</span><span role="cell">55</span><span role="cell">10</span></div>
+          </div>
+
+          <figure class="prose-figure">
+            <div class="figure-art grain">
+              <svg viewBox="0 0 720 250" aria-hidden="true">
+                <defs>
+                  <pattern id="eg-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#C7BDAB" stroke-width=".8"/></pattern>
+                  <pattern id="eg-hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V5" stroke="#141413" stroke-width="1"/></pattern>
+                </defs>
+                <rect width="720" height="250" fill="#E3DACC"/>
+                <rect width="720" height="250" fill="url(#eg-grid)"/>
+                <g font-family="Figtree, sans-serif" font-size="13" fill="#3D3D3A">
+                  <text x="24" y="82">As-is</text><text x="24" y="172">To-be</text>
+                  <text x="110" y="40" fill="#5E5D59">Minutes of work per quote</text>
+                </g>
+                <g stroke="#141413" stroke-width="1.2">
+                  <rect x="110" y="62" width="50" height="30" fill="url(#eg-hatch)"/>
+                  <rect x="160" y="62" width="200" height="30" fill="url(#eg-hatch)"/>
+                  <rect x="360" y="62" width="50" height="30" fill="url(#eg-hatch)"/>
+                  <rect x="410" y="62" width="150" height="30" fill="url(#eg-hatch)"/>
+                  <rect x="560" y="62" width="100" height="30" fill="#FAF9F5"/>
+                  <rect x="110" y="152" width="100" height="30" fill="#FAF9F5"/>
+                </g>
+                <g font-family="Figtree, sans-serif" font-size="13" fill="#141413">
+                  <text x="672" y="82">55</text>
+                  <text x="222" y="172">10</text>
+                </g>
+                <path d="M248 167H652" stroke="#C6613F" stroke-width="2" stroke-dasharray="5 5"/>
+                <text x="430" y="210" fill="#C6613F" font-family="Figtree, sans-serif" font-size="14" text-anchor="middle">45 minutes back on every quote</text>
+              </svg>
+            </div>
+            <figcaption>Hatched: work that disappears in the to-be. White: work a person still does, on purpose.</figcaption>
+          </figure>
+
+          <p>From there the arithmetic is simple, and we always show it:</p>
+          <dl class="facts facts-calc">
+            <div><dt>Saved per quote</dt><dd>55 − 10 = 45 minutes</dd></div>
+            <div><dt>Per week</dt><dd>45 minutes × 25 quotes ≈ 19 hours</dd></div>
+            <div><dt>Per year</dt><dd>19 hours × 46 working weeks ≈ 860 hours</dd></div>
+            <div><dt>Lead time</dt><dd>From one to two days down to the same day</dd></div>
+          </dl>
+        </section>
+
+        <section id="ranges">
+          <h2><span class="h-num">4</span> Ranges, not promises</h2>
+          <p>Two days is enough to see a process clearly. It isn’t enough to time every step to the minute. So we never give a single number. In the example above, we’d write <strong>15 to 20 hours a week</strong>, and explain what would push it towards either end.</p>
+          <p>When we recommend whether to build something, we use the low end. If a lane is only worth it at the optimistic end of the range, it isn’t worth it, and we’ll say so.</p>
+
+          <blockquote class="pull">
+            <p>If the low end isn’t worth it, the lane isn’t worth building.</p>
+          </blockquote>
+
+          <p>We also say what the estimate leaves out. Faster quotes often win more deals, but that’s hard to prove in advance, so we mention it and don’t count it.</p>
+        </section>
+
+        <section id="cost">
+          <h2><span class="h-num">5</span> What it costs to get there</h2>
+          <p>Time saved only matters next to what it costs to save it. Every estimate comes with the other side of the scale:</p>
+          <ul class="checks">
+            <li><strong>Building it.</strong> How many days the to-be takes to build and test with your team.</li>
+            <li><strong>Running it.</strong> Licences, integrations and AI usage per month, if any.</li>
+            <li><strong>Keeping it running.</strong> Our time after launch for fixes and changes.</li>
+          </ul>
+          <p>Then we put the two side by side, using your own hourly cost rather than ours:</p>
+
+          <div class="callout">
+            <p class="callout-title">The comparison we show you</p>
+            <ol class="deliverables">
+              <li><span class="n">1</span><div><strong>Value per year</strong><span>Hours saved per week, low end × your hourly cost × 46 weeks.</span></div></li>
+              <li><span class="n">2</span><div><strong>Cost in the first year</strong><span>Building it, plus a year of running and keeping it running.</span></div></li>
+              <li><span class="n">3</span><div><strong>Payback</strong><span>How many months until the value has covered the cost.</span></div></li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="after">
+          <h2><span class="h-num">6</span> Checking afterwards</h2>
+          <p>An estimate you never check is just a sales pitch. Because we wrote down the as-is numbers during the two days, we have a baseline. A few weeks after launch we measure the same steps again, with the same method, and compare.</p>
+          <p>If the result is below the range, we find out why and fix it. That’s part of staying after launch, not an extra.</p>
+          <p>You can read the rest of <a href="method.html">how the two days work</a>, or why most of the to-be is plain rules rather than AI in <a href="when-ai-is-the-wrong-tool.html">When AI is the wrong tool</a>.</p>
+        </section>
+      </article>
+    </div>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="wrap section contact" id="contact">
+      <div class="contact-head">
+        <h2 class="contact-title">Curious what your number would be?</h2>
+        <p class="contact-lede">Tell us which process eats the most time, and we’ll tell you how we’d measure it.</p>
+      </div>
+      <div class="btn-row contact-cta">
+        <a class="btn btn-dark btn-lg" href="index.html#contact">Get in touch <span aria-hidden="true">→</span></a>
+        <a class="btn btn-flat btn-lg" href="method.html">Read the method</a>
+      </div>
+      <p class="contact-line">
+        <a href="mailto:hello@lanes.dk">hello@lanes.dk</a>
+        <span aria-hidden="true">·</span>
+        <a href="tel:+4530360086">+45 30 36 00 86</a>
+      </p>
+    </section>
+  </main>
+
+
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <a class="brand brand-lg brand-light" href="index.html" aria-label="lanes, home">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+      <nav class="footer-rows" aria-label="Footer">
+        <a href="index.html#how">How it works <span aria-hidden="true">→</span></a>
+        <a href="index.html#services">Services <span aria-hidden="true">→</span></a>
+        <a href="index.html#about">About <span aria-hidden="true">→</span></a>
+        <a href="method.html">The lanes method <span aria-hidden="true">→</span></a>
+        <a href="articles.html">Articles <span aria-hidden="true">→</span></a>
+        <a href="index.html#contact">Contact <span aria-hidden="true">→</span></a>
+      </nav>
+      <div class="footer-meta">
+        <p>© <span id="year">2026</span> lanes</p>
+        <p class="footer-mission"><strong>What we do</strong><br />Process analysis, AI tools and automation for small and mid-sized B2B sales teams.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js?v=15"></script>
+</body>
+</html>

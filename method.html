@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The lanes method · lanes</title>
+  <meta name="description" content="Two days with your team, an as-is and a to-be swimlane, and a time estimate. Here is exactly how it works." />
+  <meta property="og:title" content="The lanes method" />
+  <meta property="og:description" content="Two days, two swimlanes, one estimate." />
+  <meta name="theme-color" content="#141413" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141413'/%3E%3Crect x='5' y='7.5' width='16' height='4' rx='2' fill='%23FAF9F5'/%3E%3Crect x='10' y='14' width='16' height='4' rx='2' fill='%23D97757'/%3E%3Crect x='5' y='20.5' width='11' height='4' rx='2' fill='%23FAF9F5'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+</head>
+<body class="page-article">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header on-dark" id="top">
+    <div class="wrap header-inner">
+      <nav class="nav-left" aria-label="Main">
+        <a class="pill" href="index.html#how">How it works</a>
+        <a class="pill" href="index.html#services">Services</a>
+        <a class="pill" href="index.html#about">About</a>
+        <a class="pill" href="method.html" aria-current="page">Method</a>
+      </nav>
+
+      <a class="brand" href="index.html" aria-label="lanes, home">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+
+      <div class="nav-right">
+        <a class="pill" href="articles.html">Articles</a>
+        <a class="pill pill-dark" href="#contact">Book a call</a>
+        <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h9" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <div class="wrap">
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="method.html" aria-current="page">Method</a>
+        <a href="articles.html">Articles</a>
+        <a href="#contact">Book a call</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ ARTICLE HERO ============ -->
+    <section class="article-hero grain" data-header-dark>
+      <canvas class="pool" data-variant="night" aria-hidden="true"></canvas>
+      <button class="hud-btn pool-toggle hero-toggle" type="button" aria-label="Pause animation" aria-pressed="false">
+        <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.5v9M10.5 3.5v9" /></svg>
+        <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5 12 8l-7 4.5z" /></svg>
+      </button>
+
+      <div class="article-hero-inner wrap">
+        <p class="kicker">The lanes method</p>
+        <h1 class="stagger">
+          <span>Two days.</span>
+          <span>Two swimlanes.</span>
+        </h1>
+
+        <nav class="toc toc-hero" aria-label="Contents">
+          <ol>
+            <li><a href="#introduction"><span class="n">1</span><span class="leader" aria-hidden="true"></span><span class="t">Introduction</span></a></li>
+            <li><a href="#two-days"><span class="n">2</span><span class="leader" aria-hidden="true"></span><span class="t">Two days with your people</span></a></li>
+            <li><a href="#deliverable"><span class="n">3</span><span class="leader" aria-hidden="true"></span><span class="t">What you get</span></a></li>
+            <li><a href="#done-properly"><span class="n">4</span><span class="leader" aria-hidden="true"></span><span class="t">Done properly</span></a></li>
+            <li><a href="#build"><span class="n">5</span><span class="leader" aria-hidden="true"></span><span class="t">If you go ahead</span></a></li>
+            <li><a href="#working-together"><span class="n">6</span><span class="leader" aria-hidden="true"></span><span class="t">Working together</span></a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="wrap article-grid">
+      <aside class="article-side">
+        <dl class="article-meta">
+          <div><dt>Category</dt><dd>Method</dd></div>
+          <div><dt>Reading time</dt><dd>5 min</dd></div>
+        </dl>
+        <nav class="side-toc" aria-label="On this page">
+          <a href="#introduction">Introduction</a>
+          <a href="#two-days">Two days with your people</a>
+          <a href="#deliverable">What you get</a>
+          <a href="#done-properly">Done properly</a>
+          <a href="#build">If you go ahead</a>
+          <a href="#working-together">Working together</a>
+        </nav>
+      </aside>
+
+      <article class="prose">
+        <section id="introduction">
+          <h2 class="sr-only">Introduction</h2>
+          <p class="prose-lede">Most sales teams don't have an AI problem. They have a process nobody has ever drawn.</p>
+          <p>Information lives in five places. Handoffs depend on someone remembering. Quotes get retyped from an email into a spreadsheet and from the spreadsheet into a Word template, and everyone quietly keeps their own list on the side.</p>
+          <p>New tools often make this worse when they're bolted on top. You get another tab and another login, and the underlying mess is still there.</p>
+          <p>So we start by drawing the process. Not the version in the handbook, the one that actually happens. We draw it as a <em>swimlane</em>: one lane per role, with every step placed in the lane of whoever does it. Once everyone can see it, the fixes are usually obvious, and so is what they're worth. Want to try it first? Here’s <a href="draw-your-own-swimlane.html">how to draw your own swimlane in an afternoon</a>.</p>
+        </section>
+
+        <section id="two-days">
+          <h2><span class="h-num">2</span> Two days with your people</h2>
+          <p>The analysis takes two days, with the people who do the work. Not a steering group, and not a questionnaire.</p>
+
+          <dl class="facts facts-days">
+            <div><dt>Day 1</dt><dd>We walk through real cases with each role. We follow a handful of recent deals or orders from first contact to invoice, and draw the as-is as we go.</dd></div>
+            <div><dt>Day 2</dt><dd>We go through the drawing with the whole group, find the bottlenecks together and sketch the to-be. In the last hour we walk a decision-maker through both.</dd></div>
+          </dl>
+
+          <p>Who should be there:</p>
+          <ul class="checks">
+            <li><strong>A couple of sellers,</strong> ideally one experienced and one newer.</li>
+            <li><strong>Sales ops or customer service,</strong> whoever picks up after the deal is won.</li>
+            <li><strong>Whoever owns pricing, quotes or invoicing.</strong></li>
+            <li><strong>A decision-maker</strong> for the last hour of day two.</li>
+          </ul>
+          <p>Nobody needs to be in the room for two full days. Most people need a few hours.</p>
+        </section>
+
+        <section id="deliverable">
+          <h2><span class="h-num">3</span> What you get</h2>
+          <p>Shortly after the two days, you get a short report built around three things.</p>
+
+          <div class="callout">
+            <p class="callout-title">The deliverable</p>
+            <ol class="deliverables">
+              <li><span class="n">01</span><div><strong>The as-is swimlane</strong><span>Your process as it runs today, with every role, system, handoff and wait.</span></div></li>
+              <li><span class="n">02</span><div><strong>The to-be swimlane</strong><span>A concrete suggestion for how it should run, with each step moved into the right lane.</span></div></li>
+              <li><span class="n">03</span><div><strong>A time estimate</strong><span>The hours the to-be saves per week or per case, and how long it takes to build.</span></div></li>
+            </ol>
+          </div>
+
+          <figure class="prose-figure">
+            <div class="figure-art grain">
+              <svg viewBox="0 0 720 400" aria-hidden="true">
+                <defs>
+                  <pattern id="grid-f" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#C7BDAB" stroke-width=".8"/></pattern>
+                  <pattern id="hatch-f" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V5" stroke="#141413" stroke-width="1"/></pattern>
+                  <marker id="arr-ink" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8z" fill="#141413"/></marker>
+                  <marker id="arr-clay" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8z" fill="#C6613F"/></marker>
+                </defs>
+                <rect width="720" height="400" fill="#E3DACC"/>
+                <rect width="720" height="400" fill="url(#grid-f)"/>
+
+                <!-- AS-IS -->
+                <g font-family="Figtree, sans-serif" font-size="13" fill="#141413">
+                  <text x="20" y="28" font-weight="500">As-is</text>
+                  <text x="20" y="66" fill="#5E5D59">Customer</text><text x="20" y="116" fill="#5E5D59">Sales</text><text x="20" y="166" fill="#5E5D59">Ops</text>
+                </g>
+                <path d="M20 37H700M20 87H700M20 137H700M20 187H700M110 37V187" stroke="#141413" stroke-opacity=".3"/>
+                <g fill="none" stroke="#141413" stroke-width="1.4" marker-end="url(#arr-ink)">
+                  <path d="M200 62H211V112H220"/><path d="M292 112H303V162H312"/><path d="M384 162H395V112H404"/><path d="M476 112H487V162H496"/><path d="M568 162H579V112H588"/>
+                </g>
+                <g stroke="#141413" stroke-width="1.3">
+                  <rect x="130" y="49" width="70" height="26" rx="3" fill="#FAF9F5"/>
+                  <rect x="222" y="99" width="70" height="26" rx="3" fill="#FAF9F5"/>
+                  <rect x="314" y="149" width="70" height="26" rx="3" fill="#FAF9F5"/>
+                  <rect x="406" y="99" width="70" height="26" rx="3" fill="url(#hatch-f)"/>
+                  <rect x="498" y="149" width="70" height="26" rx="3" fill="url(#hatch-f)"/>
+                  <rect x="590" y="99" width="70" height="26" rx="3" fill="#FAF9F5"/>
+                </g>
+                <g font-family="Figtree, sans-serif" font-size="11" fill="#141413" text-anchor="middle">
+                  <text x="165" y="65.5">Request</text><text x="257" y="115.5">Retype</text><text x="349" y="165.5">Look up</text><text x="625" y="115.5">Quote</text>
+                </g>
+                <g font-family="Figtree, sans-serif" font-size="12" fill="#C6613F"><text x="406" y="94">Chase</text><text x="498" y="196">Reply</text></g>
+
+                <!-- TO-BE -->
+                <g font-family="Figtree, sans-serif" font-size="13" fill="#141413">
+                  <text x="20" y="228" font-weight="500">To-be</text>
+                  <text x="20" y="266" fill="#5E5D59">Customer</text><text x="20" y="316" fill="#5E5D59">Sales</text><text x="20" y="366" fill="#C6613F">System</text>
+                </g>
+                <path d="M20 237H700M20 287H700M20 337H700M20 387H700M110 237V387" stroke="#141413" stroke-opacity=".3"/>
+                <g fill="none" stroke="#C6613F" stroke-width="1.8" marker-end="url(#arr-clay)">
+                  <path d="M200 262H225V362H248"/><path d="M320 362H368"/><path d="M440 362H465V312H488"/><path d="M560 312H585V262H608"/>
+                </g>
+                <g stroke-width="1.3">
+                  <rect x="130" y="249" width="70" height="26" rx="3" fill="#FAF9F5" stroke="#141413"/>
+                  <rect x="250" y="349" width="70" height="26" rx="3" fill="#D97757" stroke="#C6613F"/>
+                  <rect x="370" y="349" width="70" height="26" rx="3" fill="#D97757" stroke="#C6613F"/>
+                  <rect x="490" y="299" width="70" height="26" rx="3" fill="#FAF9F5" stroke="#141413"/>
+                  <rect x="610" y="249" width="70" height="26" rx="3" fill="#FAF9F5" stroke="#141413"/>
+                </g>
+                <g font-family="Figtree, sans-serif" font-size="11" fill="#141413" text-anchor="middle">
+                  <text x="165" y="265.5">Request</text><text x="285" y="365.5">Read</text><text x="405" y="365.5">Price</text><text x="525" y="315.5">Review</text><text x="645" y="265.5">Accept</text>
+                </g>
+              </svg>
+            </div>
+          </figure>
+
+          <p>The estimate is the part most people care about, so we're careful with it. It's based on what we saw over the two days, not on vendor benchmarks, and we show how we got to the number so you can check it. Read <a href="how-we-estimate-time.html">how we estimate the time you’ll get back</a>.</p>
+        </section>
+
+        <section id="done-properly">
+          <h2><span class="h-num">4</span> Done properly</h2>
+          <p>The person who sits with your team is the person who draws the swimlanes and builds the solution. Nothing gets lost between a sales meeting and a delivery team, because there isn't one.</p>
+          <p>Every estimate comes with the reasoning behind it. If part of a process can't be automated well, we say so, even when it means less work for us.</p>
+
+          <blockquote class="pull">
+            <p>One process done properly beats five done halfway.</p>
+          </blockquote>
+
+          <p>And if the two days don't turn up anything worth fixing, you don't pay for them. You keep the as-is drawing either way.</p>
+        </section>
+
+        <section id="build">
+          <h2><span class="h-num">5</span> If you go ahead</h2>
+          <p>Most of the time, the to-be is worth building. You can build it with us, or take the drawings and the estimate and do it yourselves. Both are fine.</p>
+          <p>When we build, it runs inside the tools your team already lives in: your CRM, your inbox, Slack or Teams. We work in short cycles, and a first working version is used on real cases early, so feedback is about reality rather than a demo.</p>
+          <p>We're deliberate about where AI goes. Language models are excellent at reading, summarising and drafting. They are the wrong tool for anything that has to be exactly right every time, like pricing, routing or compliance checks. Those stay as plain, predictable rules you can read and change. More on that in <a href="when-ai-is-the-wrong-tool.html">When AI is the wrong tool</a>.</p>
+
+          <div class="split-table" role="table" aria-label="Responsibilities during the build">
+            <div class="st-row st-head" role="row"><span role="columnheader">We do</span><span role="columnheader">You do</span></div>
+            <div class="st-row" role="row"><span role="cell">Build and test the to-be in short cycles</span><span role="cell">Use it on real cases and tell us what's wrong</span></div>
+            <div class="st-row" role="row"><span role="cell">Set up access, logging and monitoring</span><span role="cell">Give us access to the systems involved</span></div>
+            <div class="st-row" role="row"><span role="cell">Write prompts, rules and integrations</span><span role="cell">Decide on edge cases and tone of voice</span></div>
+            <div class="st-row" role="row"><span role="cell">Track the result against the time estimate</span><span role="cell">Join a 30-minute check-in once a week</span></div>
+          </div>
+
+          <p>When it's live, we don't disappear. Your team gets trained on it, and we keep it running: we watch for problems, fix what breaks, and adjust it when your products, prices or people change. You shouldn't need an IT department to keep it working.</p>
+        </section>
+
+        <section id="working-together">
+          <h2><span class="h-num">6</span> Working together</h2>
+          <p>We're a small, senior team, and you talk directly to the people who draw your swimlanes and build the result.</p>
+          <dl class="facts">
+            <div><dt>Analysis</dt><dd>Two days with your team. If we find nothing worth fixing, you don't pay.</dd></div>
+            <div><dt>Build</dt><dd>Scoped and priced from the time estimate in the to-be.</dd></div>
+            <div><dt>Rhythm</dt><dd>A weekly 30-minute check-in and a shared Slack or Teams channel.</dd></div>
+            <div><dt>After launch</dt><dd>We keep it running, fix what breaks and adjust it as you grow.</dd></div>
+            <div><dt>Data</dt><dd>A data processing agreement is signed before we touch any system.</dd></div>
+          </dl>
+        </section>
+      </article>
+    </div>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="wrap section contact" id="contact">
+      <p class="statement">
+        <strong>Let's draw your first swimlane.</strong>
+        Thirty minutes on a call to find the process worth looking at. If it makes sense, we book the two days. If it doesn't, we'll say so.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-dark btn-lg" href="index.html#contact">Get in touch <span aria-hidden="true">→</span></a>
+        <a class="btn btn-flat btn-lg" href="index.html">Back to home</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <a class="brand brand-lg brand-light" href="index.html" aria-label="lanes, home">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+      <nav class="footer-rows" aria-label="Footer">
+        <a href="index.html#how">How it works <span aria-hidden="true">→</span></a>
+        <a href="index.html#services">Services <span aria-hidden="true">→</span></a>
+        <a href="index.html#about">About <span aria-hidden="true">→</span></a>
+        <a href="method.html">The lanes method <span aria-hidden="true">→</span></a>
+        <a href="articles.html">Articles <span aria-hidden="true">→</span></a>
+        <a href="index.html#contact">Contact <span aria-hidden="true">→</span></a>
+      </nav>
+      <div class="footer-meta">
+        <p>© <span id="year">2026</span> lanes</p>
+        <p class="footer-mission"><strong>What we do</strong><br />Process analysis, AI tools and automation for small and mid-sized B2B sales teams.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js?v=15"></script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>lanes · Process analysis and automation for sales teams</title>
+  <meta name="description" content="Two days with your team. An as-is and a to-be swimlane of your sales process, with an estimate of the time you would get back." />
+  <meta property="og:title" content="lanes · Process analysis and automation for sales teams" />
+  <meta property="og:description" content="Two days, two swimlanes, one time estimate." />
+  <meta name="theme-color" content="#FAF9F5" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141413'/%3E%3Crect x='5' y='7.5' width='16' height='4' rx='2' fill='%23FAF9F5'/%3E%3Crect x='10' y='14' width='16' height='4' rx='2' fill='%23D97757'/%3E%3Crect x='5' y='20.5' width='11' height='4' rx='2' fill='%23FAF9F5'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <nav class="nav-left" aria-label="Main">
+        <a class="pill" href="#how">How it works</a>
+        <div class="dd">
+          <button class="pill dd-btn" type="button" aria-expanded="false" aria-controls="dd-services">
+            Services <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" /></svg>
+          </button>
+          <div class="dd-panel" id="dd-services" hidden>
+            <div class="dd-list">
+              <a href="#how"><strong>Two-day process analysis</strong><span>As-is, to-be and a time estimate</span></a>
+              <a href="#services"><strong>Sales automation</strong><span>Routing, follow-up and CRM hygiene</span></a>
+              <a href="#services"><strong>AI sales assistants</strong><span>Research, call prep and first drafts</span></a>
+              <a href="#services"><strong>Quotes and proposals</strong><span>Priced proposals the same day</span></a>
+              <a href="#services"><strong>Data and integrations</strong><span>CRM, ERP, email and calendar in sync</span></a>
+            </div>
+            <a class="dd-feature" href="method.html">
+              <span class="dd-art grain" aria-hidden="true">
+                <svg viewBox="0 0 200 120"><rect width="200" height="120" fill="#BCD1CA"/><path d="M0 40H200M0 80H200" stroke="#141413" stroke-opacity=".3"/><g fill="none" stroke="#141413" stroke-width="1.6"><path d="M44 20H58V60H88V100H120"/></g><rect x="14" y="12" width="30" height="16" rx="3" fill="#FAF9F5" stroke="#141413"/><rect x="88" y="52" width="30" height="16" rx="3" fill="#FAF9F5" stroke="#141413"/><rect x="120" y="92" width="30" height="16" rx="3" fill="#D97757" stroke="#D97757"/><circle cx="170" cy="100" r="5" fill="#141413"/><path d="M150 100H165" stroke="#141413" stroke-width="1.6"/></svg>
+              </span>
+              <strong>The lanes method</strong>
+              <span>Two days, two swimlanes, one estimate <span aria-hidden="true">→</span></span>
+            </a>
+          </div>
+        </div>
+        <a class="pill" href="#about">About</a>
+        <a class="pill" href="method.html">Method</a>
+      </nav>
+
+      <a class="brand" href="#top" aria-label="lanes, home">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+
+      <div class="nav-right">
+        <a class="pill" href="articles.html">Articles</a>
+        <a class="pill pill-dark" href="#contact">Book a call</a>
+        <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h9" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <div class="wrap">
+        <a href="#how">How it works</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="method.html">Method</a>
+        <a href="articles.html">Articles</a>
+        <a href="#contact">Book a call</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="wrap hero-split" aria-label="Introduction">
+      <div class="hero-copy">
+        <h1 class="hero-title">Find the friction.<br />Then remove it.</h1>
+        <p class="hero-sub">Two days with your team, your process drawn as it is and as it could be, and a clear plan to get the time back.</p>
+        <div class="btn-row">
+          <a class="btn btn-dark btn-lg" href="#contact">Book the two days <span aria-hidden="true">→</span></a>
+          <a class="btn btn-flat btn-lg" href="#how">How it works</a>
+        </div>
+      </div>
+      <div class="mosaic2" aria-hidden="true">
+        <!-- The knot: tangled threads come out as three straight lanes -->
+        <figure class="art grain m-knot">
+          <svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice">
+            <defs><pattern id="m-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#C9BFAD" stroke-width=".8"/></pattern></defs>
+            <rect width="400" height="600" fill="#E3DACC"/>
+            <rect width="400" height="600" fill="url(#m-grid)"/>
+            <g fill="none" stroke-linecap="round" stroke-width="2.4">
+              <path stroke="#141413" d="M-10 170C90 90 170 330 90 290C20 255 130 140 190 230C225 282 210 250 250 250H420"/>
+              <path stroke="#C6613F" d="M-10 330C70 440 160 200 120 270C85 340 205 395 210 320C213 298 224 300 250 300H420"/>
+              <path stroke="#141413" d="M-10 470C100 420 60 230 150 260C245 292 115 405 200 370C232 357 228 350 250 350H420"/>
+            </g>
+            <g fill="none" stroke-linecap="round" stroke-width="7" class="m-beads">
+              <path stroke="#141413" d="M262 250H420"/>
+              <path stroke="#C6613F" d="M262 300H420" style="animation-delay:-.6s"/>
+              <path stroke="#141413" d="M262 350H420" style="animation-delay:-1.2s"/>
+            </g>
+            <path d="M250 205V395" stroke="#141413" stroke-width="1.2" stroke-dasharray="2 6"/>
+          </svg>
+        </figure>
+
+        <!-- The clock: a hatched quarter of time given back -->
+        <figure class="art grain m-clock">
+          <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+            <defs><pattern id="m-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V6" stroke="#C6613F" stroke-width="2"/></pattern></defs>
+            <rect width="400" height="400" fill="#CBCADB"/>
+            <circle cx="200" cy="200" r="138" fill="#FAF9F5" stroke="#141413" stroke-width="2"/>
+            <path d="M200 200L200 62A138 138 0 0 1 338 200Z" fill="url(#m-hatch)"/>
+            <g id="m-ticks" stroke="#141413" stroke-linecap="round"></g>
+            <path d="M200 200L200 112" stroke="#141413" stroke-width="5" stroke-linecap="round"/>
+            <g class="m-hand"><path d="M200 214L200 80" stroke="#141413" stroke-width="2.6" stroke-linecap="round"/></g>
+            <circle cx="200" cy="200" r="7" fill="#D97757" stroke="#141413" stroke-width="1.5"/>
+          </svg>
+        </figure>
+
+        <!-- The paperwork: a stack of forms with an approval stamp -->
+        <figure class="art grain m-paper">
+          <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="400" fill="#D97757"/>
+            <g stroke="#141413" stroke-width="1.4">
+              <rect x="96" y="70" width="190" height="250" fill="#E8DFD2" transform="rotate(-9 191 195)"/>
+              <rect x="112" y="76" width="190" height="250" fill="#F0EBE2" transform="rotate(5 207 201)"/>
+              <rect x="104" y="80" width="190" height="250" fill="#FAF9F5" transform="rotate(-2 199 205)"/>
+            </g>
+            <g transform="rotate(-2 199 205)" stroke="#141413" stroke-linecap="round">
+              <path d="M128 112H232M128 128H200" stroke-width="2.4"/>
+              <path d="M128 160H270M128 180H270M128 200H270M128 220H270M128 240H270M186 160V240M232 160V240" stroke-width="1" stroke-opacity=".55" fill="none"/>
+              <path d="M128 278H196" stroke-width="1.6" stroke-opacity=".6"/>
+            </g>
+            <g transform="rotate(-14 252 270)">
+              <circle cx="252" cy="270" r="34" fill="none" stroke="#C6613F" stroke-width="3"/>
+              <circle cx="252" cy="270" r="27" fill="none" stroke="#C6613F" stroke-width="1.2"/>
+              <path d="M238 271L248 281L268 259" fill="none" stroke="#C6613F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </figure>
+
+        <!-- The magnifier: finding the one square that slows everything down -->
+        <figure class="art grain m-lens">
+          <svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <pattern id="m-dots" width="26" height="26" patternUnits="userSpaceOnUse"><rect x="6" y="6" width="12" height="12" rx="2" fill="#FAF9F5" fill-opacity=".16"/></pattern>
+              <pattern id="m-dots-big" width="52" height="52" patternUnits="userSpaceOnUse" x="4" y="4"><rect x="12" y="12" width="24" height="24" rx="3" fill="#FAF9F5" fill-opacity=".22"/></pattern>
+              <clipPath id="m-lens-clip"><circle cx="0" cy="0" r="86"/></clipPath>
+            </defs>
+            <rect width="800" height="300" fill="#1F1E1D"/>
+            <rect width="800" height="300" fill="url(#m-dots)"/>
+            <rect x="500" y="136" width="12" height="12" rx="2" fill="#D97757"/>
+            <g class="m-glass">
+              <g transform="translate(506 142)">
+                <g clip-path="url(#m-lens-clip)">
+                  <rect x="-90" y="-90" width="180" height="180" fill="#262624"/>
+                  <rect x="-90" y="-90" width="180" height="180" fill="url(#m-dots-big)"/>
+                  <rect x="-14" y="-14" width="28" height="28" rx="3" fill="#D97757"/>
+                </g>
+                <circle r="86" fill="none" stroke="#FAF9F5" stroke-width="3"/>
+                <path d="M62 60L124 122" stroke="#FAF9F5" stroke-width="12" stroke-linecap="round"/>
+                <path d="M-46 -54A70 70 0 0 1 10 -70" fill="none" stroke="#FAF9F5" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"/>
+              </g>
+            </g>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="wrap section" id="how">
+      <div class="label-bar"><h2>How it works</h2></div>
+
+      <div class="section-lead">
+        <p class="statement statement-sm"><strong>Two days. Two swimlanes. One estimate.</strong> No transformation programme. We show you where the time goes and what it would take to get it back.</p>
+        <a class="btn btn-flat" href="method.html">Read the full method <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="tiles">
+        <article class="tile">
+          <div class="meta"><span class="chip" aria-hidden="true"><i></i><i></i><i></i></span><span>Day 1 and 2</span></div>
+          <figure class="art grain">
+            <svg viewBox="0 0 400 500" aria-hidden="true">
+              <defs>
+                <pattern id="grid-a" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#C7BDAB" stroke-width=".8"/></pattern>
+                <g id="note-lines"><path d="M12 22H50M12 33H44M12 44H34" stroke="#141413" stroke-opacity=".5" stroke-width="1.6" stroke-linecap="round"/></g>
+              </defs>
+              <rect width="400" height="500" fill="#E3DACC"/>
+              <rect width="400" height="500" fill="url(#grid-a)"/>
+              <path d="M200 40V440" stroke="#141413" stroke-width="1.2" stroke-dasharray="2 5"/>
+              <g font-family="Figtree, sans-serif" font-size="13" fill="#141413"><text x="40" y="62">Day 1</text><text x="228" y="62">Day 2</text></g>
+              <g stroke="#141413" stroke-width="1.2">
+                <g transform="translate(46 92) rotate(-4 32 32)"><rect width="64" height="64" fill="#FAF9F5"/><use href="#note-lines"/></g>
+                <g transform="translate(108 160) rotate(3 32 32)"><rect width="64" height="64" fill="#EBCECE"/><use href="#note-lines"/></g>
+                <g transform="translate(40 248) rotate(2 32 32)"><rect width="64" height="64" fill="#CBCADB"/><use href="#note-lines"/></g>
+                <g transform="translate(112 322) rotate(-3 32 32)"><rect width="64" height="64" fill="#FAF9F5"/><use href="#note-lines"/></g>
+                <g transform="translate(226 96) rotate(3 32 32)"><rect width="64" height="64" fill="#FAF9F5"/><use href="#note-lines"/></g>
+                <g transform="translate(292 176) rotate(-2 32 32)"><rect width="64" height="64" fill="#D97757"/><use href="#note-lines"/></g>
+                <g transform="translate(232 268) rotate(-4 32 32)"><rect width="64" height="64" fill="#EBCECE"/><use href="#note-lines"/></g>
+                <g transform="translate(296 336) rotate(2 32 32)"><rect width="64" height="64" fill="#FAF9F5"/><use href="#note-lines"/></g>
+              </g>
+              <path d="M110 124C170 130 200 140 226 128M172 196C220 220 250 230 292 210M258 160C262 200 262 230 264 268" fill="none" stroke="#141413" stroke-width="1.2" stroke-dasharray="3 4"/>
+            </svg>
+          </figure>
+          <h3>Two days with your people</h3>
+          <p>We sit with the sellers, ops and finance people who actually do the work, and walk through real cases from first contact to invoice.</p>
+        </article>
+
+        <article class="tile">
+          <div class="meta"><span class="chip" aria-hidden="true"><i></i><i></i><i></i></span><span>Deliverable</span></div>
+          <figure class="art grain">
+            <svg viewBox="0 0 400 500" aria-hidden="true">
+              <defs><pattern id="hatch-b" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V5" stroke="#141413" stroke-width="1"/></pattern></defs>
+              <rect width="400" height="500" fill="#BCD1CA"/>
+              <path d="M0 70H400M0 190H400M0 310H400M0 430H400" stroke="#141413" stroke-opacity=".35"/>
+              <g font-family="Figtree, sans-serif" font-size="13" fill="#141413"><text x="16" y="90">Customer</text><text x="16" y="210">Sales</text><text x="16" y="330">Ops</text></g>
+              <g fill="none" stroke="#141413" stroke-width="1.6">
+                <path d="M68 130H79V250H90M134 250H145V370H156M200 370H211V250H222M266 250H277V370H288M332 370H336V130H340"/>
+                <path d="M310 383V412H178V383" stroke-dasharray="4 4"/>
+              </g>
+              <g stroke="#141413" stroke-width="1.4">
+                <rect x="24" y="117" width="44" height="26" rx="3" fill="#FAF9F5"/>
+                <rect x="90" y="237" width="44" height="26" rx="3" fill="url(#hatch-b)"/>
+                <rect x="156" y="357" width="44" height="26" rx="3" fill="#FAF9F5"/>
+                <rect x="222" y="237" width="44" height="26" rx="3" fill="url(#hatch-b)"/>
+                <rect x="288" y="357" width="44" height="26" rx="3" fill="#FAF9F5"/>
+                <rect x="340" y="117" width="44" height="26" rx="3" fill="#FAF9F5"/>
+              </g>
+              <g fill="#D97757"><circle cx="145" cy="310" r="9"/><circle cx="277" cy="310" r="9"/></g>
+              <g stroke="#FAF9F5" stroke-width="1.4" stroke-linecap="round"><path d="M145 310V305M145 310H149M277 310V305M277 310H281"/></g>
+              <text x="186" y="432" fill="#141413" font-family="Figtree, sans-serif" font-size="12">Rework</text>
+            </svg>
+          </figure>
+          <h3>The as-is swimlane</h3>
+          <p>Your process drawn exactly as it runs today: every role, every handoff, every spreadsheet and every wait.</p>
+        </article>
+
+        <article class="tile">
+          <div class="meta"><span class="chip" aria-hidden="true"><i></i><i></i><i></i></span><span>Deliverable</span></div>
+          <figure class="art grain">
+            <svg viewBox="0 0 400 500" aria-hidden="true">
+              <rect width="400" height="500" fill="#788C5D"/>
+              <path d="M0 70H400M0 190H400M0 310H400M0 430H400" stroke="#FAF9F5" stroke-opacity=".4"/>
+              <g font-family="Figtree, sans-serif" font-size="13" fill="#FAF9F5"><text x="16" y="90">Customer</text><text x="16" y="210">Sales</text><text x="16" y="330">System</text></g>
+              <g fill="none" stroke="#FAF9F5" stroke-width="1.8"><path d="M68 130H82V370H96M140 370H168M212 370H226V250H240M284 250H302V130H320"/></g>
+              <g stroke-width="1.4">
+                <rect x="24" y="117" width="44" height="26" rx="3" fill="#FAF9F5" stroke="#FAF9F5"/>
+                <rect x="96" y="357" width="44" height="26" rx="3" fill="#D97757" stroke="#D97757"/>
+                <rect x="168" y="357" width="44" height="26" rx="3" fill="#D97757" stroke="#D97757"/>
+                <rect x="240" y="237" width="44" height="26" rx="3" fill="#FAF9F5" stroke="#FAF9F5"/>
+                <rect x="320" y="117" width="44" height="26" rx="3" fill="#FAF9F5" stroke="#FAF9F5"/>
+              </g>
+              <g transform="translate(232 448)">
+                <rect width="152" height="26" rx="13" fill="none" stroke="#FAF9F5" stroke-width="1.2"/>
+                <circle cx="16" cy="13" r="6" fill="none" stroke="#FAF9F5" stroke-width="1.2"/><path d="M16 13V9.5M16 13H19" stroke="#FAF9F5" stroke-width="1.2" stroke-linecap="round"/>
+                <text x="30" y="17" fill="#FAF9F5" font-family="Figtree, sans-serif" font-size="13">Time estimate</text>
+              </g>
+            </svg>
+          </figure>
+          <h3>The to-be, with an estimate</h3>
+          <p>A concrete suggestion for how the process should run, with an estimate of the hours it saves and how long it takes to build. <a class="tile-link" href="how-we-estimate-time.html">How we estimate</a></p>
+        </article>
+
+        <article class="tile">
+          <div class="meta"><span class="chip" aria-hidden="true"><i></i><i></i><i></i></span><span>Your call</span></div>
+          <figure class="art grain">
+            <svg viewBox="0 0 400 500" aria-hidden="true">
+              <rect width="400" height="500" fill="#1F1E1D"/>
+              <path d="M0 160H400M0 340H400" stroke="#FAF9F5" stroke-opacity=".1"/>
+              <g fill="none" stroke="#FAF9F5" stroke-width="1.8">
+                <path d="M48 250H150C205 250 195 160 250 160H322"/>
+                <path d="M150 250C205 250 195 340 250 340H322"/>
+              </g>
+              <circle cx="48" cy="250" r="6" fill="#FAF9F5"/>
+              <circle cx="338" cy="160" r="15" fill="#D97757"/>
+              <circle cx="338" cy="340" r="14" fill="none" stroke="#FAF9F5" stroke-width="1.8"/>
+              <g font-family="Figtree, sans-serif" font-size="13">
+                <text x="40" y="232" fill="#B0AEA5">To-be</text>
+                <text x="250" y="142" fill="#D97757">Build it</text>
+                <text x="250" y="372" fill="#B0AEA5">Not now</text>
+              </g>
+            </svg>
+          </figure>
+          <h3>You decide</h3>
+          <p>With the drawings and the estimate in hand, you choose what happens next: build it with us, do it yourselves, or leave it for now.</p>
+        </article>
+      </div>
+
+      <div class="ncnp">
+        <p class="ncnp-big">Done<br />properly.</p>
+        <div class="ncnp-body">
+          <p>You work with the person who maps your process and builds the solution. No juniors, no handoffs, no slide decks. We'd rather do one process properly than five halfway.</p>
+          <p class="ncnp-small">If the two days don't turn up anything worth fixing, you don't pay for them.</p>
+          <a class="btn btn-dark" href="#contact">Book the two days <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOUND FAMILIAR? ============ -->
+    <section class="wrap section" id="services">
+      <div class="label-bar"><h2>Sound familiar?</h2></div>
+
+      <ul class="familiar">
+        <li class="fam-item">
+          <details class="fam" data-example="quotes">
+            <summary class="fam-row">
+              <p class="fam-q">“Quotes take two days because the pricing lives in one person’s head.”</p>
+              <div class="fam-a">
+                <p>Pricing rules in one place, and a quote drafted straight from the call notes.</p>
+                <span class="fam-tag">Quotes and proposals</span>
+                <span class="fam-toggle"><span class="ft-show">See it as a swimlane</span><span class="ft-hide">Hide the swimlane</span><i aria-hidden="true"></i></span>
+              </div>
+            </summary>
+            <div class="fam-lanes"></div>
+          </details>
+        </li>
+        <li class="fam-item">
+          <details class="fam" data-example="leads">
+            <summary class="fam-row">
+              <p class="fam-q">“New leads sit in an inbox all weekend.”</p>
+              <div class="fam-a">
+                <p>Leads routed to the right person and answered the same day.</p>
+                <span class="fam-tag">Sales automation</span>
+                <span class="fam-toggle"><span class="ft-show">See it as a swimlane</span><span class="ft-hide">Hide the swimlane</span><i aria-hidden="true"></i></span>
+              </div>
+            </summary>
+            <div class="fam-lanes"></div>
+          </details>
+        </li>
+        <li class="fam-item">
+          <details class="fam" data-example="crm">
+            <summary class="fam-row">
+              <p class="fam-q">“The CRM is only up to date on Fridays.”</p>
+              <div class="fam-a">
+                <p>The CRM fills itself in as calls, emails and orders happen.</p>
+                <span class="fam-tag">CRM and integrations</span>
+                <span class="fam-toggle"><span class="ft-show">See it as a swimlane</span><span class="ft-hide">Hide the swimlane</span><i aria-hidden="true"></i></span>
+              </div>
+            </summary>
+            <div class="fam-lanes"></div>
+          </details>
+        </li>
+        <li class="fam-item">
+          <details class="fam" data-example="orders">
+            <summary class="fam-row">
+              <p class="fam-q">“Every order gets typed in twice.”</p>
+              <div class="fam-a">
+                <p>Every order is read straight from the email or PDF and proposed in the ERP, ready for someone to approve.</p>
+                <span class="fam-tag">CRM and integrations</span>
+                <span class="fam-toggle"><span class="ft-show">See it as a swimlane</span><span class="ft-hide">Hide the swimlane</span><i aria-hidden="true"></i></span>
+              </div>
+            </summary>
+            <div class="fam-lanes"></div>
+          </details>
+        </li>
+        <li class="fam-item">
+          <details class="fam" data-example="research">
+            <summary class="fam-row">
+              <p class="fam-q">“Our sellers spend the morning researching instead of calling.”</p>
+              <div class="fam-a">
+                <p>A short brief on every account, ready before the first call of the day.</p>
+                <span class="fam-tag">AI sales assistants</span>
+                <span class="fam-toggle"><span class="ft-show">See it as a swimlane</span><span class="ft-hide">Hide the swimlane</span><i aria-hidden="true"></i></span>
+              </div>
+            </summary>
+            <div class="fam-lanes"></div>
+          </details>
+        </li>
+        <li class="fam-item">
+          <details class="fam" data-example="knowledge">
+            <summary class="fam-row">
+              <p class="fam-q">“Only Kim knows how it works.”</p>
+              <div class="fam-a">
+                <p>The process drawn, written down and running without depending on Kim.</p>
+                <span class="fam-tag">Process analysis</span>
+                <span class="fam-toggle"><span class="ft-show">See it as a swimlane</span><span class="ft-hide">Hide the swimlane</span><i aria-hidden="true"></i></span>
+              </div>
+            </summary>
+            <div class="fam-lanes"></div>
+          </details>
+        </li>
+      </ul>
+
+      <div class="fam-foot">
+        <p>Recognise one of these? That’s usually where the two days start.</p>
+        <a class="btn btn-dark" href="#contact">Book a call <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <!-- ============ WHO YOU'LL WORK WITH (dark) ============ -->
+    <section class="dark grain" id="about">
+      <div class="wrap about">
+        <figure class="portrait">
+          <span class="portrait-empty" aria-hidden="true">Add your photo as founder.jpg</span>
+          <img src="founder.jpg" alt="Portrait of Danni Dahl, founder of lanes" width="1600" height="1066" onerror="this.remove()" />
+        </figure>
+
+        <div class="about-copy">
+          <p class="kicker">Who you’ll work with</p>
+          <h2 class="about-name">Danni Dahl</h2>
+          <p class="about-role">Founder of lanes</p>
+          <blockquote class="about-quote">
+            <p>“Fixing the process is always better than adding AI.”</p>
+          </blockquote>
+          <a class="about-read" href="when-ai-is-the-wrong-tool.html">Read why: When AI is the wrong tool <span aria-hidden="true">→</span></a>
+          <dl class="about-facts">
+            <div><dt>Education</dt><dd>AI engineer</dd></div>
+            <div><dt>Experience</dt><dd>2 years as an automation consultant</dd></div>
+            <div><dt>Works with</dt><dd>Small and mid-sized B2B sales teams</dd></div>
+            <div><dt>Based in</dt><dd>Aalborg, Denmark</dd></div>
+          </dl>
+          <a class="btn btn-light" href="#contact">Book a call with Danni <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="wrap section contact contact-mid" id="contact">
+      <div class="contact-head">
+        <h2 class="contact-title">Let’s draw your first swimlane.</h2>
+        <p class="contact-lede">Tell us a little about your team and what slows it down. We’ll set up a 30-minute call to find the process worth looking at.</p>
+      </div>
+
+        <!--
+          Form service: paste your endpoint in data-endpoint, for example
+          https://formspree.io/f/your-form-id
+          While it's empty, the form opens the visitor's email app with the message filled in.
+          With Web3Forms, also set data-access-key to your access key.
+        -->
+        <div class="contact-card">
+          <form id="contact-form" class="contact-form" novalidate data-endpoint="" data-access-key="" data-fallback-email="hello@lanes.dk">
+            <div class="field-row">
+              <div class="field">
+                <label for="cf-name">Name</label>
+                <input id="cf-name" name="name" type="text" autocomplete="name" required aria-describedby="cf-name-error" />
+                <p class="field-error" id="cf-name-error"></p>
+              </div>
+              <div class="field">
+                <label for="cf-email">Work email</label>
+                <input id="cf-email" name="email" type="email" autocomplete="email" required aria-describedby="cf-email-error" />
+                <p class="field-error" id="cf-email-error"></p>
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="cf-company">Company <span class="optional">optional</span></label>
+                <input id="cf-company" name="company" type="text" autocomplete="organization" />
+              </div>
+              <div class="field">
+                <label for="cf-size">People in sales <span class="optional">optional</span></label>
+                <select id="cf-size" name="team_size">
+                  <option value="">Choose</option>
+                  <option>Just me</option>
+                  <option>2–5</option>
+                  <option>6–15</option>
+                  <option>16–50</option>
+                  <option>More than 50</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="cf-message">What would you like to fix?</label>
+              <textarea id="cf-message" name="message" rows="5" required aria-describedby="cf-message-error" placeholder="For example: quotes take two days because pricing lives in one spreadsheet."></textarea>
+              <p class="field-error" id="cf-message-error"></p>
+            </div>
+
+            <!-- spam trap: hidden from people, bots fill it in -->
+            <div class="hp" aria-hidden="true">
+              <label for="cf-website">Website</label>
+              <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form-foot">
+              <p class="form-note">We only use your details to reply to you.</p>
+              <button class="btn btn-dark btn-lg" type="submit">Send message <span aria-hidden="true">→</span></button>
+            </div>
+            <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="form-done" id="cf-done" hidden tabindex="-1">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="none" stroke="#D97757" stroke-width="2"/><path d="M15 24.5l6 6 12-13" fill="none" stroke="#D97757" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3 id="cf-done-title">Thanks, your message is on its way.</h3>
+            <p id="cf-done-text">Danni will get back to you to set up a short call.</p>
+          </div>
+        </div>
+
+      <p class="contact-line">
+        <a href="mailto:hello@lanes.dk">hello@lanes.dk</a>
+        <span aria-hidden="true">·</span>
+        <a href="tel:+4530360086">+45 30 36 00 86</a>
+      </p>
+    </section>
+    <!-- ============ FAQ ============ -->
+    <section class="wrap section section-last" id="faq">
+      <div class="label-bar"><h2>Questions</h2></div>
+
+      <div class="faq">
+        <details>
+          <summary>What if you don't find anything worth fixing?</summary>
+          <p>Then you don't pay for the two days, and you keep the as-is drawing. We'd rather tell you that than sell you something you don't need.</p>
+        </details>
+        <details>
+          <summary>Who needs to be in the room?</summary>
+          <p>The people who actually do the work: typically a couple of sellers, someone from sales ops or customer service, and whoever handles pricing or invoicing. Nobody needs to be there for two full days. Most people need a few hours.</p>
+        </details>
+        <details>
+          <summary>What happens after the two days?</summary>
+          <p>You get the as-is and to-be swimlanes and the time estimate. Then you decide: build the to-be with us, build it yourselves, or leave it. There's no obligation to continue.</p>
+        </details>
+        <details>
+          <summary>Which tools do you work with?</summary>
+          <p>The common CRMs (HubSpot, Salesforce, Pipedrive, Microsoft Dynamics), Microsoft 365 and Google Workspace, Slack and Teams, and the major AI model providers. If you run something else, we'll tell you honestly whether we're a good fit.</p>
+        </details>
+        <details>
+          <summary>What happens to our data?</summary>
+          <p>During the analysis we only need to see how your systems are used, not export anything. If we build, we work inside your existing systems and agreements, use enterprise AI services that don't train on your data, and sign a data processing agreement first.</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <a class="brand brand-lg brand-light" href="#top" aria-label="lanes, back to top">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+      <nav class="footer-rows" aria-label="Footer">
+        <a href="#how">How it works <span aria-hidden="true">→</span></a>
+        <a href="#services">Services <span aria-hidden="true">→</span></a>
+        <a href="#about">About <span aria-hidden="true">→</span></a>
+        <a href="method.html">The lanes method <span aria-hidden="true">→</span></a>
+        <a href="articles.html">Articles <span aria-hidden="true">→</span></a>
+        <a href="#contact">Contact <span aria-hidden="true">→</span></a>
+      </nav>
+      <div class="footer-meta">
+        <p>© <span id="year">2026</span> lanes</p>
+        <p class="footer-mission"><strong>What we do</strong><br />Process analysis, AI tools and automation for small and mid-sized B2B sales teams.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js?v=15"></script>
+</body>
+</html>

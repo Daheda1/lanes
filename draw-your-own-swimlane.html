@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to draw your own swimlane in an afternoon · lanes</title>
+  <meta name="description" content="A practical guide for small sales teams: pick one process, list the roles, follow one real case, and mark the waits and retyping. All in one afternoon." />
+  <meta property="og:title" content="How to draw your own swimlane in an afternoon" />
+  <meta property="og:description" content="Draw what actually happened, not what is supposed to happen." />
+  <meta name="theme-color" content="#141413" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141413'/%3E%3Crect x='5' y='7.5' width='16' height='4' rx='2' fill='%23FAF9F5'/%3E%3Crect x='10' y='14' width='16' height='4' rx='2' fill='%23D97757'/%3E%3Crect x='5' y='20.5' width='11' height='4' rx='2' fill='%23FAF9F5'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20" />
+</head>
+<body class="page-article">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header on-dark" id="top">
+    <div class="wrap header-inner">
+      <nav class="nav-left" aria-label="Main">
+        <a class="pill" href="index.html#how">How it works</a>
+        <a class="pill" href="index.html#services">Services</a>
+        <a class="pill" href="index.html#about">About</a>
+        <a class="pill" href="method.html">Method</a>
+      </nav>
+
+      <a class="brand" href="index.html" aria-label="lanes, home">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+
+      <div class="nav-right">
+        <a class="pill" href="articles.html">Articles</a>
+        <a class="pill pill-dark" href="#contact">Book a call</a>
+        <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h9" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <div class="wrap">
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="method.html">Method</a>
+        <a href="articles.html">Articles</a>
+        <a href="#contact">Book a call</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ ARTICLE HERO ============ -->
+    <section class="article-hero grain" data-header-dark>
+      <svg class="sw-hero" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <radialGradient id="sw-glow" cx="50%" cy="105%" r="70%">
+            <stop offset="0" stop-color="#D97757" stop-opacity=".24" />
+            <stop offset=".6" stop-color="#D97757" stop-opacity=".05" />
+            <stop offset="1" stop-color="#D97757" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <rect width="1440" height="900" fill="url(#sw-glow)" />
+        <path d="M0 225H1440M0 450H1440M0 675H1440M170 0V900" stroke="#FAF9F5" stroke-opacity=".08" />
+        <g font-family="Figtree, sans-serif" font-size="14" fill="#FAF9F5" fill-opacity=".38">
+          <text x="36" y="118">Customer</text><text x="36" y="343">Seller</text><text x="36" y="568">Back office</text><text x="36" y="793">Systems</text>
+        </g>
+        <!-- a hand-drawn route through the lanes -->
+        <path class="sw-path" pathLength="1" d="M236 112C262 110 280 116 292 128C304 150 300 300 310 330C318 342 340 338 380 338C430 337 470 341 506 339C530 340 536 360 538 400C541 470 536 530 546 556C556 566 590 562 640 563C700 562 740 565 764 560C786 556 790 520 792 470C795 410 790 368 802 344C812 334 850 339 900 338C960 337 1010 341 1052 336C1076 330 1080 290 1081 220C1082 160 1078 128 1092 118C1104 110 1140 112 1210 112" />
+        <g class="sw-notes">
+          <rect x="196" y="88" width="62" height="50" transform="rotate(-4 227 113)" />
+          <rect x="420" y="312" width="62" height="50" transform="rotate(3 451 337)" />
+          <rect x="668" y="537" width="62" height="50" transform="rotate(-3 699 562)" class="sw-note-clay" />
+          <rect x="934" y="312" width="62" height="50" transform="rotate(4 965 337)" />
+          <rect x="1196" y="88" width="62" height="50" transform="rotate(-2 1227 113)" />
+        </g>
+        <g class="sw-marks" fill="none" stroke="#D97757" stroke-width="2.4" stroke-linecap="round">
+          <g class="sw-mark" style="animation-delay: 1.4s"><circle cx="538" cy="450" r="14" /><path d="M538 450V441M538 450H545" /></g>
+          <g class="sw-mark" style="animation-delay: 2.4s"><circle cx="1081" cy="225" r="14" /><path d="M1081 225V216M1081 225H1088" /></g>
+        </g>
+      </svg>
+
+      <div class="article-hero-inner wrap">
+        <p class="kicker">Guide · Danni Dahl</p>
+        <h1 class="stagger">
+          <span>Draw your own swimlane</span>
+          <span>in an afternoon.</span>
+        </h1>
+
+        <nav class="toc toc-hero" aria-label="Contents">
+          <ol>
+            <li><a href="#introduction"><span class="n">1</span><span class="leader" aria-hidden="true"></span><span class="t">What you need</span></a></li>
+            <li><a href="#process"><span class="n">2</span><span class="leader" aria-hidden="true"></span><span class="t">Pick one process</span></a></li>
+            <li><a href="#roles"><span class="n">3</span><span class="leader" aria-hidden="true"></span><span class="t">List the roles</span></a></li>
+            <li><a href="#case"><span class="n">4</span><span class="leader" aria-hidden="true"></span><span class="t">Follow one real case</span></a></li>
+            <li><a href="#mark"><span class="n">5</span><span class="leader" aria-hidden="true"></span><span class="t">Mark the waits and retyping</span></a></li>
+            <li><a href="#read"><span class="n">6</span><span class="leader" aria-hidden="true"></span><span class="t">Read the drawing</span></a></li>
+            <li><a href="#help"><span class="n">7</span><span class="leader" aria-hidden="true"></span><span class="t">When to get help</span></a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="wrap article-grid">
+      <aside class="article-side">
+        <dl class="article-meta">
+          <div><dt>Written by</dt><dd>Danni Dahl</dd></div>
+          <div><dt>Category</dt><dd>Guide</dd></div>
+          <div><dt>Reading time</dt><dd>7 min</dd></div>
+        </dl>
+        <nav class="side-toc" aria-label="On this page">
+          <a href="#introduction">What you need</a>
+          <a href="#process">Pick one process</a>
+          <a href="#roles">List the roles</a>
+          <a href="#case">Follow one real case</a>
+          <a href="#mark">Mark the waits and retyping</a>
+          <a href="#read">Read the drawing</a>
+          <a href="#help">When to get help</a>
+        </nav>
+      </aside>
+
+      <article class="prose">
+        <section id="introduction">
+          <h2 class="sr-only">What you need</h2>
+          <p class="prose-lede">You don’t need software or a consultant to see where your team’s time goes. You need an afternoon, a wall and the people who do the work.</p>
+          <p>A swimlane is a drawing of a process with one horizontal lane for each person, role or system involved. Every step goes in the lane of whoever does it. That simple rule makes the expensive parts visible: the handoffs, the waiting and the information that gets typed in twice.</p>
+          <p>This guide is the same approach we use in our two-day analysis, cut down to something a small team can do on its own.</p>
+
+          <div class="callout">
+            <p class="callout-title">What you need</p>
+            <ol class="deliverables">
+              <li><span class="n">1</span><div><strong>About three hours</strong><span>One afternoon, with no meetings in the middle of it.</span></div></li>
+              <li><span class="n">2</span><div><strong>Two to four people</strong><span>The ones who actually do the work, not only the ones who manage it.</span></div></li>
+              <li><span class="n">3</span><div><strong>Sticky notes in three colours</strong><span>Plus a long wall, a whiteboard or a shared digital whiteboard.</span></div></li>
+              <li><span class="n">4</span><div><strong>One recent, real case</strong><span>A quote you sent last week, or an order that came in yesterday.</span></div></li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="process">
+          <h2><span class="h-num">2</span> Pick one process</h2>
+          <p>The most common mistake is drawing too much. “Our sales process” is not a process you can draw in an afternoon. Pick something with a clear start and a clear end, that happens at least every week, and that someone already complains about.</p>
+          <ul class="checks">
+            <li><strong>From enquiry to quote sent.</strong> A good first choice for most teams.</li>
+            <li><strong>From order received to invoice sent.</strong> Usually full of retyping.</li>
+            <li><strong>From new lead to first meeting.</strong> Usually full of waiting.</li>
+          </ul>
+          <p>Write the start and the end on the wall before you do anything else. Whenever the discussion drifts outside them, point at the wall.</p>
+        </section>
+
+        <section id="roles">
+          <h2><span class="h-num">3</span> List the roles</h2>
+          <p>Next, list everyone and everything that touches the process. Each one gets its own horizontal lane, drawn across the full width of the wall.</p>
+          <ul class="checks">
+            <li><strong>Put the customer on top.</strong> It keeps everyone honest about what the customer actually experiences.</li>
+            <li><strong>Use roles, not names.</strong> “Seller” and “Back office”, so nobody feels the drawing is about them.</li>
+            <li><strong>Give your systems a lane too.</strong> CRM, ERP, email. It’s the only way to see what people type into them by hand, and what the systems never do on their own.</li>
+          </ul>
+          <p>Three to five lanes is normal. If you have more than seven, the process you picked is probably too big.</p>
+        </section>
+
+        <section id="case">
+          <h2><span class="h-num">4</span> Follow one real case</h2>
+          <p>Now take your real case and walk through it from the start. For every step, ask three questions: what happened next, who did it, and where did they do it? Write each step on a sticky note and put it in that person’s lane, left to right, with an arrow to the next one.</p>
+          <p>Write the rough number of minutes on each note as you go. Guesses are fine. You’re looking for the big numbers, not precision.</p>
+
+          <blockquote class="pull">
+            <p>Draw what actually happened, not what is supposed to happen.</p>
+          </blockquote>
+
+          <p>This is the rule that matters most. The side spreadsheet, the phone call to check a price, the reminder someone keeps in their own calendar: they all go on the wall. Those workarounds are usually exactly where the time goes.</p>
+        </section>
+
+        <section id="mark">
+          <h2><span class="h-num">5</span> Mark the waits and retyping</h2>
+          <p>When the case is on the wall, go through it again with a different-coloured pen and mark three things:</p>
+          <ul class="checks">
+            <li><strong>Waiting.</strong> Anywhere the work sat still: waiting for an answer, an approval or someone to get back from holiday. Draw a small clock and write roughly how long.</li>
+            <li><strong>Retyping.</strong> Anywhere information was copied from one place into another by hand. Draw two short parallel lines.</li>
+            <li><strong>Rework.</strong> Anywhere something went backwards because it was wrong or incomplete. Draw a dashed arrow back to where it returned.</li>
+          </ul>
+          <p>Then count the arrows that cross from one lane to another. Every crossing is a handoff, and every handoff is a chance for work to wait or get lost.</p>
+
+          <figure class="prose-figure">
+            <div class="figure-art grain">
+              <svg viewBox="0 0 720 420" aria-hidden="true">
+                <defs>
+                  <pattern id="gd-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#C7BDAB" stroke-width=".8"/></pattern>
+                  <marker id="gd-arr" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8z" fill="#141413"/></marker>
+                  <marker id="gd-arr-c" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 8 4 0 8z" fill="#C6613F"/></marker>
+                </defs>
+                <rect width="720" height="420" fill="#E3DACC"/>
+                <rect width="720" height="420" fill="url(#gd-grid)"/>
+                <path d="M0 30H720M0 110H720M0 190H720M0 270H720M0 350H720M112 30V350" stroke="#141413" stroke-opacity=".28"/>
+                <g font-family="Figtree, sans-serif" font-size="13" fill="#3D3D3A"><text x="14" y="75">Customer</text><text x="14" y="155">Seller</text><text x="14" y="235">Back office</text><text x="14" y="315">Systems</text></g>
+                <text x="704" y="314" text-anchor="end" fill="#5E5D59" font-family="Figtree, sans-serif" font-size="13" font-style="italic">Nothing happens here on its own</text>
+
+                <g fill="none" stroke="#141413" stroke-width="1.4" marker-end="url(#gd-arr)">
+                  <path d="M214 70H221V150H226"/>
+                  <path d="M312 150H324"/>
+                  <path d="M410 150H417V230H422"/>
+                  <path d="M508 230H515V150H520"/>
+                  <path d="M606 150H613V70H618"/>
+                </g>
+                <path d="M563 132V120H367V127" fill="none" stroke="#C6613F" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#gd-arr-c)"/>
+
+                <g stroke="#141413" stroke-width="1.2" font-family="Figtree, sans-serif" font-size="12" text-anchor="middle">
+                  <g><rect x="128" y="52" width="86" height="36" fill="#FAF9F5"/><text x="171" y="74" stroke="none" fill="#141413">Sends enquiry</text></g>
+                  <g><rect x="226" y="132" width="86" height="36" fill="#EBCECE"/><text x="269" y="154" stroke="none" fill="#141413">Reads it</text></g>
+                  <g><rect x="324" y="132" width="86" height="36" fill="#EBCECE"/><text x="367" y="154" stroke="none" fill="#141413">Asks for stock</text></g>
+                  <g><rect x="422" y="212" width="86" height="36" fill="#CBCADB"/><text x="465" y="234" stroke="none" fill="#141413">Checks ERP</text></g>
+                  <g><rect x="520" y="132" width="86" height="36" fill="#EBCECE"/><text x="563" y="154" stroke="none" fill="#141413">Writes quote</text></g>
+                  <g><rect x="618" y="52" width="86" height="36" fill="#FAF9F5"/><text x="661" y="74" stroke="none" fill="#141413">Gets quote</text></g>
+                </g>
+                <g fill="none" stroke="#C6613F" stroke-width="2" stroke-linecap="round">
+                  <g><circle cx="417" cy="190" r="10" fill="#E3DACC"/><path d="M417 190V184M417 190H422"/></g>
+                  <g><circle cx="613" cy="110" r="10" fill="#E3DACC"/><path d="M613 110V104M613 110H618"/></g>
+                  <path d="M556 178H570M556 183H570" stroke-width="2.4"/>
+                </g>
+                <g font-family="Figtree, sans-serif" font-size="11.5" fill="#C6613F"><text x="432" y="194">1 day</text><text x="628" y="114">½ day</text></g>
+
+                <g font-family="Figtree, sans-serif" font-size="13" fill="#3D3D3A">
+                  <g fill="none" stroke="#C6613F" stroke-width="2" stroke-linecap="round"><circle cx="134" cy="388" r="9"/><path d="M134 388V383M134 388H138"/><path d="M226 384H240M226 390H240" stroke-width="2.4"/><path d="M330 387H362" stroke-dasharray="4 4"/></g>
+                  <text x="150" y="392">Waiting</text><text x="248" y="392">Retyping</text><text x="370" y="392">Rework</text>
+                </g>
+              </svg>
+            </div>
+            <figcaption>A typical first drawing of enquiry to quote: two waits, one retyped quote, one round of rework, four handoffs, and an empty systems lane.</figcaption>
+          </figure>
+        </section>
+
+        <section id="read">
+          <h2><span class="h-num">6</span> Read the drawing</h2>
+          <p>Step back from the wall and look at it together. Some patterns jump out on their own. A few questions help with the rest:</p>
+          <ul class="checks">
+            <li><strong>Where do the marks cluster?</strong> Waiting and retyping usually bunch around one or two handoffs.</li>
+            <li><strong>Which lane is the busiest?</strong> That person is probably your bottleneck, and probably tired.</li>
+            <li><strong>Is the systems lane empty?</strong> Then your tools are storing information, not doing work.</li>
+            <li><strong>Which steps does the customer never notice?</strong> Those are the first candidates to remove.</li>
+          </ul>
+          <p>Pick one to three fixes. Each one usually does one of three things: removes a step, moves it into the systems lane, or merges two steps into one. For a rough sense of what each fix is worth, multiply the minutes on the notes by how often it happens in a week. We wrote more about that in <a href="how-we-estimate-time.html">how we estimate the time you’ll get back</a>.</p>
+        </section>
+
+        <section id="help">
+          <h2><span class="h-num">7</span> When to get help</h2>
+          <p>Many teams can get a long way with just this afternoon. Take a photo of the wall, fix the obvious things, and draw it again in a month.</p>
+          <p>It’s worth bringing someone in from outside when:</p>
+          <ul class="checks">
+            <li><strong>Nobody agrees on what actually happens.</strong> A neutral person asking questions settles it faster.</li>
+            <li><strong>The drawing gets political.</strong> It’s easier to say “this step wastes time” when the person saying it doesn’t work there.</li>
+            <li><strong>You know what to fix, but not how to build it.</strong> Moving a step into the systems lane is where the technical work starts.</li>
+          </ul>
+          <p>That’s what <a href="method.html">our two days</a> are for. We do exactly what this guide describes with your team, then add the to-be swimlane and an estimate of the time you’d get back. Or, put simply: you can draw it yourselves in an afternoon, or we can do it with you in two days.</p>
+        </section>
+      </article>
+    </div>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="wrap section contact" id="contact">
+      <div class="contact-head">
+        <h2 class="contact-title">Rather do it together?</h2>
+        <p class="contact-lede">Two days with your team, your process drawn as it is and as it could be, and a clear plan to get the time back.</p>
+      </div>
+      <div class="btn-row contact-cta">
+        <a class="btn btn-dark btn-lg" href="index.html#contact">Book the two days <span aria-hidden="true">→</span></a>
+        <a class="btn btn-flat btn-lg" href="method.html">Read the method</a>
+      </div>
+      <p class="contact-line">
+        <a href="mailto:hello@lanes.dk">hello@lanes.dk</a>
+        <span aria-hidden="true">·</span>
+        <a href="tel:+4530360086">+45 30 36 00 86</a>
+      </p>
+    </section>
+  </main>
+
+
+
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <a class="brand brand-lg brand-light" href="index.html" aria-label="lanes, home">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+      <nav class="footer-rows" aria-label="Footer">
+        <a href="index.html#how">How it works <span aria-hidden="true">→</span></a>
+        <a href="index.html#services">Services <span aria-hidden="true">→</span></a>
+        <a href="index.html#about">About <span aria-hidden="true">→</span></a>
+        <a href="method.html">The lanes method <span aria-hidden="true">→</span></a>
+        <a href="articles.html">Articles <span aria-hidden="true">→</span></a>
+        <a href="index.html#contact">Contact <span aria-hidden="true">→</span></a>
+      </nav>
+      <div class="footer-meta">
+        <p>© <span id="year">2026</span> lanes</p>
+        <p class="footer-mission"><strong>What we do</strong><br />Process analysis, AI tools and automation for small and mid-sized B2B sales teams.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js?v=15"></script>
+</body>
+</html>
