@@ -394,7 +394,7 @@ svg { display: block; }
   display: grid;
   grid-template-columns: 5fr 7fr;
   gap: 24px clamp(32px, 5vw, 80px);
-  align-items: end;
+  align-items: center;
   margin-top: clamp(40px, 5vw, 64px);
   padding: clamp(28px, 4vw, 56px);
   border-radius: 16px;
@@ -410,7 +410,7 @@ svg { display: block; }
 }
 .ncnp-body { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; max-width: 34em; }
 .ncnp-body p { font-size: clamp(18px, 1.5vw, 21px); line-height: 1.45; }
-.ncnp-body .ncnp-small { font-size: 15px; color: var(--gray-600); margin-bottom: 8px; }
+.ncnp-body .ncnp-small { font-size: 15px; color: var(--gray-600); }
 
 /* Service cards */
 .cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
@@ -1229,4 +1229,16 @@ svg { display: block; }
 @media (prefers-reduced-motion: reduce) {
   .sw-path { animation: none; stroke-dashoffset: 0; }
   .sw-notes rect, .sw-mark { animation: none; opacity: 1; }
+}
+
+/* quiet text link, used where a button would be one call to action too many */
+.text-link { display: inline-flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 500; color: var(--gray-950); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--gray-300); }
+.text-link span { transition: transform .15s ease; }
+.text-link:hover { text-decoration-color: var(--gray-950); }
+.text-link:hover span { transform: translateX(3px); }
+
+/* optical centring: trim the empty space above the capitals so the visible letters sit in the middle */
+.ncnp-big { text-box: trim-both cap alphabetic; }
+@supports not (text-box: trim-both cap alphabetic) {
+  .ncnp-big { margin-top: -0.12em; }
 }

@@ -1,0 +1,20 @@
+# lanes
+
+> lanes helps small and mid-sized B2B sales teams find the friction in their sales process and remove it. Founded by Danni Dahl in Aalborg, Denmark.
+
+How it works: two days with the people who do the work. The client gets an as-is swimlane of the process as it runs today, a to-be swimlane suggesting how it should run, and an estimate of the hours saved and how long the change takes to build. If the two days don't turn up anything worth fixing, the client doesn't pay for them. After that, lanes can build the to-be (sales automation, AI sales assistants, quotes and proposals, CRM and ERP integration) and keeps it running after launch.
+
+Point of view: fixing the process is always better than adding AI. AI reads, rules decide, people approve.
+
+Contact: hello@lanes.dk, +45 30 36 00 86.
+
+## Pages
+
+- [Home](https://daheda1.github.io/lanes/): what lanes does, how the two days work, common problems, the founder and contact form
+- [The lanes method](https://daheda1.github.io/lanes/method.html): the two-day analysis step by step, the deliverable, and what happens if you go ahead
+
+## Articles
+
+- [How to draw your own swimlane in an afternoon](https://daheda1.github.io/lanes/draw-your-own-swimlane.html): a practical guide a small team can follow on its own
+- [How we estimate the time you'll get back](https://daheda1.github.io/lanes/how-we-estimate-time.html): touch time, frequency and waiting, with a worked example
+- [When AI is the wrong tool](https://daheda1.github.io/lanes/when-ai-is-the-wrong-tool.html): where rules win, where AI earns its place, and a four-question test
