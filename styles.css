@@ -587,29 +587,17 @@ svg { display: block; }
    Footer
    ========================================================================== */
 
-.site-footer { background: var(--gray-950); color: var(--gray-300); padding: 64px 0 48px; }
-.footer-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 48px 16px; }
-.footer-grid .brand { align-self: start; }
-.footer-rows { display: flex; flex-direction: column; }
-.footer-rows a {
-  display: flex; justify-content: space-between;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--gray-750);
-  font-size: 14.5px;
-  color: var(--gray-200);
-}
-.footer-rows a:first-child { border-top: 1px solid var(--gray-750); }
-.footer-rows a span { color: var(--gray-500); transition: transform .15s ease; }
-.footer-rows a:hover span { transform: translateX(3px); color: var(--gray-050); }
-.footer-meta {
-  grid-column: 1 / -1;
-  display: grid; grid-template-columns: 1fr 2fr; gap: 16px;
-  margin-top: 40px;
-  font-size: 13px; color: var(--gray-500);
-}
-.footer-mission { max-width: 34em; }
-.footer-legal { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--gray-700); }
-.footer-legal:hover { color: var(--gray-050); }
+.site-footer { background: var(--gray-050); color: var(--gray-950); border-top: 1px solid var(--gray-200); padding: 28px 0 24px; }
+.sf-row { display: flex; align-items: center; justify-content: space-between; gap: 16px 24px; flex-wrap: wrap; padding-bottom: 18px; border-bottom: 1px solid var(--gray-200); }
+.sf-brand { display: inline-flex; align-items: center; gap: 9px; font: 700 20px/1 var(--sans); letter-spacing: -.02em; }
+.sf-brand .mark { width: 26px; height: 19px; }
+.sf-brand .mark-bar { fill: var(--gray-950); }
+.sf-nav { display: flex; gap: 8px 22px; flex-wrap: wrap; font-size: 14.5px; }
+.sf-nav a:hover { color: var(--clay-ink); }
+.sf-legal { display: flex; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; padding-top: 14px; font-size: 13px; color: var(--gray-600); }
+.sf-links { display: flex; gap: 16px; }
+.sf-links a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--gray-300); }
+.sf-links a:hover { color: var(--gray-950); text-decoration-color: var(--gray-950); }
 .footer-mission strong { color: var(--gray-200); font-weight: 600; }
 
 /* ==========================================================================
