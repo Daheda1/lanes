@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brand guide · lanes</title>
+  <meta name="description" content="How lanes looks, sounds and moves: logo, colour, typography, voice, illustration, components and motion." />
+  <meta name="theme-color" content="#FAF9F5" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141413'/%3E%3Crect x='5' y='7.5' width='16' height='4' rx='2' fill='%23FAF9F5'/%3E%3Crect x='10' y='14' width='16' height='4' rx='2' fill='%23D97757'/%3E%3Crect x='5' y='20.5' width='11' height='4' rx='2' fill='%23FAF9F5'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=23" />
+  <meta name="robots" content="noindex" />
+  <style>
+    .bg-grid { display: grid; grid-template-columns: minmax(180px, 220px) minmax(0, 1fr); column-gap: clamp(32px, 5vw, 72px); padding-top: clamp(32px, 4vw, 56px); padding-bottom: clamp(80px, 9vw, 128px); }
+    .brand-guide { max-width: 980px; }
+    .brand-guide section + section { margin-top: 88px; padding-top: 40px; border-top: 1px solid var(--gray-200); }
+    .brand-guide h3 { font: 700 18px/1.3 var(--sans); margin: 36px 0 14px; }
+    .brand-guide > section > p:not(.prose-lede):not(.bg-note) { max-width: 40em; }
+    .bg-note { font-family: var(--sans); font-size: 14px; color: var(--gray-600); margin-top: 10px; }
+    .bg-lines { margin-top: 28px; display: grid; gap: 10px; }
+    .bg-lines p { margin: 0 !important; padding: 18px 22px; border-radius: 12px; background: var(--gray-100); font-size: clamp(22px, 2.2vw, 30px); line-height: 1.2; letter-spacing: -0.01em; }
+
+    .bg-logos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 24px; font-family: var(--sans); }
+    .bg-tile { margin: 0; border-radius: 16px; overflow: hidden; background: var(--gray-100); }
+    .bg-stage { height: 170px; display: grid; place-items: center; background: var(--gray-050); border-bottom: 1px solid var(--gray-200); }
+    .bg-stage.bg-dark { background: var(--gray-950); }
+    .bg-lockup { gap: 14px; }
+    .bg-lockup .mark { width: 54px; height: 39px; }
+    .bg-lockup .brand-text { font-size: 46px; max-width: none; }
+    .bg-mark { width: 64px; height: auto; }
+    .bg-icon { width: 72px; height: 72px; }
+    .bg-tile figcaption { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; padding: 14px 18px 16px; align-items: center; }
+    .bg-tile figcaption strong { font-size: 15px; }
+    .bg-tile figcaption span { grid-column: 1; font-size: 13.5px; color: var(--gray-600); line-height: 1.4; }
+    .bg-copy { grid-column: 2; grid-row: 1 / span 2; height: 32px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--gray-250); background: var(--gray-050); font: 500 12.5px/1 var(--sans); color: var(--gray-950); cursor: pointer; }
+    .bg-copy:hover { background: var(--gray-200); }
+
+    .bg-construct { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: center; }
+    .bg-construct svg { width: 100%; height: auto; border: 1px solid var(--gray-200); border-radius: 12px; background: var(--gray-050); }
+    .bg-construct .checks { margin: 0; }
+    .bg-donts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .bg-donts figure { margin: 0; position: relative; display: grid; place-items: center; gap: 12px; padding: 28px 12px 14px; border-radius: 12px; background: var(--gray-100); font-family: var(--sans); }
+    .bg-donts figure::before { content: "✕"; position: absolute; top: 8px; right: 12px; color: var(--clay-ink); font-size: 15px; }
+    .bg-donts svg { width: 52px; height: 37px; }
+    .bg-donts figcaption { font-size: 13px; color: var(--gray-700); text-align: center; }
+
+    .bg-ratio { display: flex; height: 44px; border-radius: 10px; overflow: hidden; border: 1px solid var(--gray-200); margin-top: 24px; }
+    .bg-swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+    .sw { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; padding: 0 0 14px; border: 1px solid var(--gray-200); border-radius: 12px; background: var(--gray-050); text-align: left; cursor: pointer; overflow: hidden; font-family: var(--sans); color: var(--gray-950); transition: transform .15s ease; }
+    .sw:hover { transform: translateY(-2px); }
+    .sw i { display: block; width: 100%; height: 86px; margin-bottom: 10px; border-bottom: 1px solid var(--gray-200); }
+    .sw strong, .sw span { padding: 0 14px; }
+    .sw strong { font-size: 15px; }
+    .sw span { font-size: 13px; color: var(--gray-600); font-variant-numeric: tabular-nums; }
+    .sw.copied span::after { content: " · copied"; color: var(--clay-ink); }
+
+    .bg-specimens { display: grid; gap: 0; margin: 20px 0 24px; border-top: 1px solid var(--gray-200); }
+    .spec { padding: 22px 0; border-bottom: 1px solid var(--gray-200); }
+    .spec-meta { display: block; font: 500 13px/1.4 var(--sans); color: var(--gray-500); margin-bottom: 10px; }
+    .spec p { margin: 0 !important; }
+    .spec-display { font-family: var(--serif); font-size: clamp(40px, 4.6vw, 68px); line-height: 1.04; letter-spacing: -0.025em; font-variation-settings: "opsz" 60; }
+    .spec-h { font: 700 27px/1.2 var(--sans); letter-spacing: -0.015em; }
+    .spec-body { font: 400 16.5px/1.55 var(--sans); color: var(--gray-700); max-width: 36em; }
+    .spec-article { font-family: var(--serif); font-size: 19px; line-height: 1.62; max-width: 36em; }
+    .spec-labels { display: flex; gap: 28px; align-items: baseline; font-family: var(--sans); }
+    .spec-label { font-weight: 700; font-size: 13px; }
+    .spec-kicker { font-weight: 500; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--gray-700); }
+
+    .bg-dos { margin-top: 24px; }
+    .bg-dos .st-row span:nth-child(2) { color: var(--gray-950) !important; }
+    .bg-dos .st-row:not(.st-head) span:nth-child(3) { color: var(--gray-500) !important; text-decoration: line-through; text-decoration-color: var(--clay); }
+
+    .bg-illus { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 24px 0 8px; }
+    .bg-illus figure { margin: 0; border-radius: 8px; overflow: hidden; }
+    .bg-illus svg { display: block; width: 100%; height: auto; }
+    .bg-illus figcaption { position: relative; z-index: 4; padding: 10px 2px 0; font: 400 13.5px/1.4 var(--sans); color: var(--gray-600); background: var(--gray-050); }
+    .bg-legend { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 16px 0 20px; font-family: var(--sans); }
+    .bg-legend > div { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 12px; background: var(--gray-100); }
+    .bg-legend svg { width: 60px; height: 30px; flex: none; }
+    .bg-legend span { display: flex; flex-direction: column; font-size: 13px; color: var(--gray-600); line-height: 1.35; }
+    .bg-legend strong { font-size: 14px; color: var(--gray-950); }
+
+    .bg-comp { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 20px 0 8px; }
+    .comp { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; padding: 20px; border-radius: 12px; border: 1px solid var(--gray-200); background: var(--gray-050); }
+    .comp-wide { grid-column: 1 / -1; align-items: stretch; }
+
+    .bg-motion { margin: 20px 0 8px; }
+    .logo-demo { height: 150px; display: grid; place-items: center; border-radius: 12px; background: var(--gray-100); }
+    .logo-demo .brand .mark { width: 40px; height: 29px; }
+    .logo-demo .brand-text { font-size: 34px; }
+    .logo-demo.compact .brand { gap: 0; }
+    .logo-demo.compact .brand-text { max-width: 0; opacity: 0; }
+    .bg-no li::before { background: var(--gray-950); }
+
+    @media (max-width: 1000px) {
+      .bg-grid { grid-template-columns: 1fr; }
+      .bg-grid .side-toc { display: none; }
+      .bg-grid .article-side { position: static; margin-bottom: 32px; }
+    }
+    @media (max-width: 700px) {
+      .bg-logos, .bg-construct, .bg-illus, .bg-comp { grid-template-columns: 1fr; }
+      .bg-donts, .bg-legend { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <nav class="nav-left" aria-label="Main">
+        <a class="pill" href="index.html#how">How it works</a>
+        <a class="pill" href="index.html#services">Services</a>
+        <a class="pill" href="index.html#about">About</a>
+        <a class="pill" href="method.html">Method</a>
+      </nav>
+
+      <a class="brand" href="index.html" aria-label="lanes, home">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+
+      <div class="nav-right">
+        <a class="pill" href="articles.html">Articles</a>
+        <a class="pill pill-dark" href="#contact">Book a call</a>
+        <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h9" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <div class="wrap">
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="method.html">Method</a>
+        <a href="articles.html">Articles</a>
+        <a href="#contact">Book a call</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="wrap articles-head">
+      <h1 class="statement">
+        <strong>Brand guide.</strong>
+        How lanes looks, sounds and moves. Use it for the website, slides, proposals and anything else with our name on it.
+      </h1>
+    </section>
+
+    <div class="wrap bg-grid">
+      <aside class="article-side">
+        <dl class="article-meta">
+          <div><dt>Version</dt><dd>1.0</dd></div>
+          <div><dt>Updated</dt><dd><time datetime="2026-11-11">11 November 2026</time></dd></div>
+          <div><dt>Owner</dt><dd>Danni Dahl</dd></div>
+        </dl>
+        <nav class="side-toc" aria-label="On this page">
+          <a href="#essence">Essence</a>
+          <a href="#logo">Logo</a>
+          <a href="#colour">Colour</a>
+          <a href="#type">Typography</a>
+          <a href="#voice">Voice</a>
+          <a href="#illustration">Illustration</a>
+          <a href="#components">Components</a>
+          <a href="#motion">Motion</a>
+          <a href="#donts">What we don’t do</a>
+        </nav>
+      </aside>
+
+      <div class="prose brand-guide">
+
+        <!-- ============ ESSENCE ============ -->
+        <section id="essence">
+          <h2><span class="h-num">1</span> Essence</h2>
+          <p class="prose-lede">lanes finds the friction in a sales process and removes it.</p>
+          <dl class="facts">
+            <div><dt>The name</dt><dd>From swimlanes: one lane per role, and every step in the lane of whoever does it. Always written in lowercase: lanes.</dd></div>
+            <div><dt>The offer</dt><dd>Two days, two swimlanes, one estimate. Then we build the to-be and keep it running.</dd></div>
+            <div><dt>Who it’s for</dt><dd>Small and mid-sized B2B sales teams, starting in Denmark.</dd></div>
+            <div><dt>Personality</dt><dd>Calm, practical and honest, with a little dry humour. A senior person who has seen the mess before and isn’t impressed by hype.</dd></div>
+            <div><dt>Point of view</dt><dd>Fixing the process is always better than adding AI.</dd></div>
+          </dl>
+          <div class="bg-lines">
+            <p>Find the friction. Then remove it.</p>
+            <p>Fixing the process is always better than adding AI.</p>
+            <p>AI reads. Rules decide. People approve.</p>
+          </div>
+          <p class="bg-note">These three lines carry the brand. Use them as they are; don’t rephrase them into slogans.</p>
+        </section>
+
+        <!-- ============ LOGO ============ -->
+        <section id="logo">
+          <h2><span class="h-num">2</span> Logo</h2>
+          <p>The mark is three lanes. The middle one is clay and shifted to the right: the one step that moves. Next to it, the name in Figtree Bold, lowercase.</p>
+
+          <div class="bg-logos">
+            <figure class="bg-tile">
+              <div class="bg-stage">
+                <span class="brand bg-lockup"><svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg><span class="brand-text">lanes</span></span>
+              </div>
+              <figcaption><strong>Lockup</strong><span>The default, on light backgrounds.</span><button class="bg-copy" type="button" data-copy="lockup-light">Copy SVG</button></figcaption>
+            </figure>
+            <figure class="bg-tile">
+              <div class="bg-stage bg-dark">
+                <span class="brand brand-light bg-lockup"><svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg><span class="brand-text">lanes</span></span>
+              </div>
+              <figcaption><strong>On dark</strong><span>Ink becomes ivory. Clay stays clay.</span><button class="bg-copy" type="button" data-copy="lockup-dark">Copy SVG</button></figcaption>
+            </figure>
+            <figure class="bg-tile">
+              <div class="bg-stage">
+                <svg class="bg-mark" viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y=".25" width="22" height="4.5" rx="2.25" fill="#141413"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect x="0" y="15.25" width="15" height="4.5" rx="2.25" fill="#141413"/></svg>
+              </div>
+              <figcaption><strong>Mark</strong><span>When space is tight, or once the name is already on screen.</span><button class="bg-copy" type="button" data-copy="mark">Copy SVG</button></figcaption>
+            </figure>
+            <figure class="bg-tile">
+              <div class="bg-stage">
+                <svg class="bg-icon" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#141413"/><rect x="5" y="7.5" width="16" height="4" rx="2" fill="#FAF9F5"/><rect x="10" y="14" width="16" height="4" rx="2" fill="#D97757"/><rect x="5" y="20.5" width="11" height="4" rx="2" fill="#FAF9F5"/></svg>
+              </div>
+              <figcaption><strong>Icon</strong><span>Favicon, app icon and social avatar.</span><button class="bg-copy" type="button" data-copy="icon">Copy SVG</button></figcaption>
+            </figure>
+          </div>
+
+          <h3>Construction</h3>
+          <div class="bg-construct">
+            <svg viewBox="0 0 360 200" aria-hidden="true">
+              <defs><pattern id="bgc-grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" fill="none" stroke="#E8E6DC" stroke-width=".8"/></pattern></defs>
+              <rect width="360" height="200" fill="url(#bgc-grid)"/>
+              <g transform="translate(70 40)">
+                <rect x="0" y="0" width="176" height="36" rx="18" fill="#141413"/>
+                <rect x="48" y="60" width="176" height="36" rx="18" fill="#D97757"/>
+                <rect x="0" y="120" width="120" height="36" rx="18" fill="#141413"/>
+                <g stroke="#C6613F" stroke-width="1" stroke-dasharray="3 3" fill="none"><path d="M48 -14V170"/><path d="M-14 36H240M-14 60H240M-14 96H240M-14 120H240"/></g>
+              </g>
+              <g font-family="Figtree, sans-serif" font-size="11" fill="#5E5D59">
+                <text x="70" y="24">22</text><text x="76" y="132">offset 6</text><text x="320" y="96">gap 3</text><text x="196" y="186">15</text><text x="14" y="62">4.5</text>
+              </g>
+            </svg>
+            <ul class="checks">
+              <li><strong>Three bars, 4.5 units tall, 3 apart.</strong> Lengths 22, 22 and 15.</li>
+              <li><strong>The middle bar starts 6 units in.</strong> It’s always clay, on every background.</li>
+              <li><strong>Clear space</strong> is the height of the mark on every side.</li>
+              <li><strong>Smallest size:</strong> mark 16 px wide on screen, lockup 72 px wide.</li>
+            </ul>
+          </div>
+
+          <h3>Don’t</h3>
+          <div class="bg-donts">
+            <figure><svg viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y=".25" width="22" height="4.5" rx="2.25" fill="#141413"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#6A9BCC"/><rect x="0" y="15.25" width="15" height="4.5" rx="2.25" fill="#141413"/></svg><figcaption>Recolour the clay bar</figcaption></figure>
+            <figure><svg viewBox="0 0 28 20" aria-hidden="true" style="transform: scaleX(1.7)"><rect x="0" y=".25" width="22" height="4.5" rx="2.25" fill="#141413"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect x="0" y="15.25" width="15" height="4.5" rx="2.25" fill="#141413"/></svg><figcaption>Stretch or squash</figcaption></figure>
+            <figure><svg viewBox="0 0 28 20" aria-hidden="true" style="transform: rotate(90deg)"><rect x="0" y=".25" width="22" height="4.5" rx="2.25" fill="#141413"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect x="0" y="15.25" width="15" height="4.5" rx="2.25" fill="#141413"/></svg><figcaption>Rotate</figcaption></figure>
+            <figure><svg viewBox="0 0 28 20" aria-hidden="true"><rect x=".5" y=".75" width="21" height="3.5" rx="1.75" fill="none" stroke="#141413"/><rect x="6.5" y="8.25" width="21" height="3.5" rx="1.75" fill="none" stroke="#D97757"/><rect x=".5" y="15.75" width="14" height="3.5" rx="1.75" fill="none" stroke="#141413"/></svg><figcaption>Outline or add effects</figcaption></figure>
+          </div>
+        </section>
+
+        <!-- ============ COLOUR ============ -->
+        <section id="colour">
+          <h2><span class="h-num">3</span> Colour</h2>
+          <p>Mostly warm ivory and ink. Clay is the highlight, not the background: roughly one clay thing per view. Click a swatch to copy its hex code.</p>
+
+          <div class="bg-ratio" aria-hidden="true"><span style="flex:62;background:#FAF9F5"></span><span style="flex:18;background:#F5F4ED"></span><span style="flex:15;background:#141413"></span><span style="flex:5;background:#D97757"></span></div>
+          <p class="bg-note">Roughly how much of each: ivory, sand, ink, clay.</p>
+
+          <h3>Core</h3>
+          <div class="bg-swatches">
+            <button class="sw" data-hex="#FAF9F5"><i style="background:#FAF9F5"></i><strong>Ivory</strong><span>#FAF9F5 · page background</span></button>
+            <button class="sw" data-hex="#F5F4ED"><i style="background:#F5F4ED"></i><strong>Sand</strong><span>#F5F4ED · cards and panels</span></button>
+            <button class="sw" data-hex="#E8E6DC"><i style="background:#E8E6DC"></i><strong>Line</strong><span>#E8E6DC · borders and buttons</span></button>
+            <button class="sw" data-hex="#141413"><i style="background:#141413"></i><strong>Ink</strong><span>#141413 · text and dark sections</span></button>
+            <button class="sw" data-hex="#5E5D59"><i style="background:#5E5D59"></i><strong>Stone</strong><span>#5E5D59 · secondary text</span></button>
+            <button class="sw" data-hex="#D97757"><i style="background:#D97757"></i><strong>Clay</strong><span>#D97757 · the accent</span></button>
+            <button class="sw" data-hex="#C6613F"><i style="background:#C6613F"></i><strong>Clay ink</strong><span>#C6613F · clay text on light</span></button>
+          </div>
+
+          <h3>Illustration</h3>
+          <div class="bg-swatches">
+            <button class="sw" data-hex="#E3DACC"><i style="background:#E3DACC"></i><strong>Oat</strong><span>#E3DACC · paper</span></button>
+            <button class="sw" data-hex="#BCD1CA"><i style="background:#BCD1CA"></i><strong>Cactus</strong><span>#BCD1CA · as-is</span></button>
+            <button class="sw" data-hex="#788C5D"><i style="background:#788C5D"></i><strong>Olive</strong><span>#788C5D · to-be</span></button>
+            <button class="sw" data-hex="#CBCADB"><i style="background:#CBCADB"></i><strong>Heather</strong><span>#CBCADB · notes, AI</span></button>
+            <button class="sw" data-hex="#EBCECE"><i style="background:#EBCECE"></i><strong>Coral</strong><span>#EBCECE · sticky notes</span></button>
+            <button class="sw" data-hex="#1F1E1D"><i style="background:#1F1E1D"></i><strong>Night</strong><span>#1F1E1D · dark tiles</span></button>
+          </div>
+        </section>
+
+        <!-- ============ TYPE ============ -->
+        <section id="type">
+          <h2><span class="h-num">4</span> Typography</h2>
+          <p>Two typefaces, both free from Google Fonts. Source Serif 4 gives the calm, editorial voice. Figtree does the work: interface, labels and short text.</p>
+
+          <div class="bg-specimens">
+            <div class="spec"><span class="spec-meta">Display · Source Serif 4, 400, tight tracking</span><p class="spec-display">Find the friction. Then remove it.</p></div>
+            <div class="spec"><span class="spec-meta">Statement · Figtree Bold lead-in, then serif</span><p class="statement statement-sm"><strong>Two days. Two swimlanes. One estimate.</strong> We show you where the time goes.</p></div>
+            <div class="spec"><span class="spec-meta">Heading · Figtree Bold</span><p class="spec-h">What you get after the two days</p></div>
+            <div class="spec"><span class="spec-meta">Body · Figtree, 16.5 px, line height 1.55</span><p class="spec-body">We sit with the sellers, ops and finance people who actually do the work, and walk through real cases from first contact to invoice.</p></div>
+            <div class="spec"><span class="spec-meta">Article body · Source Serif 4, 19 px</span><p class="spec-article">Draw what actually happened, not what is supposed to happen. Those workarounds are usually exactly where the time goes.</p></div>
+            <div class="spec"><span class="spec-meta">Label and kicker · Figtree</span><p class="spec-labels"><span class="spec-label">How it works</span><span class="spec-kicker">The lanes method</span></p></div>
+          </div>
+
+          <ul class="checks">
+            <li><strong>Sentence case everywhere.</strong> Capitals only for the small tracked kicker above dark heroes.</li>
+            <li><strong>No monospace.</strong> Not for labels, not for numbers, not for “technical” flavour.</li>
+            <li><strong>Numbers in tables line up.</strong> Use tabular figures.</li>
+          </ul>
+        </section>
+
+        <!-- ============ VOICE ============ -->
+        <section id="voice">
+          <h2><span class="h-num">5</span> Voice</h2>
+          <p>Write like a senior person explaining something to a busy colleague: plainly, concretely, and without selling. Short sentences. Real examples.</p>
+          <ul class="checks">
+            <li><strong>Concrete beats clever.</strong> Minutes, steps, roles and real situations, not abstractions.</li>
+            <li><strong>Honest about limits.</strong> Say what we won’t do and when something isn’t worth it.</li>
+            <li><strong>A little dry humour is welcome.</strong> “Only Kim knows how it works.”</li>
+            <li><strong>“We” for lanes, “I” when Danni signs an article.</strong></li>
+            <li><strong>Calls to action work without context.</strong> One per view, and it says “Book a call”.</li>
+          </ul>
+
+          <div class="split-table st-3 st-plain bg-dos" role="table" aria-label="Do and don't examples">
+            <div class="st-row st-head" role="row"><span role="columnheader">Situation</span><span role="columnheader">Write</span><span role="columnheader">Not</span></div>
+            <div class="st-row" role="row"><span role="cell">Headline</span><span role="cell">Find the friction. Then remove it.</span><span role="cell">Revolutionise your sales with AI</span></div>
+            <div class="st-row" role="row"><span role="cell">Button</span><span role="cell">Book a call</span><span role="cell">Book the two days</span></div>
+            <div class="st-row" role="row"><span role="cell">Results</span><span role="cell">15 to 20 hours a week</span><span role="cell">Save up to 40%</span></div>
+            <div class="st-row" role="row"><span role="cell">Problem</span><span role="cell">Only Kim knows how it works.</span><span role="cell">Knowledge silos create inefficiencies</span></div>
+            <div class="st-row" role="row"><span role="cell">The guarantee</span><span role="cell">If we find nothing worth fixing, you don’t pay.</span><span role="cell">No cure, no pay! Zero risk!</span></div>
+          </div>
+          <p class="bg-note">Words we avoid: seamless, leverage, empower, cutting-edge, revolutionise, AI-powered, synergy, unlock.</p>
+        </section>
+
+        <!-- ============ ILLUSTRATION ============ -->
+        <section id="illustration">
+          <h2><span class="h-num">6</span> Illustration</h2>
+          <p>Paper and ink. Flat colour with a fine grain, ink lines, hatching, and one clay detail. Every picture is a metaphor for the work, never decoration.</p>
+
+          <div class="bg-illus">
+            <figure class="grain"><svg viewBox="0 0 300 220"><defs><pattern id="bi-grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#C9BFAD" stroke-width=".8"/></pattern></defs><rect width="300" height="220" fill="#E3DACC"/><rect width="300" height="220" fill="url(#bi-grid)"/><g fill="none" stroke-linecap="round" stroke-width="2.2"><path stroke="#141413" d="M-10 70C50 30 110 160 60 140C20 125 90 70 130 110C150 130 150 110 170 110H310"/><path stroke="#C6613F" d="M-10 150C60 200 110 80 90 120C70 160 150 180 150 140C152 128 160 130 170 130H310"/></g></svg><figcaption>The knot: messy in, clear lanes out.</figcaption></figure>
+            <figure class="grain"><svg viewBox="0 0 300 220"><defs><pattern id="bi-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V6" stroke="#C6613F" stroke-width="2"/></pattern></defs><rect width="300" height="220" fill="#CBCADB"/><circle cx="150" cy="110" r="76" fill="#FAF9F5" stroke="#141413" stroke-width="2"/><path d="M150 110L150 34A76 76 0 0 1 226 110Z" fill="url(#bi-hatch)"/><path d="M150 110V60" stroke="#141413" stroke-width="2.4" stroke-linecap="round" transform="rotate(40 150 110)"/><circle cx="150" cy="110" r="5" fill="#D97757" stroke="#141413"/></svg><figcaption>The clock: time given back.</figcaption></figure>
+            <figure class="grain"><svg viewBox="0 0 300 220"><rect width="300" height="220" fill="#1F1E1D"/><path d="M40 110H110C150 110 140 60 180 60H240M110 110C150 110 140 160 180 160H240" fill="none" stroke="#FAF9F5" stroke-width="2"/><circle cx="40" cy="110" r="5" fill="#FAF9F5"/><circle cx="254" cy="60" r="12" fill="#D97757"/><circle cx="254" cy="160" r="11" fill="none" stroke="#FAF9F5" stroke-width="2"/></svg><figcaption>The fork: you decide.</figcaption></figure>
+          </div>
+
+          <h3>Swimlane conventions</h3>
+          <p>Every swimlane we draw, on the site or in a client report, uses the same rules so people only have to learn them once.</p>
+          <div class="bg-legend">
+            <div><svg viewBox="0 0 60 30"><rect x="6" y="6" width="48" height="18" rx="3" fill="#FAF9F5" stroke="#141413"/></svg><span><strong>A person does it</strong>Ivory box, ink outline</span></div>
+            <div><svg viewBox="0 0 60 30"><rect x="6" y="6" width="48" height="18" rx="3" fill="#D97757"/></svg><span><strong>Done automatically</strong>Clay box</span></div>
+            <div><svg viewBox="0 0 60 30"><defs><pattern id="bl-h" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V4" stroke="#141413"/></pattern></defs><rect x="6" y="6" width="48" height="18" rx="3" fill="#FAF9F5" stroke="#141413"/><rect x="7" y="7" width="9" height="16" fill="url(#bl-h)"/></svg><span><strong>Manual work or waiting</strong>Hatched strip on the left</span></div>
+            <div><svg viewBox="0 0 60 30"><g fill="none" stroke="#C6613F" stroke-width="2" stroke-linecap="round"><circle cx="30" cy="15" r="9"/><path d="M30 15V10M30 15H34"/></g></svg><span><strong>Waiting time</strong>Clay clock, with a duration</span></div>
+            <div><svg viewBox="0 0 60 30"><path d="M22 12H38M22 18H38" stroke="#C6613F" stroke-width="2.4" stroke-linecap="round"/></svg><span><strong>Retyping</strong>Two clay lines</span></div>
+            <div><svg viewBox="0 0 60 30"><path d="M8 15H50" stroke="#C6613F" stroke-width="1.8" stroke-dasharray="4 3"/></svg><span><strong>Rework</strong>Dashed clay arrow, squared off</span></div>
+          </div>
+          <ul class="checks">
+            <li><strong>The customer lane is always on top</strong>, systems at the bottom.</li>
+            <li><strong>Lanes are roles, not names</strong>, unless the joke needs a name.</li>
+            <li><strong>As-is on cactus, to-be on olive.</strong> Connectors are squared off, never curved.</li>
+          </ul>
+        </section>
+
+        <!-- ============ COMPONENTS ============ -->
+        <section id="components">
+          <h2><span class="h-num">7</span> Components</h2>
+          <div class="bg-comp">
+            <div class="comp"><span class="spec-meta">Primary button, one per view</span><a class="btn btn-dark btn-lg" href="#components">Book a call <span aria-hidden="true">→</span></a></div>
+            <div class="comp"><span class="spec-meta">Secondary button</span><a class="btn btn-flat btn-lg" href="#components">How it works</a></div>
+            <div class="comp"><span class="spec-meta">Text link, instead of a third button</span><a class="text-link" href="#components">Read the full method <span aria-hidden="true">→</span></a></div>
+            <div class="comp"><span class="spec-meta">Navigation pills</span><span class="btn-row"><a class="pill" href="#components">How it works</a><a class="pill pill-dark" href="#components">Book a call</a></span></div>
+            <div class="comp comp-wide"><span class="spec-meta">Section label</span><div class="label-bar" style="margin:0"><h2>What we build</h2></div></div>
+          </div>
+          <dl class="facts">
+            <div><dt>Corners</dt><dd>Images 8 px, buttons 10 px, cards 16 px, pills fully round.</dd></div>
+            <div><dt>Surfaces</dt><dd>Ivory page, sand cards with no shadow, a single dark section per page at most.</dd></div>
+            <div><dt>Texture</dt><dd>A fine grain on illustrations and dark heroes only, never on text or buttons.</dd></div>
+          </dl>
+        </section>
+
+        <!-- ============ MOTION ============ -->
+        <section id="motion">
+          <h2><span class="h-num">8</span> Motion</h2>
+          <p>Slow, calm and meaningful. Things move the way a process moves: along a line, one step after another.</p>
+          <div class="bg-motion">
+            <div class="logo-demo" id="logo-demo"><span class="brand"><svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg><span class="brand-text">lanes</span></span></div>
+            <p class="bg-note">On scroll, the name fades and the space closes, leaving the mark.</p>
+          </div>
+          <ul class="checks">
+            <li><strong>What moves:</strong> lines drawing themselves, a clock hand, beads along a lane, the logo collapsing.</li>
+            <li><strong>What doesn’t:</strong> text fading in on scroll, bouncing buttons, anything that loops fast.</li>
+            <li><strong>Always pausable</strong>, and still when the visitor asks for reduced motion.</li>
+          </ul>
+        </section>
+
+        <!-- ============ DON'TS ============ -->
+        <section id="donts">
+          <h2><span class="h-num">9</span> What we don’t do</h2>
+          <p>Learned the hard way while building the site.</p>
+          <ul class="checks bg-no">
+            <li><strong>No dark dashboards or flowchart interfaces.</strong> They look generic and generated.</li>
+            <li><strong>No monospace “AI font”.</strong></li>
+            <li><strong>No long hero text.</strong> One headline, one line, one button.</li>
+            <li><strong>Don’t lead with “no cure, no pay”.</strong> Quality first; the guarantee is a footnote.</li>
+            <li><strong>No stacked calls to action.</strong> One per view, saying “Book a call”.</li>
+            <li><strong>No invented numbers or case studies.</strong> Examples are labelled as examples.</li>
+            <li><strong>No hidden text for AI or search engines.</strong> Everything we say is visible to people.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+
+
+
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <a class="brand brand-lg brand-light" href="index.html" aria-label="lanes, home">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+      <nav class="footer-rows" aria-label="Footer">
+        <a href="index.html#how">How it works <span aria-hidden="true">→</span></a>
+        <a href="index.html#services">Services <span aria-hidden="true">→</span></a>
+        <a href="index.html#about">About <span aria-hidden="true">→</span></a>
+        <a href="method.html">The lanes method <span aria-hidden="true">→</span></a>
+        <a href="articles.html">Articles <span aria-hidden="true">→</span></a>
+        <a href="index.html#contact">Contact <span aria-hidden="true">→</span></a>
+      </nav>
+      <div class="footer-meta">
+        <p>© <span id="year">2026</span> lanes</p>
+        <p class="footer-mission"><strong>What we do</strong><br />Process analysis, AI tools and automation for small and mid-sized B2B sales teams.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js?v=15"></script>
+  <script>
+  (() => {
+    const MARK = (ink) => `<rect x="0" y=".25" width="22" height="4.5" rx="2.25" fill="${ink}"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect x="0" y="15.25" width="15" height="4.5" rx="2.25" fill="${ink}"/>`;
+    const LOCKUP = (ink) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 22" width="224" height="44"><g transform="translate(0 1)">${MARK(ink)}</g><text x="35" y="17.5" font-family="Figtree, sans-serif" font-weight="700" font-size="22" letter-spacing="-0.9" fill="${ink}">lanes</text></svg>`;
+    const FILES = {
+      "lockup-light": LOCKUP("#141413"),
+      "lockup-dark": LOCKUP("#FAF9F5"),
+      "mark": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 20" width="56" height="40">${MARK("#141413")}</svg>`,
+      "icon": `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64"><rect width="32" height="32" rx="7" fill="#141413"/><rect x="5" y="7.5" width="16" height="4" rx="2" fill="#FAF9F5"/><rect x="10" y="14" width="16" height="4" rx="2" fill="#D97757"/><rect x="5" y="20.5" width="11" height="4" rx="2" fill="#FAF9F5"/></svg>`,
+    };
+
+    const copy = async (text, done) => {
+      try { await navigator.clipboard.writeText(text); done(true); return; } catch (e) {}
+      // fallback for browsers that block the clipboard API
+      const ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", ""); ta.style.cssText = "position:fixed;opacity:0;top:0;left:0";
+      document.body.appendChild(ta); ta.select();
+      let ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+      ta.remove(); done(ok);
+    };
+
+    document.querySelectorAll(".bg-copy").forEach((btn) => {
+      btn.addEventListener("click", () => copy(FILES[btn.dataset.copy], (ok) => {
+        const label = btn.textContent;
+        btn.textContent = ok ? "Copied" : "Copy failed";
+        setTimeout(() => { btn.textContent = label; }, 1400);
+      }));
+    });
+
+    document.querySelectorAll(".sw").forEach((sw) => {
+      sw.addEventListener("click", () => copy(sw.dataset.hex, (ok) => {
+        if (!ok) return;
+        sw.classList.add("copied");
+        setTimeout(() => sw.classList.remove("copied"), 1400);
+      }));
+    });
+
+    // the 01 logo animation, on a loop
+    const demo = document.getElementById("logo-demo");
+    if (demo && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setInterval(() => demo.classList.toggle("compact"), 2200);
+    }
+  })();
+  </script>
+</body>
+</html>
