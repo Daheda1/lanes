@@ -119,6 +119,12 @@
     .svc-body { font-size: 17px; line-height: 1.6; max-width: 38em; }
     .svc-body p + p { margin-top: 1em; }
     .svc-note { margin-top: 18px; font-size: 15px; color: var(--gray-600); max-width: 40em; }
+    .svc-get { margin-top: 28px; max-width: 38em; }
+    .svc-price { font-size: 17px; color: var(--gray-600); }
+    .svc-price strong { font: 400 28px/1.2 var(--serif); letter-spacing: -.01em; color: var(--ink); margin-right: 6px; }
+    .svc-get .checks { margin: 14px 0 0; font-size: 16px; }
+    .svc-get .checks li { padding-top: 10px; padding-bottom: 10px; }
+    .svc-get .checks li::before { top: 17px; }
     .svc-links { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 20px; }
     @media (max-width: 900px) { .svc-head { grid-template-columns: 1fr; } }
   </style>
@@ -174,6 +180,17 @@
         <div>
           <p class="svc-problem">“Only Kim knows how it works.”</p>
           <div class="svc-body"><p>Everything we build starts here. We spend two days with the people who do the work and follow real cases, from the first email to the invoice. Not the process in the manual, the one that actually runs, with its handovers, waiting and retyping.</p><p>You get two drawings and a number. The first shows how the work runs today. The second shows how it could run, with each step given to the right lane: AI, fixed rules or a person. The number is our estimate of the hours you get back, and what it takes to build.</p><p>Sometimes the answer is a better checklist, not software. Then we say so.</p></div>
+          <div class="svc-get">
+            <p class="svc-price"><strong>15,000 DKK</strong> excl. VAT, fixed price</p>
+            <ul class="checks">
+              <li>An intro call of 30 minutes</li>
+              <li>Two days with your team, at your office</li>
+              <li>A short report with the as-is and the to-be swimlane</li>
+              <li>In the report: the hours you get back and what it costs to build</li>
+              <li>A walkthrough of the result with your team</li>
+              <li>No obligation to build anything afterwards</li>
+            </ul>
+          </div>
           <p class="svc-note">If the two days don’t turn up anything worth fixing, you don’t pay for them.</p>
           <div class="svc-links"><a class="text-link" href="method.html">The lanes method <span aria-hidden="true">→</span></a><a class="text-link" href="how-we-estimate-time.html">How we estimate the time you’ll get back <span aria-hidden="true">→</span></a><a class="text-link" href="draw-your-own-swimlane.html">Draw your own swimlane <span aria-hidden="true">→</span></a></div>
         </div>

@@ -2,7 +2,7 @@
 
 > lanes automates the boring part of the work for small and mid-sized teams, built on process understanding and explainable AI. Founded by Danni Dahl in Aalborg, Denmark.
 
-How it works: two days with the people who do the work. The client gets an as-is swimlane of the process as it runs today, a to-be swimlane suggesting how it should run, and an estimate of the hours saved and how long the change takes to build. If the two days don't turn up anything worth fixing, the client doesn't pay for them. After that, lanes can build the to-be (sales automation, AI sales assistants, quotes and proposals, CRM and ERP integration) and keeps it running after launch.
+How it works: two days with the people who do the work. The client gets an as-is swimlane of the process as it runs today, a to-be swimlane suggesting how it should run, and an estimate of the hours saved and how long the change takes to build. The two days cost 15,000 DKK excl. VAT as a fixed price. If they don't turn up anything worth fixing, the client doesn't pay for them. After that, lanes can build the to-be (sales automation, AI sales assistants, quotes and proposals, CRM and ERP integration) and keeps it running after launch.
 
 Point of view: fixing the process is always better than adding AI. AI reads, rules decide, people approve.
 
