@@ -22,3 +22,8 @@ Contact: hello@lanes.dk, +45 30 36 00 86.
 - [What an hour of sales time costs](https://daheda1.github.io/lanes/what-sales-time-costs.html): Statistics Denmark's 2025 figures for what sales and office roles earn per hour worked, and how to use them in an estimate
 - [Ask the questions before you quote](https://daheda1.github.io/lanes/ask-the-questions-first.html): why a fixed automatic first reply with your standard questions saves days on every quote, with an example reply
 - [When AI is the wrong tool](https://daheda1.github.io/lanes/when-ai-is-the-wrong-tool.html): where rules win, where AI earns its place, and a four-question test
+
+## Legal
+
+- [General terms](https://daheda1.github.io/lanes/terms.html): the terms behind every offer and agreement
+- [Privacy policy](https://daheda1.github.io/lanes/privacy.html): what personal data lanes collects and why

@@ -608,6 +608,8 @@ svg { display: block; }
   font-size: 13px; color: var(--gray-500);
 }
 .footer-mission { max-width: 34em; }
+.footer-legal { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--gray-700); }
+.footer-legal:hover { color: var(--gray-050); }
 .footer-mission strong { color: var(--gray-200); font-weight: 600; }
 
 /* ==========================================================================

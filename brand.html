@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=23" />
+  <link rel="stylesheet" href="styles.css?v=24" />
   <meta name="robots" content="noindex" />
   <style>
     .bg-grid { display: grid; grid-template-columns: minmax(180px, 220px) minmax(0, 1fr); column-gap: clamp(32px, 5vw, 72px); padding-top: clamp(32px, 4vw, 56px); padding-bottom: clamp(80px, 9vw, 128px); }
@@ -103,6 +103,43 @@
       .bg-logos, .bg-construct, .bg-illus, .bg-comp { grid-template-columns: 1fr; }
       .bg-donts, .bg-legend { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
+
+    /* offer pages, drawn at A4 proportions and scaled with the page width */
+    .of-pages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 28px 0 10px; }
+    .of-wrap { container-type: inline-size; }
+    .of-page { position: relative; aspect-ratio: 210 / 297; background: #FAF9F5; border: 1px solid var(--gray-200); border-radius: 4px; box-shadow: 0 1px 0 rgba(20,20,19,.04), 0 14px 28px -20px rgba(20,20,19,.35); padding: 7cqw 8cqw 6cqw; display: flex; flex-direction: column; font-family: var(--sans); color: #141413; overflow: hidden; }
+    .of-hd, .of-ft { display: flex; justify-content: space-between; align-items: center; font-size: 2.6cqw; color: var(--gray-600); }
+    .brand-guide .of-page .of-hd { padding-bottom: 3cqw; border-bottom: .3cqw solid var(--gray-250); }
+    .brand-guide .of-page .of-ft { margin-top: auto; padding-top: 3cqw; border-top: .3cqw solid var(--gray-250); font-size: 2.3cqw; }
+    .of-brand { display: inline-flex; align-items: center; gap: 1.6cqw; font-weight: 700; font-size: 3.6cqw; letter-spacing: -.02em; color: #141413; }
+    .of-mark { width: 5cqw; height: auto; }
+    .brand-guide .of-page .of-kick { font-size: 2.6cqw; font-weight: 600; color: var(--clay-ink); margin: 5cqw 0 2.5cqw; }
+    .brand-guide .of-page .of-title { font: 400 9.4cqw/1.04 var(--serif); letter-spacing: -.03em; }
+    .brand-guide .of-page .of-sub { font-size: 3.4cqw; line-height: 1.45; color: var(--gray-700); margin-top: 3cqw; }
+    .brand-guide .of-page .of-meta { display: grid; grid-template-columns: 30cqw 1fr; row-gap: 1.4cqw; margin-top: 5cqw; font-size: 2.8cqw; }
+    .brand-guide .of-page .of-meta dt { color: var(--gray-600); }
+    .brand-guide .of-page .of-meta dd { margin: 0; }
+    .of-art { margin-top: 5cqw; border-radius: 1.5cqw; overflow: hidden; }
+    .of-art svg { display: block; width: 100%; height: 22cqw; }
+    .of-page > * { flex-shrink: 0; }
+    .brand-guide .of-page .of-h { font: 700 4.6cqw/1.2 var(--sans); letter-spacing: -.02em; margin: 6cqw 0 3cqw; }
+    .brand-guide .of-page .of-short { background: var(--gray-100); border-radius: 2cqw; padding: 3.4cqw 3.8cqw; font-size: 3cqw; line-height: 1.45; }
+    .of-short b { display: block; color: var(--clay-ink); font-size: 2.4cqw; margin-bottom: 1cqw; }
+    .brand-guide .of-page .of-p { font-size: 2.8cqw; line-height: 1.5; color: var(--gray-700); margin-top: 2.4cqw; }
+    .brand-guide .of-page .of-list { margin-top: 2cqw; font-size: 2.8cqw; line-height: 1.45; }
+    .brand-guide .of-page .of-list li { display: grid; grid-template-columns: 6cqw 1fr; padding: 1.8cqw 0; border-top: .3cqw solid var(--gray-200); }
+    .brand-guide .of-page .of-list li span { color: var(--gray-500); }
+    .brand-guide .of-page .of-table { width: 100%; border-collapse: collapse; font-size: 2.7cqw; font-variant-numeric: tabular-nums; margin-top: 1cqw; }
+    .brand-guide .of-page .of-table th { text-align: left; font-weight: 600; color: var(--gray-600); padding: 0 0 1.6cqw; border-bottom: .35cqw solid #141413; }
+    .brand-guide .of-page .of-table td { padding: 1.8cqw 0; border-bottom: .3cqw solid var(--gray-200); vertical-align: top; }
+    .of-table .n { text-align: right; white-space: nowrap; }
+    .of-table tr.tot td { border-bottom: 0; border-top: .35cqw solid #141413; font-weight: 700; }
+    .of-ph { color: var(--clay-ink); }
+    .brand-guide .of-page .of-sign { display: grid; grid-template-columns: 1fr 1fr; gap: 5cqw; margin-top: 6cqw; font-size: 2.5cqw; color: var(--gray-600); }
+    .of-sign div { border-top: .3cqw solid #141413; padding-top: 1.6cqw; }
+    .brand-guide .of-page .of-foot { font-size: 2.4cqw; line-height: 1.45; color: var(--gray-600); margin-top: 4cqw; }
+    .of-caption { font: 400 14px/1.45 var(--sans); color: var(--gray-600); }
+    @media (max-width: 700px) { .of-pages { grid-template-columns: 1fr; max-width: 420px; } }
   </style>
 </head>
 <body>
@@ -167,6 +204,7 @@
           <a href="#voice">Voice</a>
           <a href="#illustration">Illustration</a>
           <a href="#components">Components</a>
+          <a href="#offers">Offers</a>
           <a href="#motion">Motion</a>
           <a href="#donts">What we don’t do</a>
         </nav>
@@ -378,8 +416,76 @@
         </section>
 
         <!-- ============ MOTION ============ -->
+        <section id="offers">
+          <h2><span class="h-num">8</span> Offers</h2>
+          <p>How an offer looks when it leaves us as a PDF. Three A4 pages: what it is, what you get, and what it costs. Same paper, ink and type as everything else.</p>
+
+          <div class="of-pages" aria-label="Example offer, three A4 pages">
+            <div class="of-wrap"><article class="of-page">
+              <header class="of-hd"><span class="of-brand"><svg class="of-mark" viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y=".25" width="22" height="4.5" rx="2.25" fill="#141413"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect x="0" y="15.25" width="15" height="4.5" rx="2.25" fill="#141413"/></svg>lanes</span><span>Offer · 16 November 2026</span></header>
+              <p class="of-kick">Offer</p>
+              <h3 class="of-title">Find the friction in your quote process.</h3>
+              <p class="of-sub">A two-day process analysis for Example A/S: your quote process drawn as it runs today, as it could run, and an estimate of the time you’d get back.</p>
+              <div class="of-art"><svg viewBox="0 0 300 110" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="300" height="110" fill="#BCD1CA"/><path d="M0 36.7H300M0 73.3H300" stroke="#141413" stroke-opacity=".3"/><g fill="none" stroke="#141413" stroke-width="1.6"><path d="M80 18H96V55H122M172 55H188V92H214"/></g><g stroke="#141413" stroke-width="1.4"><rect x="30" y="8" width="50" height="20" rx="3" fill="#FAF9F5"/><rect x="122" y="45" width="50" height="20" rx="3" fill="#FAF9F5"/><rect x="214" y="82" width="50" height="20" rx="3" fill="#D97757" stroke="#C6613F"/></g></svg></div>
+              <dl class="of-meta">
+                <dt>For</dt><dd>Example A/S, sales and sales ops</dd>
+                <dt>From</dt><dd>Danni Dahl, lanes</dd>
+                <dt>Valid until</dt><dd>16 December 2026</dd>
+              </dl>
+              <footer class="of-ft"><span>lanes · hello@lanes.dk · +45 30 36 00 86</span><span>1 / 3</span></footer>
+            </article></div>
+
+            <div class="of-wrap"><article class="of-page">
+              <header class="of-hd"><span class="of-brand"><svg class="of-mark" viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y=".25" width="22" height="4.5" rx="2.25" fill="#141413"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect x="0" y="15.25" width="15" height="4.5" rx="2.25" fill="#141413"/></svg>lanes</span><span>Offer · Example A/S</span></header>
+              <h3 class="of-h">What you get</h3>
+              <div class="of-short"><b>In short</b>Two days with the people who do the work. You get two swimlanes and an estimate, then you decide what happens next.</div>
+              <ol class="of-list">
+                <li><span>1</span>The as-is swimlane: your quote process as it runs today</li>
+                <li><span>2</span>The to-be swimlane: how it could run</li>
+                <li><span>3</span>An estimate of the hours saved and the time to build</li>
+                <li><span>4</span>A walk-through with whoever decides</li>
+              </ol>
+              <h3 class="of-h">The two days</h3>
+              <p class="of-p">Day 1: real quotes with the sellers, then sales ops and pricing. Day 2: we check the drawing with each person, mark where the time goes and draw the to-be. Most people need a few hours.</p>
+              <footer class="of-ft"><span>lanes · hello@lanes.dk · +45 30 36 00 86</span><span>2 / 3</span></footer>
+            </article></div>
+
+            <div class="of-wrap"><article class="of-page">
+              <header class="of-hd"><span class="of-brand"><svg class="of-mark" viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y=".25" width="22" height="4.5" rx="2.25" fill="#141413"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect x="0" y="15.25" width="15" height="4.5" rx="2.25" fill="#141413"/></svg>lanes</span><span>Offer · Example A/S</span></header>
+              <h3 class="of-h">Price</h3>
+              <table class="of-table">
+                <thead><tr><th>Item</th><th class="n">Price</th></tr></thead>
+                <tbody>
+                  <tr><td>Two-day process analysis, on site</td><td class="n of-ph">[amount] kr.</td></tr>
+                  <tr><td>Estimate and walk-through</td><td class="n">Included</td></tr>
+                  <tr class="tot"><td>Total, excl. VAT</td><td class="n of-ph">[amount] kr.</td></tr>
+                </tbody>
+              </table>
+              <p class="of-p">Fixed price. <span class="of-ph">[When it is invoiced, and payment terms.]</span></p>
+              <h3 class="of-h">Accept</h3>
+              <p class="of-p">Sign below, or reply to the email this came with. We’ll find two days that suit your team.</p>
+              <div class="of-sign"><div>Example A/S, date</div><div>lanes, date</div></div>
+              <p class="of-foot">If the two days don’t turn up anything worth fixing, you don’t pay for them. Our general terms apply, see lanes.dk/terms.</p>
+              <footer class="of-ft"><span>lanes · hello@lanes.dk · +45 30 36 00 86</span><span>3 / 3</span></footer>
+            </article></div>
+          </div>
+          <p class="of-caption">An example. The client is made up, and everything in clay is a placeholder.</p>
+
+          <h3>How an offer is built</h3>
+          <ul class="checks">
+            <li><strong>A4, portrait, three pages if it can be.</strong> What it is, what you get, what it costs. Anything longer goes in an appendix.</li>
+            <li><strong>The title states the result,</strong> not the product. “Find the friction in your quote process”, not “Process analysis offer”.</li>
+            <li><strong>“In short” box first.</strong> A busy reader should get the whole offer from it.</li>
+            <li><strong>Prices in a table,</strong> right-aligned with tabular figures, and always say whether VAT is included.</li>
+            <li><strong>One clay detail per page,</strong> and the logo small in the header. Ivory paper, ink text, no shadows or gradients.</li>
+            <li><strong>The guarantee is a footnote,</strong> on the price page, never the headline.</li>
+            <li><strong>Refer to the general terms</strong> on the price page, with the link. Anything that differs from them is written in the offer.</li>
+            <li><strong>File name:</strong> <code style="font-family:var(--sans)">lanes-offer-[client]-[yyyy-mm-dd].pdf</code></li>
+          </ul>
+        </section>
+
         <section id="motion">
-          <h2><span class="h-num">8</span> Motion</h2>
+          <h2><span class="h-num">9</span> Motion</h2>
           <p>Slow, calm and meaningful. Things move the way a process moves: along a line, one step after another.</p>
           <div class="bg-motion">
             <div class="logo-demo" id="logo-demo"><span class="brand"><svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg><span class="brand-text">lanes</span></span></div>
@@ -394,7 +500,7 @@
 
         <!-- ============ DON'TS ============ -->
         <section id="donts">
-          <h2><span class="h-num">9</span> What we don’t do</h2>
+          <h2><span class="h-num">10</span> What we don’t do</h2>
           <p>Learned the hard way while building the site.</p>
           <ul class="checks bg-no">
             <li><strong>No dark dashboards or flowchart interfaces.</strong> They look generic and generated.</li>
@@ -429,7 +535,7 @@
         <a href="index.html#contact">Contact <span aria-hidden="true">→</span></a>
       </nav>
       <div class="footer-meta">
-        <p>© <span id="year">2026</span> lanes</p>
+        <p>© <span id="year">2026</span> lanes · <a class="footer-legal" href="terms.html">General terms</a> · <a class="footer-legal" href="privacy.html">Privacy</a></p>
         <p class="footer-mission"><strong>What we do</strong><br />Process analysis, AI tools and automation for small and mid-sized B2B sales teams.</p>
       </div>
     </div>
