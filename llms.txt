@@ -25,5 +25,5 @@ Contact: hello@lanes.dk, +45 30 36 00 86.
 
 ## Legal
 
-- [General terms](https://daheda1.github.io/lanes/terms.html): the terms behind every offer and agreement
+- [General terms (in Danish)](https://daheda1.github.io/lanes/terms.html): the terms behind every offer and agreement, with a plain-language summary of each section
 - [Privacy policy](https://daheda1.github.io/lanes/privacy.html): what personal data lanes collects and why

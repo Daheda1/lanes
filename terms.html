@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>General terms · lanes</title>
-  <meta name="description" content="The general terms for lanes’ services: what we do, what you do, prices, payment, liability, confidentiality and data." />
+  <title>Generelle vilkår · lanes</title>
+  <meta name="description" content="Generelle vilkår for lanes’ ydelser: anvendelse, ydelser, garanti, priser, betaling, ansvar, fortrolighed og persondata. Med en kort forklaring til hvert afsnit." />
   <meta name="theme-color" content="#FAF9F5" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141413'/%3E%3Crect x='5' y='7.5' width='16' height='4' rx='2' fill='%23FAF9F5'/%3E%3Crect x='10' y='14' width='16' height='4' rx='2' fill='%23D97757'/%3E%3Crect x='5' y='20.5' width='11' height='4' rx='2' fill='%23FAF9F5'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,6 +29,12 @@
     .legal .note { margin-top: 48px; padding: 18px 22px; border-radius: 12px; background: var(--gray-100); font-size: 14.5px; color: var(--gray-700); }
     @media (max-width: 1000px) { .lg-grid { grid-template-columns: 1fr; } .lg-grid .side-toc { display: none; } .lg-grid .article-side { position: static; margin-bottom: 24px; } }
     @media (max-width: 560px) { .legal ol.cl > li { grid-template-columns: 34px 1fr; } }
+    .legal .intro { font: 400 17px/1.6 var(--serif); color: var(--gray-700); max-width: 42em; }
+    .legal .kf { margin: 4px 0 14px; padding: 14px 18px; border-radius: 12px; background: var(--gray-100); font-size: 15.5px; line-height: 1.55; color: var(--gray-700); }
+    .legal .kf b { display: block; font: 600 12.5px/1 var(--sans); color: var(--clay-ink); margin-bottom: 6px; }
+    .legal ul.df { margin: 8px 0 0; padding: 0; list-style: none; }
+    .legal ul.df li { padding: 4px 0; }
+    .legal ol.cl > li { hyphens: auto; }
   </style>
 </head>
 <body>
@@ -71,115 +77,135 @@
 
   <main id="main">
     <section class="wrap articles-head">
-      <h1 class="statement"><strong>General terms.</strong> The terms behind every offer and agreement with lanes, written to be read.</h1>
+      <h1 class="statement"><strong>Generelle vilkår.</strong> Vilkårene bag alle tilbud og aftaler med lanes.</h1>
     </section>
     <div class="wrap lg-grid">
       <aside class="article-side">
         <dl class="article-meta">
-          <div><dt>Version</dt><dd>1.0</dd></div>
-          <div><dt>Valid from</dt><dd><time datetime="2026-11-16">16 November 2026</time></dd></div>
-          <div><dt>Company</dt><dd>lanes, CVR <span class="ph">[number]</span></dd></div>
+          <div><dt>Version</dt><dd>2.0</dd></div>
+          <div><dt>Gælder fra</dt><dd><time datetime="2026-11-16">16. november 2026</time></dd></div>
+          <div><dt>Virksomhed</dt><dd>lanes, CVR <span class="ph">[nummer]</span></dd></div>
         </dl>
-        <nav class="side-toc" aria-label="On this page">
-          <a href="#scope">Scope</a>
-          <a href="#precedence">What applies first</a>
-          <a href="#services">The work we do</a>
-          <a href="#guarantee">The two-day guarantee</a>
-          <a href="#your-part">Your part</a>
-          <a href="#dates">Moving or cancelling dates</a>
-          <a href="#acceptance">Checking what we deliver</a>
-          <a href="#subcontractors">Subcontractors</a>
-          <a href="#rights">Who owns what</a>
-          <a href="#prices">Prices</a>
-          <a href="#payment">Invoices and payment</a>
-          <a href="#defects">Defects and delays</a>
-          <a href="#liability">Liability</a>
-          <a href="#confidentiality">Confidentiality</a>
-          <a href="#data">Personal data</a>
+        <nav class="side-toc" aria-label="Indhold">
+          <a href="#anvendelse">Anvendelse og definitioner</a>
+          <a href="#forrang">Forrang</a>
+          <a href="#ydelser">Ydelserne</a>
+          <a href="#garanti">Garanti ved procesanalyse</a>
+          <a href="#medvirken">Kundens medvirken</a>
+          <a href="#udskydelse">Udskydelse og aflysning</a>
+          <a href="#godkendelse">Godkendelse af Leverancer</a>
+          <a href="#underleverandoerer">Underleverandører</a>
+          <a href="#rettigheder">Immaterielle rettigheder</a>
+          <a href="#priser">Priser</a>
+          <a href="#betaling">Fakturering og betaling</a>
+          <a href="#mangler">Mangler og forsinkelse</a>
+          <a href="#ansvar">Ansvar og ansvarsbegrænsning</a>
+          <a href="#fortrolighed">Fortrolighed</a>
+          <a href="#personoplysninger">Personoplysninger</a>
           <a href="#force-majeure">Force majeure</a>
-          <a href="#ending">Ending an agreement</a>
-          <a href="#changes">Changes to these terms</a>
-          <a href="#law">Law and disputes</a>
+          <a href="#ophoer">Opsigelse og ophævelse</a>
+          <a href="#aendringer">Ændringer</a>
+          <a href="#lovvalg">Lovvalg og værneting</a>
         </nav>
       </aside>
       <div class="legal">
-        <section id="scope">
-          <h2><span class="h-num">1</span>Scope</h2>
-          <ol class="cl"><li data-n="1.1"><span>These general terms apply to everything lanes, CVR <span class="ph">[number]</span>, (“lanes”, “we”) delivers to a customer (“you”): process analysis, advice, building and running automation and AI tools, and support (the “services”).</span></li><li data-n="1.2"><span>An “agreement” is any accepted offer, signed contract or written confirmation by email that describes services we deliver to you.</span></li><li data-n="1.3"><span>We only work with businesses. These terms are not written for consumers.</span></li></ol>
+        <p class="intro">Hvert afsnit begynder med <b>Kort fortalt</b>: en kort forklaring i almindeligt sprog. Den er en hjælp til læsning og er ikke en del af aftalen. Det er bestemmelserne under den, der gælder.</p>
+        <section id="anvendelse">
+          <h2><span class="h-num">1</span>Anvendelse og definitioner</h2>
+          <p class="kf"><b>Kort fortalt</b>Vilkårene gælder for alt, hvad lanes leverer til virksomheder. Her står også, hvad de vigtigste ord betyder.</p>
+          <ol class="cl"><li data-n="1.1"><span>Disse generelle vilkår (“Vilkårene”) gælder for alle Ydelser, som lanes, CVR-nr. <span class="ph">[nummer]</span> (“lanes”), leverer til en kunde (“Kunden”). lanes og Kunden benævnes hver for sig “Part” og tilsammen “Parterne”.</span></li><li data-n="1.2"><span>I Vilkårene har følgende ord denne betydning:<ul class="df"><li><b>Aftale:</b> enhver skriftlig aftale mellem Parterne om levering af Ydelser, herunder et accepteret tilbud, en underskrevet kontrakt eller en skriftlig bekræftelse pr. e-mail, med tilhørende bilag.</li><li><b>Ydelser:</b> procesanalyse, rådgivning, udvikling, implementering, drift og vedligeholdelse af automatiseringer og AI-værktøjer samt support, som nærmere beskrevet i Aftalen.</li><li><b>Leverancer:</b> de konkrete resultater af Ydelserne, herunder procestegninger (swimlanes), estimater, dokumentation, konfigurationer og programkode udarbejdet til Kunden.</li><li><b>Arbejdsdage:</b> mandag til fredag, bortset fra helligdage, grundlovsdag, 24. december og 31. december.</li><li><b>Skriftligt:</b> på papir eller elektronisk, herunder pr. e-mail.</li><li><b>Tredjepartsprogrammel:</b> software og tjenester, som ejes eller leveres af tredjemand.</li><li><b>Fortrolige Oplysninger:</b> som defineret i pkt. 14.1.</li></ul></span></li><li data-n="1.3"><span>Vilkårene gælder alene for aftaler med erhvervsdrivende og finder ikke anvendelse på forbrugeraftaler.</span></li><li data-n="1.4"><span>Kundens egne indkøbs- eller forretningsbetingelser finder ikke anvendelse, medmindre lanes Skriftligt har accepteret dem.</span></li></ol>
         </section>
-        <section id="precedence">
-          <h2><span class="h-num">2</span>What applies first</h2>
-          <ol class="cl"><li data-n="2.1"><span>If documents say different things, they apply in this order: (1) a data processing agreement, (2) the agreement and its appendices, including the accepted offer, (3) these general terms.</span></li><li data-n="2.2"><span>Software from third parties, for example a CRM, an AI service or a form service, is always covered by that supplier’s own licence terms. You may need to accept those terms to use it.</span></li></ol>
+        <section id="forrang">
+          <h2><span class="h-num">2</span>Forrang</h2>
+          <p class="kf"><b>Kort fortalt</b>Står der noget forskelligt i dokumenterne, gælder databehandleraftalen først, så selve aftalen og til sidst disse vilkår. “Kort fortalt” er kun en hjælp til læsning.</p>
+          <ol class="cl"><li data-n="2.1"><span>Ved uoverensstemmelse mellem dokumenterne gælder de i følgende rækkefølge: (1) en databehandleraftale, (2) Aftalen, herunder bilag og accepteret tilbud, og (3) Vilkårene. Fravigelser af Vilkårene skal fremgå udtrykkeligt af Aftalen.</span></li><li data-n="2.2"><span>Tredjepartsprogrammel er underlagt den pågældende tredjemands licens- og leveringsvilkår, som har forrang for så vidt angår dette programmel. Kunden er forpligtet til at tiltræde sådanne vilkår, hvis det er en forudsætning for at anvende Tredjepartsprogrammellet.</span></li><li data-n="2.3"><span>Afsnittene “Kort fortalt” er en uforbindende sammenfatning og udgør ikke en del af aftalegrundlaget. Ved uoverensstemmelse gælder bestemmelserne i Vilkårene.</span></li></ol>
         </section>
-        <section id="services">
-          <h2><span class="h-num">3</span>The work we do</h2>
-          <ol class="cl"><li data-n="3.1"><span>We do the work with care, in line with good practice, and with people who know what they are doing.</span></li><li data-n="3.2"><span>We commit to doing the work well, not to a specific result, unless the agreement says otherwise. A process analysis shows where the time goes; how much time you actually get back also depends on decisions you make.</span></li><li data-n="3.3"><span>We are responsible for our own work. We are not responsible for work your other suppliers or your own people do, or for changes they make to what we built.</span></li></ol>
+        <section id="ydelser">
+          <h2><span class="h-num">3</span>Ydelserne</h2>
+          <p class="kf"><b>Kort fortalt</b>Vi gør arbejdet ordentligt og med folk, der kan deres fag. Vi lover en god indsats, ikke et bestemt resultat, og vores estimater er skøn, ikke garantier.</p>
+          <ol class="cl"><li data-n="3.1"><span>lanes leverer Ydelserne fagligt forsvarligt, i overensstemmelse med god skik på området og med kvalificerede medarbejdere.</span></li><li data-n="3.2"><span>Medmindre andet udtrykkeligt er aftalt Skriftligt, påtager lanes sig en indsatsforpligtelse og ikke en resultatforpligtelse. Estimater over tidsbesparelser og andre gevinster er skøn baseret på de forhold, lanes har iagttaget, og udgør ikke en garanti for et bestemt resultat.</span></li><li data-n="3.3"><span>lanes er alene ansvarlig for egne Ydelser. lanes er ikke ansvarlig for ydelser fra Kundens øvrige leverandører, for Kundens egne medarbejderes arbejde eller for ændringer, som disse foretager i Leverancerne.</span></li></ol>
         </section>
-        <section id="guarantee">
-          <h2><span class="h-num">4</span>The two-day guarantee</h2>
-          <ol class="cl"><li data-n="4.1"><span>If a two-day process analysis doesn’t turn up anything worth fixing, you don’t pay for the two days. You keep the as-is drawing.</span></li><li data-n="4.2"><span>We agree together at the walk-through whether that is the case. If you think it is, tell us in writing within 5 working days of the walk-through.</span></li><li data-n="4.3"><span>The guarantee covers the price of the two days. It does not cover travel or other expenses agreed in the offer.</span></li></ol>
+        <section id="garanti">
+          <h2><span class="h-num">4</span>Garanti ved procesanalyse</h2>
+          <p class="kf"><b>Kort fortalt</b>Finder de to dage ikke noget, der er værd at forbedre, betaler I ikke for dem, og I beholder tegningen af, hvordan processen kører i dag.</p>
+          <ol class="cl"><li data-n="4.1"><span>Identificerer en procesanalyse ikke forhold, som efter Parternes fælles vurdering er værd at forbedre, er Kunden ikke forpligtet til at betale vederlaget for analysen. Kunden beholder i så fald retten til at anvende as-is-tegningen.</span></li><li data-n="4.2"><span>Vurderingen foretages ved gennemgangen af analysens resultater. Kunden skal gøre garantien gældende Skriftligt senest 5 Arbejdsdage efter gennemgangen. Sker det ikke, bortfalder garantien.</span></li><li data-n="4.3"><span>Garantien omfatter alene vederlaget for analysen og ikke rejseomkostninger og udlæg, som er aftalt i tilbuddet.</span></li></ol>
         </section>
-        <section id="your-part">
-          <h2><span class="h-num">5</span>Your part</h2>
-          <ol class="cl"><li data-n="5.1"><span>You give us access to the people, information and systems the work needs, in the time agreed. For an analysis we need to see how systems are used; we don’t need to export anything.</span></li><li data-n="5.2"><span>You make sure that information you give us is correct, and that you have the licences and permissions needed for us to work in your systems.</span></li><li data-n="5.3"><span>You keep backups of your own systems and data, unless we have agreed in writing that we do it.</span></li><li data-n="5.4"><span>If the work is delayed because something on your side is missing, deadlines move accordingly, and extra time we spend because of it may be invoiced at our hourly rate.</span></li></ol>
+        <section id="medvirken">
+          <h2><span class="h-num">5</span>Kundens medvirken</h2>
+          <p class="kf"><b>Kort fortalt</b>I sørger for de folk, oplysninger og adgange, vi har brug for, og for backup af jeres egne systemer. Venter vi på jer, rykker fristerne tilsvarende.</p>
+          <ol class="cl"><li data-n="5.1"><span>Kunden stiller rettidigt de medarbejdere, oplysninger og adgange til rådighed, som er nødvendige for levering af Ydelserne. Ved procesanalyser skal lanes kunne se, hvordan Kundens systemer anvendes. lanes eksporterer ikke data uden Kundens forudgående Skriftlige accept.</span></li><li data-n="5.2"><span>Kunden indestår for, at oplysninger givet til lanes er korrekte og fuldstændige, og for at Kunden har de licenser, samtykker og tilladelser, der er nødvendige for, at lanes kan arbejde i Kundens systemer.</span></li><li data-n="5.3"><span>Kunden er ansvarlig for sikkerhedskopiering af egne systemer og data, medmindre andet er aftalt Skriftligt.</span></li><li data-n="5.4"><span>Forsinkes Ydelserne som følge af forhold hos Kunden, forlænges lanes’ frister tilsvarende, og lanes er berettiget til at fakturere meromkostninger efter medgået tid.</span></li></ol>
         </section>
-        <section id="dates">
-          <h2><span class="h-num">6</span>Moving or cancelling dates</h2>
-          <ol class="cl"><li data-n="6.1"><span>You can move an agreed date, for example the two days of an analysis, once and free of charge, if you tell us at least 10 working days before.</span></li><li data-n="6.2"><span>If you move or cancel with less notice, we may invoice 50% of the price for the days affected, unless we can use the time for other work.</span></li></ol>
+        <section id="udskydelse">
+          <h2><span class="h-num">6</span>Udskydelse og aflysning</h2>
+          <p class="kf"><b>Kort fortalt</b>I kan flytte en aftalt dato én gang gratis med 10 arbejdsdages varsel. Ved kortere varsel kan vi fakturere halvdelen af de berørte dage, hvis vi ikke kan bruge tiden på andet.</p>
+          <ol class="cl"><li data-n="6.1"><span>Kunden kan én gang uden beregning udskyde et aftalt tidspunkt for udførelsen af Ydelserne, herunder dagene for en procesanalyse, hvis udskydelsen meddeles lanes Skriftligt senest 10 Arbejdsdage før det aftalte tidspunkt.</span></li><li data-n="6.2"><span>Ved udskydelse eller aflysning med kortere varsel, eller ved gentagen udskydelse, er lanes berettiget til at fakturere 50 % af vederlaget for de berørte dage, medmindre lanes kan anvende den reserverede tid til anden betalt opgave.</span></li></ol>
         </section>
-        <section id="acceptance">
-          <h2><span class="h-num">7</span>Checking what we deliver</h2>
-          <ol class="cl"><li data-n="7.1"><span>Please check what we deliver as soon as you can. If something isn’t as agreed, tell us in writing within 10 working days of delivery, with a short description of the problem.</span></li><li data-n="7.2"><span>If we don’t hear from you within that time, or you start using what we delivered, it counts as accepted.</span></li></ol>
+        <section id="godkendelse">
+          <h2><span class="h-num">7</span>Godkendelse af Leverancer</h2>
+          <p class="kf"><b>Kort fortalt</b>Kig det, vi leverer, igennem hurtigst muligt. Hører vi ikke fra jer inden 10 arbejdsdage, eller tager I det i brug, er det godkendt.</p>
+          <ol class="cl"><li data-n="7.1"><span>Kunden skal undersøge Leverancerne hurtigst muligt efter levering. Indsigelser skal gives Skriftligt og begrundet senest 10 Arbejdsdage efter levering.</span></li><li data-n="7.2"><span>Har Kunden ikke givet rettidig indsigelse, eller tager Kunden Leverancen i brug, anses Leverancen for godkendt.</span></li></ol>
         </section>
-        <section id="subcontractors">
-          <h2><span class="h-num">8</span>Subcontractors</h2>
-          <ol class="cl"><li data-n="8.1"><span>We may use subcontractors for parts of the work. We tell you before we do, and we are responsible for their work as if it were our own.</span></li></ol>
+        <section id="underleverandoerer">
+          <h2><span class="h-num">8</span>Underleverandører</h2>
+          <p class="kf"><b>Kort fortalt</b>Vi kan bruge underleverandører, men vi siger det til jer først og står inde for deres arbejde som vores eget.</p>
+          <ol class="cl"><li data-n="8.1"><span>lanes kan anvende underleverandører til dele af Ydelserne. lanes orienterer Kunden, inden en underleverandør anvendes, og hæfter for underleverandørers ydelser på samme måde som for egne Ydelser.</span></li></ol>
         </section>
-        <section id="rights">
-          <h2><span class="h-num">9</span>Who owns what</h2>
-          <ol class="cl"><li data-n="9.1"><span>Each of us keeps what we owned before we started working together.</span></li><li data-n="9.2"><span>When you have paid, you get the full right to use what we made for you, including drawings, documentation, configurations and code written for you. You may change it, and you may have others maintain it. We don’t build things you can’t run without us.</span></li><li data-n="9.3"><span>We keep the right to our own tools, methods, templates and general know-how, and may use them in other work, without using your confidential information.</span></li></ol>
+        <section id="rettigheder">
+          <h2><span class="h-num">9</span>Immaterielle rettigheder</h2>
+          <p class="kf"><b>Kort fortalt</b>Når I har betalt, må I frit bruge, ændre og lade andre vedligeholde det, vi har lavet til jer. Vi beholder vores egne værktøjer og metoder.</p>
+          <ol class="cl"><li data-n="9.1"><span>Hver Part bevarer de immaterielle rettigheder, som Parten havde forud for samarbejdet.</span></li><li data-n="9.2"><span>Når Kunden har betalt det fulde vederlag, opnår Kunden en tidsubegrænset, uigenkaldelig og vederlagsfri brugsret til de Leverancer, der er udarbejdet specifikt til Kunden. Brugsretten omfatter retten til at ændre og videreudvikle Leverancerne og til at lade tredjemand vedligeholde dem.</span></li><li data-n="9.3"><span>lanes bevarer alle rettigheder til egne værktøjer, metoder, skabeloner, standardkomponenter og generel knowhow og kan anvende disse i andre opgaver, dog uden brug af Kundens Fortrolige Oplysninger.</span></li><li data-n="9.4"><span>Kundens brug af Tredjepartsprogrammel er underlagt tredjemands licensvilkår, jf. pkt. 2.2.</span></li></ol>
         </section>
-        <section id="prices">
-          <h2><span class="h-num">10</span>Prices</h2>
-          <ol class="cl"><li data-n="10.1"><span>All prices are in Danish kroner (DKK) and exclude VAT.</span></li><li data-n="10.2"><span>A fixed price covers the work described in the offer. If it turns out that the work is substantially different from what was described, we tell you before we continue, and agree what it means for the price.</span></li><li data-n="10.3"><span>Work that isn’t at a fixed price is invoiced by the hour at our current rates.</span></li><li data-n="10.4"><span>Travel and other expenses are invoiced at cost when the offer says so.</span></li><li data-n="10.5"><span>For ongoing agreements, for example running and maintaining a solution, we can adjust prices once a year with at least 30 days’ written notice.</span></li></ol>
+        <section id="priser">
+          <h2><span class="h-num">10</span>Priser</h2>
+          <p class="kf"><b>Kort fortalt</b>Alle priser er i kroner uden moms. En fast pris dækker det, der står i tilbuddet, og ændrer opgaven sig væsentligt, siger vi det, før vi fortsætter.</p>
+          <ol class="cl"><li data-n="10.1"><span>Alle priser er angivet i danske kroner (DKK) og ekskl. moms.</span></li><li data-n="10.2"><span>En fast pris omfatter de Ydelser, der er beskrevet i Aftalen. Viser det sig, at opgaven afviger væsentligt fra de forudsætninger, der er beskrevet i Aftalen, underretter lanes Kunden, inden arbejdet fortsættes, og Parterne aftaler konsekvensen for pris og tidsplan.</span></li><li data-n="10.3"><span>Ydelser, der ikke er omfattet af en fast pris, honoreres efter medgået tid til lanes’ til enhver tid gældende timepriser.</span></li><li data-n="10.4"><span>Rejseomkostninger og udlæg faktureres efter regning, i det omfang det fremgår af Aftalen.</span></li><li data-n="10.5"><span>Ved løbende Aftaler, herunder drift og vedligeholdelse, kan lanes regulere priserne én gang årligt med mindst 30 dages Skriftligt varsel.</span></li></ol>
         </section>
-        <section id="payment">
-          <h2><span class="h-num">11</span>Invoices and payment</h2>
-          <ol class="cl"><li data-n="11.1"><span>Fixed-price work is invoiced as described in the offer. A two-day analysis is invoiced after the walk-through. Hourly work is invoiced monthly. Ongoing agreements are invoiced monthly in advance.</span></li><li data-n="11.2"><span>Invoices are sent by email or as electronic invoices (EAN). Payment is due within 14 days of the invoice date.</span></li><li data-n="11.3"><span>If payment is late, we may charge interest under the Danish Interest Act (renteloven), and pause the work until the invoice is paid.</span></li><li data-n="11.4"><span>If you disagree with an invoice, tell us within 10 working days and say why.</span></li></ol>
+        <section id="betaling">
+          <h2><span class="h-num">11</span>Fakturering og betaling</h2>
+          <p class="kf"><b>Kort fortalt</b>Vi fakturerer som aftalt i tilbuddet, og betalingsfristen er 14 dage. Er I uenige i en faktura, så sig det inden 10 arbejdsdage.</p>
+          <ol class="cl"><li data-n="11.1"><span>Ydelser til fast pris faktureres som angivet i Aftalen. En procesanalyse faktureres efter gennemgangen af resultaterne. Timeydelser faktureres månedsvis bagud. Løbende Ydelser faktureres månedsvis forud.</span></li><li data-n="11.2"><span>Fakturaer fremsendes pr. e-mail eller som elektronisk faktura (EAN). Betalingsfristen er 14 dage fra fakturadato.</span></li><li data-n="11.3"><span>Ved forsinket betaling er lanes berettiget til at beregne renter og kompensation i henhold til renteloven samt til at suspendere leveringen af Ydelser, indtil betaling er sket.</span></li><li data-n="11.4"><span>Indsigelser mod en faktura skal gives Skriftligt og begrundet senest 10 Arbejdsdage efter fakturadato. Ubestridte beløb skal betales rettidigt.</span></li></ol>
         </section>
-        <section id="defects">
-          <h2><span class="h-num">12</span>Defects and delays</h2>
-          <ol class="cl"><li data-n="12.1"><span>If something we delivered doesn’t work as agreed because of us, we fix it, deliver it again, or reduce the price, at our choice. Software is never completely free of errors, and small errors that don’t affect the agreed use are not defects.</span></li><li data-n="12.2"><span>Tell us in writing within 10 working days of discovering a defect or delay. Claims expire 12 months after delivery.</span></li><li data-n="12.3"><span>Dates in an agreement are estimates, unless the agreement says they are binding.</span></li></ol>
+        <section id="mangler">
+          <h2><span class="h-num">12</span>Mangler og forsinkelse</h2>
+          <p class="kf"><b>Kort fortalt</b>Virker noget ikke som aftalt på grund af os, retter vi det, leverer igen eller giver afslag. Sig det inden 10 arbejdsdage. Tider er vejledende, medmindre andet er aftalt.</p>
+          <ol class="cl"><li data-n="12.1"><span>Der foreligger en mangel, hvis en Leverance ikke i væsentlig grad opfylder det aftalte, og årsagen kan henføres til lanes. Kunden anerkender, at software ikke kan leveres fuldstændig fejlfri, og at uvæsentlige fejl, som ikke påvirker den aftalte anvendelse, ikke udgør en mangel.</span></li><li data-n="12.2"><span>Foreligger der en mangel, kan lanes efter eget valg afhjælpe manglen, foretage omlevering eller give et forholdsmæssigt afslag.</span></li><li data-n="12.3"><span>Kunden skal reklamere Skriftligt over mangler og forsinkelse senest 10 Arbejdsdage efter, at forholdet blev eller burde være opdaget. Krav vedrørende mangler bortfalder under alle omstændigheder 12 måneder efter levering.</span></li><li data-n="12.4"><span>Tidsangivelser i en Aftale er vejledende, medmindre Aftalen udtrykkeligt angiver dem som bindende.</span></li></ol>
         </section>
-        <section id="liability">
-          <h2><span class="h-num">13</span>Liability</h2>
-          <ol class="cl"><li data-n="13.1"><span>We are liable under the general rules of Danish law, with the limits in this section.</span></li><li data-n="13.2"><span>Neither of us is liable for indirect loss, such as lost profit, lost business, lost data or loss of goodwill.</span></li><li data-n="13.3"><span>Our total liability under an agreement is limited to what you have paid under that agreement in the 12 months before the damage happened. For a single fixed-price task, it is limited to the price of the task.</span></li><li data-n="13.4"><span>We are not liable for third-party software, which is delivered on that supplier’s terms. If it fails, we help you raise it with the supplier.</span></li><li data-n="13.5"><span>The limits don’t apply if a loss is caused intentionally or by gross negligence, or by a breach of confidentiality.</span></li></ol>
+        <section id="ansvar">
+          <h2><span class="h-num">13</span>Ansvar og ansvarsbegrænsning</h2>
+          <p class="kf"><b>Kort fortalt</b>Ingen af os hæfter for indirekte tab. Vores samlede ansvar er højst det, I har betalt under aftalen det seneste år. Grænserne gælder ikke ved forsæt eller grov uagtsomhed.</p>
+          <ol class="cl"><li data-n="13.1"><span>Parterne er ansvarlige efter dansk rets almindelige regler med de begrænsninger, der følger af dette pkt. 13.</span></li><li data-n="13.2"><span>Ingen af Parterne hæfter for indirekte tab, herunder driftstab, tabt fortjeneste, tab af forretningsmuligheder, tab af goodwill, tab af data og omkostninger til genskabelse af data.</span></li><li data-n="13.3"><span>lanes’ samlede ansvar under en Aftale er begrænset til det vederlag, som Kunden har betalt under Aftalen i de 12 måneder forud for den skadegørende begivenhed. For en opgave til fast pris er ansvaret dog begrænset til opgavens vederlag.</span></li><li data-n="13.4"><span>lanes hæfter ikke for Tredjepartsprogrammel, herunder dets tilgængelighed og funktion. lanes bistår Kunden med at reklamere over for tredjemand.</span></li><li data-n="13.5"><span>Ansvarsbegrænsningerne i dette pkt. 13 gælder ikke ved forsætlige eller groft uagtsomme handlinger eller undladelser eller ved brud på fortrolighedsforpligtelserne i pkt. 14.</span></li></ol>
         </section>
-        <section id="confidentiality">
-          <h2><span class="h-num">14</span>Confidentiality</h2>
-          <ol class="cl"><li data-n="14.1"><span>We both keep the other’s confidential information confidential: anything about the other’s business, customers, prices and processes that we learn while working together, including the content of offers and agreements.</span></li><li data-n="14.2"><span>Confidential information may only be shared with employees, subcontractors and advisers who need it, and who are bound by the same duty.</span></li><li data-n="14.3"><span>This doesn’t cover information that is already public, that we already knew, or that the law requires us to share.</span></li><li data-n="14.4"><span>The duty continues after the agreement ends.</span></li><li data-n="14.5"><span>We only mention you as a customer, or describe our work for you, if you have said yes to it first.</span></li></ol>
+        <section id="fortrolighed">
+          <h2><span class="h-num">14</span>Fortrolighed</h2>
+          <p class="kf"><b>Kort fortalt</b>Vi holder begge den andens oplysninger for os selv, også efter aftalen er slut. Vi nævner jer kun som kunde, hvis I har sagt ja.</p>
+          <ol class="cl"><li data-n="14.1"><span>“Fortrolige Oplysninger” er alle oplysninger om den anden Parts forhold, herunder forretning, kunder, priser, processer og systemer, som en Part modtager i forbindelse med forhandling, indgåelse eller opfyldelse af en Aftale, herunder indholdet af tilbud og Aftaler.</span></li><li data-n="14.2"><span>Hver Part skal behandle den anden Parts Fortrolige Oplysninger fortroligt og må alene anvende dem til opfyldelse af Aftalen. Fortrolige Oplysninger må kun videregives til medarbejdere, underleverandører og rådgivere, som har behov for dem, og som er underlagt en tilsvarende tavshedspligt.</span></li><li data-n="14.3"><span>Fortrolighedsforpligtelsen omfatter ikke oplysninger, som er eller bliver offentligt tilgængelige, som den modtagende Part allerede var i lovlig besiddelse af, eller som en Part er forpligtet til at videregive efter lovgivning eller afgørelse fra en offentlig myndighed.</span></li><li data-n="14.4"><span>Fortrolighedsforpligtelsen gælder også efter Aftalens ophør.</span></li><li data-n="14.5"><span>lanes må alene anvende Kundens navn som reference eller beskrive opgaven for Kunden med Kundens forudgående Skriftlige samtykke.</span></li></ol>
         </section>
-        <section id="data">
-          <h2><span class="h-num">15</span>Personal data</h2>
-          <ol class="cl"><li data-n="15.1"><span>We handle personal data as described in our <a href="privacy.html">privacy policy</a>.</span></li><li data-n="15.2"><span>If we process personal data on your behalf, we sign a data processing agreement with you before we start, and that agreement applies to the processing.</span></li><li data-n="15.3"><span>When AI services are part of a solution, we use enterprise services that don’t train on your data.</span></li></ol>
+        <section id="personoplysninger">
+          <h2><span class="h-num">15</span>Personoplysninger</h2>
+          <p class="kf"><b>Kort fortalt</b>Vi passer på persondata som beskrevet i vores privatlivspolitik og laver en databehandleraftale med jer, før vi behandler data for jer.</p>
+          <ol class="cl"><li data-n="15.1"><span>lanes behandler personoplysninger i overensstemmelse med lanes’ til enhver tid gældende <a href="privacy.html">privatlivspolitik</a>.</span></li><li data-n="15.2"><span>Behandler lanes personoplysninger på vegne af Kunden, indgår Parterne en databehandleraftale, inden behandlingen påbegyndes. Databehandleraftalen regulerer denne behandling.</span></li><li data-n="15.3"><span>Indgår AI-tjenester i en løsning, anvender lanes alene tjenester på erhvervsvilkår, hvor Kundens data ikke anvendes til træning af tjenesteudbyderens modeller.</span></li></ol>
         </section>
         <section id="force-majeure">
           <h2><span class="h-num">16</span>Force majeure</h2>
-          <ol class="cl"><li data-n="16.1"><span>Neither of us is responsible for failing to do something because of events outside our control that we could not reasonably have foreseen or avoided, such as natural disasters, war, pandemics, strikes or a breakdown of public infrastructure.</span></li><li data-n="16.2"><span>The one affected tells the other as soon as possible. If such an event stops the work for more than 30 working days, either of us can end the agreement with 5 working days’ written notice.</span></li></ol>
+          <p class="kf"><b>Kort fortalt</b>Ingen af os er ansvarlige for forsinkelse, der skyldes ting uden for vores kontrol. Varer det over 30 arbejdsdage, kan aftalen opsiges.</p>
+          <ol class="cl"><li data-n="16.1"><span>Ingen af Parterne anses for at have misligholdt en forpligtelse i det omfang og i den periode, hvor opfyldelsen hindres af forhold uden for Partens kontrol, som Parten ikke burde have forudset eller kunne undgå, herunder naturkatastrofer, krig, pandemi, strejke, lockout og nedbrud af offentlig infrastruktur.</span></li><li data-n="16.2"><span>Den berørte Part skal give den anden Part Skriftlig meddelelse herom uden ugrundet ophold. Varer hindringen mere end 30 Arbejdsdage, kan hver Part opsige den berørte Aftale med 5 Arbejdsdages Skriftligt varsel.</span></li></ol>
         </section>
-        <section id="ending">
-          <h2><span class="h-num">17</span>Ending an agreement</h2>
-          <ol class="cl"><li data-n="17.1"><span>An agreement can be ended as described in the agreement itself.</span></li><li data-n="17.2"><span>Either of us can end an agreement straight away if the other breaches it materially and doesn’t put it right within 20 working days of a written notice, or if the other becomes insolvent.</span></li><li data-n="17.3"><span>When an agreement ends, you get your data and the documentation for what we built, and we pay or are paid for the work done up to that date.</span></li></ol>
+        <section id="ophoer">
+          <h2><span class="h-num">17</span>Opsigelse og ophævelse</h2>
+          <p class="kf"><b>Kort fortalt</b>En aftale kan opsiges som beskrevet i aftalen. Ved alvorlige brud, der ikke rettes inden 20 arbejdsdage, kan den ophæves. I får altid jeres data og dokumentation med.</p>
+          <ol class="cl"><li data-n="17.1"><span>En Aftale kan opsiges i overensstemmelse med Aftalens bestemmelser.</span></li><li data-n="17.2"><span>Hver Part kan ophæve en Aftale med øjeblikkelig virkning, hvis den anden Part væsentligt misligholder Aftalen og ikke har afhjulpet misligholdelsen senest 20 Arbejdsdage efter Skriftligt påkrav herom, eller hvis den anden Part tages under konkursbehandling, indleder rekonstruktion eller på anden måde må anses for insolvent.</span></li><li data-n="17.3"><span>Ved Aftalens ophør udleverer lanes Kundens data og dokumentationen for Leverancerne, og Kunden betaler vederlag for de Ydelser, der er leveret frem til ophøret.</span></li></ol>
         </section>
-        <section id="changes">
-          <h2><span class="h-num">18</span>Changes to these terms</h2>
-          <ol class="cl"><li data-n="18.1"><span>We may update these general terms. A new version applies to agreements made after it is published. Existing agreements keep the version that was agreed, unless we both agree otherwise.</span></li><li data-n="18.2"><span>An agreement can only be changed in writing. Email is fine.</span></li></ol>
+        <section id="aendringer">
+          <h2><span class="h-num">18</span>Ændringer</h2>
+          <p class="kf"><b>Kort fortalt</b>Nye versioner af vilkårene gælder for nye aftaler. Jeres aftale beholder den version, I indgik den på.</p>
+          <ol class="cl"><li data-n="18.1"><span>lanes kan ændre Vilkårene. En ny version gælder for Aftaler, der indgås efter offentliggørelsen. Eksisterende Aftaler er fortsat underlagt den version, der gjaldt ved Aftalens indgåelse, medmindre Parterne aftaler andet.</span></li><li data-n="18.2"><span>Ændringer af en Aftale skal aftales Skriftligt.</span></li></ol>
         </section>
-        <section id="law">
-          <h2><span class="h-num">19</span>Law and disputes</h2>
-          <ol class="cl"><li data-n="19.1"><span>Agreements are governed by Danish law.</span></li><li data-n="19.2"><span>If we disagree, we first try to solve it by talking. If that doesn’t work, the dispute is settled by the Danish courts, with the court in Aalborg as the first instance.</span></li></ol>
+        <section id="lovvalg">
+          <h2><span class="h-num">19</span>Lovvalg og værneting</h2>
+          <p class="kf"><b>Kort fortalt</b>Dansk ret gælder. Er vi uenige, prøver vi først at finde en løsning sammen. Ellers afgøres sagen ved Retten i Aalborg.</p>
+          <ol class="cl"><li data-n="19.1"><span>Aftaler er underlagt dansk ret med undtagelse af danske internationalprivatretlige regler, der fører til anvendelse af andet lands ret.</span></li><li data-n="19.2"><span>Parterne skal søge at løse uenigheder ved forhandling. Kan en tvist ikke løses ved forhandling, afgøres den ved de danske domstole med Retten i Aalborg som første instans.</span></li></ol>
         </section>
-        <p class="note">Questions about these terms? Write to <a href="mailto:hello@lanes.dk">hello@lanes.dk</a> before you sign, and we’ll explain or adjust them in the offer.</p>
+        <p class="note">Spørgsmål til vilkårene? Skriv til <a href="mailto:hello@lanes.dk">hello@lanes.dk</a>, før I skriver under, så forklarer vi dem eller tilpasser dem i tilbuddet.</p>
       </div>
     </div>
   </main>
