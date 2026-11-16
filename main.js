@@ -1,5 +1,7 @@
 (() => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const da = document.documentElement.lang === "da";
+  const tr = (en, dk) => (da ? dk : en);
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
   const NS = "http://www.w3.org/2000/svg";
@@ -40,7 +42,7 @@
   const setMenu = (open) => {
     if (!menuBtn || !menu) return;
     menuBtn.setAttribute("aria-expanded", String(open));
-    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    menuBtn.setAttribute("aria-label", open ? tr("Close menu", "Luk menu") : tr("Open menu", "Åbn menu"));
     menu.hidden = !open;
   };
   if (menuBtn && menu) {
@@ -610,317 +612,13 @@
     if (toggle) {
       const sync = () => {
         toggle.setAttribute("aria-pressed", String(paused));
-        toggle.setAttribute("aria-label", paused ? "Play animation" : "Pause animation");
+        toggle.setAttribute("aria-label", paused ? tr("Play animation", "Afspil animation") : tr("Pause animation", "Sæt animation på pause"));
       };
       sync();
       toggle.addEventListener("click", () => { paused = !paused; sync(); start(); });
     }
   };
   $$("canvas.pool").forEach(initPool);
-
-  /* ---------- Examples: each step in its lane, run one by one ---------- */
-  const list = $("#lane-steps");
-  if (list) {
-    // [kind, lane, text]
-    const LANES = {
-      inbound: {
-        note: "Research and routing used to sit in the sales lane. Now the system does them, and the rep still writes the reply, just not from a blank page.",
-        steps: [
-          ["trigger", "Customer", "A lead comes in"],
-          ["auto", "System", "Company and contact enriched"],
-          ["auto", "System", "Scored and routed to the right rep"],
-          ["auto", "System", "Brief and draft reply sent to Slack"],
-          ["human", "Sales", "Rep edits and sends"],
-          ["auto", "System", "CRM updated, follow-up booked"],
-        ],
-      },
-      meetings: {
-        note: "Prep and notes move into the system lane. The one step left in the sales lane is the one that matters: the conversation.",
-        steps: [
-          ["trigger", "Customer", "A meeting is booked"],
-          ["auto", "System", "Account history and news gathered"],
-          ["auto", "System", "Briefing lands an hour before"],
-          ["human", "Sales", "The conversation itself"],
-          ["auto", "System", "Notes and next steps logged to CRM"],
-          ["auto", "System", "Follow-up email drafted"],
-        ],
-      },
-      proposals: {
-        note: "AI reads and drafts, rules set the price, and the seller signs off. The price never depends on a language model's guess.",
-        steps: [
-          ["trigger", "Sales", "Discovery call ends"],
-          ["auto", "System", "Scope pulled from the call notes"],
-          ["auto", "System", "Price calculated from your rules"],
-          ["auto", "System", "Proposal drafted in your template"],
-          ["human", "Sales", "Seller reviews and approves"],
-          ["auto", "System", "Sent, tracked, nudged when opened"],
-        ],
-      },
-      pipeline: {
-        note: "Clean-up moves out of everyone's Friday afternoon and into a nightly run, so forecast meetings are about deals instead of data.",
-        steps: [
-          ["trigger", "System", "Every night at 02:00"],
-          ["auto", "System", "Stale and incomplete deals found"],
-          ["auto", "System", "Owners get a one-click fix"],
-          ["auto", "System", "Forecast summary sent to managers"],
-          ["human", "Management", "Forecast meeting about the deals"],
-        ],
-      },
-    };
-
-    const tabs = $$('.lane-tabs [role="tab"]');
-    const panel = $("#lane-panel");
-    const note = $("#lane-note");
-    const status = $("#run-status");
-    const again = $("#run-again");
-    let current = "inbound", token = 0, timer = 0, seen = false;
-
-    const summary = (lane) => {
-      const count = (k) => lane.steps.filter(([kind]) => kind === k).length;
-      const lanes = new Set(lane.steps.map(([, l]) => l)).size;
-      return `Complete · ${count("auto")} automated · ${count("human")} by a person · ${lanes} lanes`;
-    };
-
-    const render = (key) => {
-      const lane = LANES[key];
-      list.replaceChildren(...lane.steps.map(([kind, laneName, text], i) => {
-        const li = document.createElement("li");
-        li.dataset.kind = kind;
-        li.innerHTML = `<span class="n">${i + 1}</span><span class="leader" aria-hidden="true"><i class="runner"></i></span><span class="t"></span><span class="k"></span>`;
-        li.querySelector(".t").textContent = text;
-        li.querySelector(".k").textContent = laneName;
-        return li;
-      }));
-      note.textContent = lane.note;
-      status.textContent = summary(lane);
-    };
-
-    const run = () => {
-      const lane = LANES[current];
-      const items = [...list.children];
-      const my = ++token;
-      clearTimeout(timer);
-      if (reduceMotion) { panel.classList.remove("running"); status.textContent = summary(lane); return; }
-      items.forEach((li) => li.classList.remove("active", "done"));
-      panel.classList.add("running");
-      let i = 0;
-      const step = () => {
-        if (my !== token) return;
-        if (i > 0) items[i - 1].classList.replace("active", "done");
-        if (i >= items.length) {
-          panel.classList.remove("running");
-          status.textContent = summary(lane);
-          return;
-        }
-        const li = items[i];
-        const dur = li.dataset.kind === "human" ? 1900 : li.dataset.kind === "trigger" ? 800 : 1000;
-        li.style.setProperty("--dur", `${dur}ms`);
-        li.classList.add("active");
-        status.textContent = li.dataset.kind === "human"
-          ? `Step ${i + 1} of ${items.length} · waiting for a person`
-          : `Running · step ${i + 1} of ${items.length}`;
-        i++;
-        timer = setTimeout(step, dur);
-      };
-      step();
-    };
-
-    const select = (tab, focus) => {
-      tabs.forEach((t) => {
-        const on = t === tab;
-        t.setAttribute("aria-selected", String(on));
-        t.tabIndex = on ? 0 : -1;
-      });
-      panel.setAttribute("aria-labelledby", tab.id);
-      current = tab.dataset.lane;
-      render(current);
-      if (focus) tab.focus();
-      if (seen) run();
-    };
-
-    tabs.forEach((tab, i) => {
-      tab.addEventListener("click", () => select(tab));
-      tab.addEventListener("keydown", (e) => {
-        const map = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 };
-        if (!(e.key in map)) return;
-        e.preventDefault();
-        select(tabs[(map[e.key] + tabs.length) % tabs.length], true);
-      });
-    });
-    again.addEventListener("click", run);
-    if (reduceMotion) again.hidden = true;
-
-    render(current);
-    new IntersectionObserver(([e]) => {
-      if (e.isIntersecting && !seen) { seen = true; run(); }
-    }, { threshold: 0.45 }).observe(list);
-  }
-
-  /* ---------- Sound familiar? Each problem opens into an as-is and a to-be swimlane ---------- */
-  // step: [lane index, "line 1|line 2", kind]  kind: p = a person does it, w = manual work or waiting, a = automated
-  const FAMILIAR = {
-    quotes: {
-      lanes: ["Customer", "Seller", "Pricing owner", "Systems"],
-      asis: [[0, "Asks for|a quote", "p"], [1, "Emails the|pricing owner", "w"], [2, "Works out|the price", "w"], [1, "Waits, then|chases", "w"], [1, "Copies it|into Word", "w"], [0, "Gets the|quote", "p"]],
-      tobe: [[0, "Asks for|a quote", "p"], [3, "Drafts quote|from call notes", "a"], [3, "Applies the|price rules", "a"], [1, "Checks|and sends", "p"], [0, "Gets the|quote", "p"]],
-      empty: { tobe: { 2: "Only keeps the price rules up to date" } },
-    },
-    leads: {
-      lanes: ["Customer", "Seller", "Systems"],
-      asis: [[0, "Sends an|enquiry", "p"], [1, "Unread all|weekend", "w"], [1, "Looks up|the company", "w"], [1, "Decides who|should reply", "w"], [1, "Replies on|Monday", "p"]],
-      tobe: [[0, "Sends an|enquiry", "p"], [2, "Looks up|the company", "a"], [2, "Routes to the|right seller", "a"], [1, "Replies the|same day", "p"]],
-    },
-    crm: {
-      lanes: ["Seller", "Manager", "CRM"],
-      asis: [[0, "Calls and|emails", "p"], [0, "Notes on|paper", "w"], [0, "Types it all|in on Friday", "w"], [2, "Up to date|once a week", "w"], [1, "Forecasts on|old numbers", "w"]],
-      tobe: [[0, "Calls and|emails", "p"], [2, "Logged|automatically", "a"], [2, "Pipeline|always current", "a"], [1, "Forecasts on|live numbers", "p"]],
-    },
-    orders: {
-      lanes: ["Customer", "Seller", "Back office", "ERP"],
-      asis: [[0, "Emails an|order", "p"], [1, "Types it|into the CRM", "w"], [2, "Types it again|into the ERP", "w"], [2, "Fixes the|typos", "w"], [3, "Order|created", "p"], [0, "Gets a|confirmation", "p"]],
-      tobe: [[0, "Emails an|order", "p"], [3, "Reads the|order", "a"], [3, "Proposes it|in the ERP", "a"], [2, "Approves with|one click", "p"], [0, "Gets a|confirmation", "p"]],
-      empty: { tobe: { 1: "No longer types orders in" } },
-    },
-    research: {
-      lanes: ["Seller", "Websites and CRM", "Systems"],
-      asis: [[0, "Picks the|next account", "p"], [1, "Searches|the website", "w"], [1, "Checks|LinkedIn", "w"], [1, "Reads old|CRM notes", "w"], [0, "Writes their|own notes", "w"], [0, "Finally|calls", "p"]],
-      tobe: [[2, "Builds a brief|overnight", "a"], [0, "Reads the|brief", "p"], [0, "Calls", "p"], [2, "Logs the|call", "a"]],
-      empty: { tobe: { 1: "Searched for the seller, not by them" } },
-    },
-    knowledge: {
-      lanes: ["Team", "Kim", "Systems"],
-      asis: [[0, "Hits an|unusual case", "p"], [1, "Gets|interrupted again", "w"], [0, "Waits for|an answer", "w"], [1, "Explains it|again", "w"], [0, "Carries on", "p"]],
-      tobe: [[0, "Hits an|unusual case", "p"], [2, "Shows the|written process", "a"], [0, "Carries on", "p"]],
-      empty: { tobe: { 1: "Finally gets to do their own work" } },
-    },
-  };
-
-  const LANE_STYLE = {
-    asis: { bg: "#BCD1CA", line: "#141413", rule: "rgba(20,20,19,.28)", label: "#30302E", note: "rgba(20,20,19,.55)" },
-    tobe: { bg: "#788C5D", line: "#FAF9F5", rule: "rgba(250,249,245,.38)", label: "#FAF9F5", note: "rgba(250,249,245,.75)" },
-  };
-  let laneUid = 0;
-
-  const drawSwimlane = (ex, mode, cols) => {
-    const st = LANE_STYLE[mode];
-    const steps = ex[mode];
-    const uid = ++laneUid;
-    const W = 1000, labelW = 150, laneH = 66, top = 6;
-    const H = top * 2 + ex.lanes.length * laneH;
-    const colW = (W - labelW - 24) / cols;
-    const bw = Math.min(132, colW - 30), bh = 40;
-    const cx = (i) => labelW + 12 + i * colW + colW / 2;
-    const cy = (l) => top + l * laneH + laneH / 2;
-
-    const svg = svgEl("svg", { viewBox: `0 0 ${W} ${H}`, role: "img" });
-    const title = svgEl("title");
-    title.textContent = `${mode === "asis" ? "As-is" : "To-be"}: ${steps.map((s) => s[1].replace("|", " ")).join(", then ")}`;
-    svg.append(title);
-
-    const defs = svgEl("defs");
-    const pat = svgEl("pattern", { id: `fh-${uid}`, width: 5, height: 5, patternUnits: "userSpaceOnUse", patternTransform: "rotate(45)" });
-    pat.append(svgEl("path", { d: "M0 0V5", stroke: "#141413", "stroke-width": 1 }));
-    defs.append(pat);
-    svg.append(defs);
-
-    svg.append(svgEl("rect", { width: W, height: H, fill: st.bg }));
-
-    // lanes: rules and labels
-    let rules = `M${labelW} ${top}V${H - top}`;
-    ex.lanes.forEach((name, l) => {
-      if (l > 0) rules += `M0 ${top + l * laneH}H${W}`;
-      const t = svgEl("text", { x: 18, y: cy(l) + 4.5, fill: st.label, "font-family": "Figtree, sans-serif", "font-size": 13.5 });
-      t.textContent = name;
-      svg.append(t);
-      const note = ex.empty && ex.empty[mode] && ex.empty[mode][l];
-      if (note && !steps.some((s) => s[0] === l)) {
-        const n = svgEl("text", { x: W - 24, y: cy(l) + 4.5, fill: st.note, "font-family": "Figtree, sans-serif", "font-size": 13, "font-style": "italic", "text-anchor": "end" });
-        n.textContent = note;
-        svg.append(n);
-      }
-    });
-    svg.append(svgEl("path", { d: rules, stroke: st.rule, "stroke-width": 1, fill: "none" }));
-
-    // connectors
-    let d = "", heads = "";
-    steps.forEach((s, i) => {
-      if (!i) return;
-      const p = steps[i - 1];
-      const x1 = cx(i - 1) + bw / 2, y1 = cy(p[0]);
-      const x2 = cx(i) - bw / 2, y2 = cy(s[0]);
-      const mx = (x1 + x2) / 2;
-      d += y1 === y2 ? `M${x1} ${y1}H${x2 - 6}` : `M${x1} ${y1}H${mx}V${y2}H${x2 - 6}`;
-      heads += `M${x2 - 7} ${y2 - 4}L${x2} ${y2}L${x2 - 7} ${y2 + 4}Z`;
-    });
-    svg.append(svgEl("path", { d, stroke: st.line, "stroke-width": 1.6, fill: "none", "stroke-linejoin": "round" }));
-    svg.append(svgEl("path", { d: heads, fill: st.line }));
-
-    // steps
-    steps.forEach(([l, label, kind], i) => {
-      const x = cx(i) - bw / 2, y = cy(l) - bh / 2;
-      const g = svgEl("g");
-      const auto = kind === "a";
-      g.append(svgEl("rect", { x, y, width: bw, height: bh, rx: 4, fill: auto ? "#D97757" : "#FAF9F5", stroke: auto ? "#D97757" : "#141413", "stroke-width": 1.3 }));
-      if (kind === "w") {
-        g.append(svgEl("rect", { x: x + 1, y: y + 1, width: 11, height: bh - 2, fill: `url(#fh-${uid})` }));
-        g.append(svgEl("path", { d: `M${x + 12} ${y + 1}V${y + bh - 1}`, stroke: "#141413", "stroke-width": 1 }));
-      }
-      const lines = label.split("|");
-      const t = svgEl("text", { "font-family": "Figtree, sans-serif", "font-size": 13, fill: "#141413", "text-anchor": "middle" });
-      lines.forEach((line, k) => {
-        const ts = svgEl("tspan", { x: x + bw / 2 + (kind === "w" ? 6 : 0), y: cy(l) + (lines.length === 1 ? 4.5 : k === 0 ? -2.5 : 13) });
-        ts.textContent = line;
-        t.append(ts);
-      });
-      g.append(t);
-      svg.append(g);
-    });
-    return svg;
-  };
-
-  const laneStats = (steps, mode) => {
-    const handoffs = steps.reduce((n, s, i) => (i && s[0] !== steps[i - 1][0] ? n + 1 : n), 0);
-    const waste = steps.filter((s) => s[2] === "w").length;
-    const auto = steps.filter((s) => s[2] === "a").length;
-    const parts = [`${steps.length} steps`, `${handoffs} handoff${handoffs === 1 ? "" : "s"}`];
-    if (mode === "asis") parts.push(`${waste} manual or waiting`);
-    else parts.push(`${auto} automated`);
-    return parts.join(" · ");
-  };
-
-  const buildFamiliar = (details) => buildLanes(FAMILIAR[details.dataset.example], $(".fam-lanes", details));
-
-  const buildLanes = (ex, host) => {
-    if (!ex || !host || host.childElementCount) return;
-    const cols = Math.max(ex.asis.length, ex.tobe.length, 5);
-    ["asis", "tobe"].forEach((mode) => {
-      const card = document.createElement("div");
-      card.className = "lane-card";
-      const head = document.createElement("p");
-      head.className = "lane-head";
-      head.innerHTML = `<strong>${mode === "asis" ? "As-is" : "To-be"}</strong><span></span>`;
-      head.querySelector("span").textContent = laneStats(ex[mode], mode);
-      const scroll = document.createElement("div");
-      scroll.className = "lane-scroll";
-      const paper = document.createElement("div");
-      paper.className = "lane-paper grain";
-      paper.append(drawSwimlane(ex, mode, cols));
-      scroll.append(paper);
-      card.append(head, scroll);
-      host.append(card);
-    });
-    const key = document.createElement("p");
-    key.className = "lane-key";
-    key.innerHTML = '<span><i class="k-w"></i>Manual work or waiting</span><span><i class="k-p"></i>Done by a person</span><span><i class="k-a"></i>Done automatically</span><span class="lane-key-note">Example of a typical case</span>';
-    host.append(key);
-  };
-
-  $$("details.fam").forEach((det) => {
-    det.addEventListener("toggle", () => { if (det.open) buildFamiliar(det); });
-  });
-
-  // swimlanes shown directly on a page, e.g. the Services page
-  $$("[data-lanes]").forEach((el) => buildLanes(FAMILIAR[el.dataset.lanes], el));
 
   /* ---------- Contact form ---------- */
   const form = $("#contact-form");
@@ -932,9 +630,9 @@
     const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
     const RULES = {
-      name: (v) => (v.trim() ? "" : "Enter your name."),
-      email: (v) => (!v.trim() ? "Enter your work email." : EMAIL.test(v.trim()) ? "" : "That email doesn't look right. Check it and try again."),
-      message: (v) => (v.trim().length >= 10 ? "" : "Tell us a little about what you'd like to fix."),
+      name: (v) => (v.trim() ? "" : tr("Enter your name.", "Skriv dit navn.")),
+      email: (v) => (!v.trim() ? tr("Enter your work email.", "Skriv din arbejdsmail.") : EMAIL.test(v.trim()) ? "" : tr("That email doesn't look right. Check it and try again.", "Mailadressen ser ikke rigtig ud. Tjek den, og prøv igen.")),
+      message: (v) => (v.trim().length >= 10 ? "" : tr("Tell us a little about what you'd like to fix.", "Skriv lidt om, hvad I gerne vil have løst.")),
     };
 
     const showError = (field, msg) => {
@@ -973,10 +671,10 @@
 
     const openEmailApp = (data) => {
       const to = form.dataset.fallbackEmail;
-      const subject = `Intro call${data.company ? ` · ${data.company}` : ""}`;
-      const lines = [data.message, "", `Name: ${data.name}`, `Email: ${data.email}`];
-      if (data.company) lines.push(`Company: ${data.company}`);
-      if (data.team_size) lines.push(`People in sales: ${data.team_size}`);
+      const subject = `${tr("Intro call", "Indledende opkald")}${data.company ? ` · ${data.company}` : ""}`;
+      const lines = [data.message, "", `${tr("Name", "Navn")}: ${data.name}`, `Email: ${data.email}`];
+      if (data.company) lines.push(`${tr("Company", "Virksomhed")}: ${data.company}`);
+      if (data.team_size) lines.push(`${tr("People in sales", "Antal i salg")}: ${data.team_size}`);
       window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
     };
 
@@ -994,21 +692,21 @@
       if (first) { first.focus(); return; }
 
       // bots fill the hidden field; pretend it worked and stop
-      if (form.elements.website.value) { finish("Thanks, your message is on its way.", "Danni will get back to you to set up a short call."); return; }
+      if (form.elements.website.value) { finish(tr("Thanks, your message is on its way.", "Tak, din besked er på vej."), tr("Danni will get back to you to set up a short call.", "Danni vender tilbage for at aftale et kort opkald.")); return; }
 
       const data = values();
       const endpoint = form.dataset.endpoint.trim();
 
       if (!endpoint) {
         openEmailApp(data);
-        finish("Your email app should open now.", `The message is written for you. Just press send. If nothing opened, email ${form.dataset.fallbackEmail} directly.`);
+        finish(tr("Your email app should open now.", "Dit mailprogram åbner nu."), tr(`The message is written for you. Just press send. If nothing opened, email ${form.dataset.fallbackEmail} directly.`, `Beskeden er skrevet for dig. Du skal bare trykke send. Skete der ikke noget, så skriv direkte til ${form.dataset.fallbackEmail}.`));
         return;
       }
 
       button.disabled = true;
-      button.textContent = "Sending…";
+      button.textContent = tr("Sending…", "Sender…");
       try {
-        const payload = { ...data, subject: `New enquiry from ${data.name}${data.company ? `, ${data.company}` : ""}` };
+        const payload = { ...data, subject: `${tr("New enquiry from", "Ny henvendelse fra")} ${data.name}${data.company ? `, ${data.company}` : ""}` };
         if (form.dataset.accessKey) payload.access_key = form.dataset.accessKey;
         const res = await fetch(endpoint, {
           method: "POST",
@@ -1017,9 +715,9 @@
         });
         if (!res.ok) throw new Error(`Status ${res.status}`);
         form.reset();
-        finish("Thanks, your message is on its way.", "Danni will get back to you to set up a short call.");
+        finish(tr("Thanks, your message is on its way.", "Tak, din besked er på vej."), tr("Danni will get back to you to set up a short call.", "Danni vender tilbage for at aftale et kort opkald."));
       } catch (err) {
-        setStatus(`Your message couldn't be sent. Try again, or email <a href="mailto:${form.dataset.fallbackEmail}">${form.dataset.fallbackEmail}</a>.`, true);
+        setStatus(tr("Your message couldn't be sent. Try again, or email", "Beskeden kunne ikke sendes. Prøv igen, eller skriv til") + ` <a href="mailto:${form.dataset.fallbackEmail}">${form.dataset.fallbackEmail}</a>.`, true);
       } finally {
         button.disabled = false;
         button.innerHTML = buttonLabel;

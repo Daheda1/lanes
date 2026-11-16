@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sådan estimerer vi den tid, I får tilbage · lanes</title>
+  <meta name="description" content="Her kommer tidsestimatet fra: aktiv arbejdstid, hyppighed og ventetid, et gennemregnet eksempel, intervaller i stedet for løfter, og hvordan vi tjekker bagefter." />
+  <meta property="og:title" content="Sådan estimerer vi den tid, I får tilbage" />
+  <meta property="og:image" content="https://daheda1.github.io/lanes/og/da/how-we-estimate-time.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:description" content="Hvis den lave ende ikke kan betale sig, er banen ikke værd at bygge." />
+  <meta name="theme-color" content="#141413" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141413'/%3E%3Crect x='5' y='7.5' width='16' height='4' rx='2' fill='%23FAF9F5'/%3E%3Crect x='10' y='14' width='16' height='4' rx='2' fill='%23D97757'/%3E%3Crect x='5' y='20.5' width='11' height='4' rx='2' fill='%23FAF9F5'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet" />
+  <link rel="canonical" href="https://daheda1.github.io/lanes/da/how-we-estimate-time.html" />
+  <link rel="alternate" hreflang="en" href="https://daheda1.github.io/lanes/how-we-estimate-time.html" />
+  <link rel="alternate" hreflang="da" href="https://daheda1.github.io/lanes/da/how-we-estimate-time.html" />
+  <link rel="alternate" hreflang="x-default" href="https://daheda1.github.io/lanes/how-we-estimate-time.html" />
+  <meta property="og:url" content="https://daheda1.github.io/lanes/da/how-we-estimate-time.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="lanes" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://daheda1.github.io/lanes/da/how-we-estimate-time.html#article",
+  "headline": "Sådan estimerer vi den tid, I får tilbage",
+  "description": "Her kommer tidsestimatet fra: aktiv arbejdstid, hyppighed og ventetid, et gennemregnet eksempel, intervaller i stedet for løfter, og hvordan vi tjekker bagefter.",
+  "url": "https://daheda1.github.io/lanes/da/how-we-estimate-time.html",
+  "mainEntityOfPage": "https://daheda1.github.io/lanes/da/how-we-estimate-time.html",
+  "datePublished": "2026-11-10",
+  "dateModified": "2026-11-10",
+  "inLanguage": "da",
+  "author": {
+    "@type": "Person",
+    "@id": "https://daheda1.github.io/lanes/da/#danni-dahl",
+    "name": "Danni Dahl",
+    "url": "https://daheda1.github.io/lanes/da/#about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://daheda1.github.io/lanes/da/#organization",
+    "name": "lanes",
+    "url": "https://daheda1.github.io/lanes/da/"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://daheda1.github.io/lanes/da/#website"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="../styles.css?v=33" />
+</head>
+<body class="page-article">
+  <a class="skip-link" href="#main">Gå til hovedindhold</a>
+
+  <header class="site-header on-dark" id="top">
+    <div class="wrap header-inner">
+      <nav class="nav-left" aria-label="Hovedmenu">
+        <a class="pill" href="services.html">Ydelser</a>
+        <a class="pill" href="index.html#about">Om</a>
+        <a class="pill" href="method.html">Metode</a>
+      </nav>
+
+      <a class="brand" href="index.html" aria-label="lanes, forside">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+
+      <div class="nav-right">
+        <a class="pill pill-lang" href="../how-we-estimate-time.html" lang="en" hreflang="en" aria-label="English version">EN</a>
+        <a class="pill" href="articles.html">Artikler</a>
+        <a class="pill pill-dark" href="#contact">Book et opkald</a>
+        <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Åbn menu">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h9" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <div class="wrap">
+        <a href="services.html">Ydelser</a>
+        <a href="index.html#about">Om</a>
+        <a href="method.html">Metode</a>
+        <a href="articles.html">Artikler</a>
+        <a href="#contact">Book et opkald</a>
+        <a href="../how-we-estimate-time.html" lang="en" hreflang="en">English</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="print-head" aria-hidden="true"><span class="print-brand"><svg viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y=".25" width="22" height="4.5" rx="2.25" fill="#141413"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect x="0" y="15.25" width="15" height="4.5" rx="2.25" fill="#141413"/></svg>lanes</span><span>daheda1.github.io/lanes/da/how-we-estimate-time.html</span></div>
+    
+
+    <!-- ============ ARTICLE HERO ============ -->
+    <section class="article-hero grain" data-header-dark>
+      <svg class="est-hero" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <radialGradient id="eh-glow" cx="50%" cy="105%" r="70%">
+            <stop offset="0" stop-color="#D97757" stop-opacity=".24" />
+            <stop offset=".6" stop-color="#D97757" stop-opacity=".05" />
+            <stop offset="1" stop-color="#D97757" stop-opacity="0" />
+          </radialGradient>
+          <pattern id="eh-hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V9" stroke="#D97757" stroke-opacity=".5" stroke-width="2" /></pattern>
+        </defs>
+        <rect width="1440" height="900" fill="url(#eh-glow)" />
+        <g transform="translate(1110 300)">
+          <circle r="250" fill="none" stroke="#FAF9F5" stroke-opacity=".14" stroke-width="2" />
+          <path d="M0 0L0 -250A250 250 0 0 1 250 0Z" fill="url(#eh-hatch)" />
+          <g id="eh-ticks" stroke="#FAF9F5" stroke-opacity=".22" stroke-linecap="round"></g>
+          <g class="eh-hand"><path d="M0 18L0 -215" stroke="#FAF9F5" stroke-opacity=".55" stroke-width="3" stroke-linecap="round" /></g>
+          <circle r="9" fill="#D97757" />
+        </g>
+      </svg>
+
+      <div class="article-hero-inner wrap">
+        <p class="kicker">Artikel · Danni Dahl</p>
+        <h1 class="stagger">
+          <span>Sådan estimerer vi</span>
+          <span>den tid, I får tilbage.</span>
+        </h1>
+
+        <nav class="toc toc-hero" aria-label="Indhold">
+          <ol>
+            <li><a href="#introduction"><span class="n">1</span><span class="leader" aria-hidden="true"></span><span class="t">Indledning</span></a></li>
+            <li><a href="#count"><span class="n">2</span><span class="leader" aria-hidden="true"></span><span class="t">Det, vi tæller</span></a></li>
+            <li><a href="#example"><span class="n">3</span><span class="leader" aria-hidden="true"></span><span class="t">Et gennemregnet eksempel</span></a></li>
+            <li><a href="#ranges"><span class="n">4</span><span class="leader" aria-hidden="true"></span><span class="t">Intervaller, ikke løfter</span></a></li>
+            <li><a href="#cost"><span class="n">5</span><span class="leader" aria-hidden="true"></span><span class="t">Hvad det koster at nå dertil</span></a></li>
+            <li><a href="#after"><span class="n">6</span><span class="leader" aria-hidden="true"></span><span class="t">Tjek bagefter</span></a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="wrap article-grid">
+      <aside class="article-side">
+        <dl class="article-meta">
+          <div><dt>Skrevet af</dt><dd>Danni Dahl</dd></div>
+          <div><dt>Kategori</dt><dd>Artikel</dd></div>
+          <div><dt>Udgivet</dt><dd><time datetime="2026-11-10">10. november 2026</time></dd></div>
+          <div><dt>Læsetid</dt><dd>5 min.</dd></div>
+          <div class="pdf-row"><dt>PDF</dt><dd><a class="pdf-link" href="../pdf/da/lanes-how-we-estimate-time.pdf" download>Hent</a></dd></div>
+        </dl>
+        <nav class="side-toc" aria-label="På denne side">
+          <a href="#introduction">Indledning</a>
+          <a href="#count">Det, vi tæller</a>
+          <a href="#example">Et gennemregnet eksempel</a>
+          <a href="#ranges">Intervaller, ikke løfter</a>
+          <a href="#cost">Hvad det koster at nå dertil</a>
+          <a href="#after">Tjek bagefter</a>
+        </nav>
+      </aside>
+
+      <article class="prose">
+        <section id="introduction">
+          <h2 class="sr-only">Indledning</h2>
+          <p class="prose-lede">Tidsestimatet er det tal, folk går mest op i. Derfor skal det også være det tal, I lettest kan kontrollere.</p>
+          <p>De fleste estimater i branchen kommer et andet sted fra: en leverandørs kundecase, en brancherapport, et slide, hvor der står “spar op til 40 %”. De passer måske for nogen. De siger meget lidt om jeres team.</p>
+          <p>Vores kommer fra det, vi ser i løbet af de to dage, i jeres proces og hos jeres folk. Og vi viser mellemregningerne, så I kan følge hvert trin fra det, vi så, til tallet på bundlinjen.</p>
+        </section>
+
+        <section id="count">
+          <h2><span class="h-num">2</span> Det, vi tæller</h2>
+          <p>For hvert trin i as-is-swimlanen (processen, som den kører i dag) skriver vi fire ting ned. Ingen af dem kræver særlige værktøjer. De kræver, at nogen spørger, ser med og skriver ned.</p>
+
+          <div class="split-table st-3 st-plain" role="table" aria-label="Det, vi måler for hvert trin">
+            <div class="st-row st-head" role="row"><span role="columnheader">Mål</span><span role="columnheader">Hvad det betyder</span><span role="columnheader">Sådan finder vi det</span></div>
+            <div class="st-row" role="row"><span role="cell">Aktiv arbejdstid</span><span role="cell">De minutter, nogen faktisk arbejder på trinnet</span><span role="cell">Vi ser rigtige sager og spørger bagefter</span></div>
+            <div class="st-row" role="row"><span role="cell">Hyppighed</span><span role="cell">Hvor tit trinnet forekommer</span><span role="cell">Optællinger fra jeres CRM eller indbakke</span></div>
+            <div class="st-row" role="row"><span role="cell">Ventetid</span><span role="cell">Hvor længe arbejdet ligger stille før næste trin</span><span role="cell">Tidsstempler på de seneste sager</span></div>
+            <div class="st-row" role="row"><span role="cell">Omarbejde</span><span role="cell">Hvor tit det skal laves om</span><span role="cell">Vi spørger dem, der retter det</span></div>
+          </div>
+
+          <p>Den aktive arbejdstid er det, der bliver til sparede timer. Ventetiden er det, der bliver til hurtigere svar til jeres kunder. Vi holder dem adskilt, fordi de har forskellig værdi for jer og er lette at blande sammen.</p>
+        </section>
+
+        <section id="example">
+          <h2><span class="h-num">3</span> Et gennemregnet eksempel</h2>
+          <p>Sådan hænger tallene sammen for en typisk tilbudsproces. Tallene er et eksempel og ikke en kundes, men de ligner dem, vi plejer at se i et lille salgsteam, der sender ca. 25 tilbud om ugen.</p>
+
+          <div class="split-table st-3" role="table" aria-label="Minutters arbejde pr. tilbud, as-is og to-be">
+            <div class="st-row st-head" role="row"><span role="columnheader">Trin</span><span role="columnheader">As-is, minutter</span><span role="columnheader">To-be, minutter</span></div>
+            <div class="st-row" role="row"><span role="cell">Sende henvendelsen på mail til den prisansvarlige</span><span role="cell">5</span><span role="cell">0, læses automatisk</span></div>
+            <div class="st-row" role="row"><span role="cell">Regne prisen ud</span><span role="cell">20</span><span role="cell">0, kommer fra prisreglerne</span></div>
+            <div class="st-row" role="row"><span role="cell">Rykke for prisen</span><span role="cell">5</span><span role="cell">0, ikke længere nødvendigt</span></div>
+            <div class="st-row" role="row"><span role="cell">Kopiere det hele over i Word</span><span role="cell">15</span><span role="cell">0, udkastet laves automatisk</span></div>
+            <div class="st-row" role="row"><span role="cell">Tjekke og sende</span><span role="cell">10</span><span role="cell">10</span></div>
+            <div class="st-row st-total" role="row"><span role="cell">Pr. tilbud</span><span role="cell">55</span><span role="cell">10</span></div>
+          </div>
+
+          <figure class="prose-figure">
+            <div class="figure-art grain">
+              <svg viewBox="0 0 720 250" aria-hidden="true">
+                <defs>
+                  <pattern id="eg-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#C7BDAB" stroke-width=".8"/></pattern>
+                  <pattern id="eg-hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><path d="M0 0V5" stroke="#141413" stroke-width="1"/></pattern>
+                </defs>
+                <rect width="720" height="250" fill="#E3DACC"/>
+                <rect width="720" height="250" fill="url(#eg-grid)"/>
+                <g font-family="Figtree, sans-serif" font-size="13" fill="#3D3D3A">
+                  <text x="24" y="82">As-is</text><text x="24" y="172">To-be</text>
+                  <text x="110" y="40" fill="#5E5D59">Minutters arbejde pr. tilbud</text>
+                </g>
+                <g stroke="#141413" stroke-width="1.2">
+                  <rect x="110" y="62" width="50" height="30" fill="url(#eg-hatch)"/>
+                  <rect x="160" y="62" width="200" height="30" fill="url(#eg-hatch)"/>
+                  <rect x="360" y="62" width="50" height="30" fill="url(#eg-hatch)"/>
+                  <rect x="410" y="62" width="150" height="30" fill="url(#eg-hatch)"/>
+                  <rect x="560" y="62" width="100" height="30" fill="#FAF9F5"/>
+                  <rect x="110" y="152" width="100" height="30" fill="#FAF9F5"/>
+                </g>
+                <g font-family="Figtree, sans-serif" font-size="13" fill="#141413">
+                  <text x="672" y="82">55</text>
+                  <text x="222" y="172">10</text>
+                </g>
+                <path d="M248 167H652" stroke="#C6613F" stroke-width="2" stroke-dasharray="5 5"/>
+                <text x="430" y="210" fill="#C6613F" font-family="Figtree, sans-serif" font-size="14" text-anchor="middle">45 minutter tilbage på hvert tilbud</text>
+              </svg>
+            </div>
+            <figcaption>Skraveret: arbejde, der forsvinder i to-be. Hvidt: arbejde, et menneske stadig udfører, med vilje.</figcaption>
+          </figure>
+
+          <p>Herfra er regnestykket enkelt, og vi viser det altid:</p>
+          <dl class="facts facts-calc">
+            <div><dt>Sparet pr. tilbud</dt><dd>55 − 10 = 45 minutter</dd></div>
+            <div><dt>Pr. uge</dt><dd>45 minutter × 25 tilbud ≈ 19 timer</dd></div>
+            <div><dt>Pr. år</dt><dd>19 timer × 46 arbejdsuger ≈ 860 timer</dd></div>
+            <div><dt>Gennemløbstid</dt><dd>Fra en til to dage ned til samme dag</dd></div>
+          </dl>
+        </section>
+
+        <section id="ranges">
+          <h2><span class="h-num">4</span> Intervaller, ikke løfter</h2>
+          <p>To dage er nok til at se en proces klart. Det er ikke nok til at tage tid på hvert trin ned til minuttet. Derfor giver vi aldrig ét enkelt tal. I eksemplet ovenfor ville vi skrive <strong>15 til 20 timer om ugen</strong> og forklare, hvad der kan trække tallet mod den ene eller den anden ende.</p>
+          <p>Når vi anbefaler, om noget skal bygges, bruger vi den lave ende. Hvis en bane kun kan betale sig i den optimistiske ende af intervallet, kan den ikke betale sig, og det siger vi.</p>
+
+          <blockquote class="pull">
+            <p>Hvis den lave ende ikke kan betale sig, er banen ikke værd at bygge.</p>
+          </blockquote>
+
+          <p>Vi siger også, hvad estimatet ikke tager med. Hurtigere tilbud giver ofte flere ordrer, men det er svært at bevise på forhånd, så vi nævner det og regner det ikke med.</p>
+        </section>
+
+        <section id="cost">
+          <h2><span class="h-num">5</span> Hvad det koster at nå dertil</h2>
+          <p>Sparet tid betyder kun noget, når den holdes op mod, hvad det koster at spare den. Hvert estimat kommer med den anden vægtskål:</p>
+          <ul class="checks">
+            <li><strong>At bygge det.</strong> Hvor mange dage det tager at bygge to-be og teste den med jeres team.</li>
+            <li><strong>At drive det.</strong> Eventuelle licenser, integrationer og AI-forbrug pr. måned.</li>
+            <li><strong>At holde det kørende.</strong> Vores tid efter idriftsættelsen til rettelser og ændringer.</li>
+          </ul>
+          <p>Så stiller vi de to op side om side og regner med jeres egen timepris, ikke vores:</p>
+
+          <div class="callout">
+            <p class="callout-title">Den sammenligning, vi viser jer</p>
+            <ol class="deliverables">
+              <li><span class="n">1</span><div><strong>Værdi pr. år</strong><span>Sparede timer pr. uge, lav ende × jeres timepris × 46 uger.</span></div></li>
+              <li><span class="n">2</span><div><strong>Omkostning det første år</strong><span>At bygge det plus et års drift og vedligehold.</span></div></li>
+              <li><span class="n">3</span><div><strong>Tilbagebetalingstid</strong><span>Hvor mange måneder der går, før værdien har dækket omkostningen.</span></div></li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="after">
+          <h2><span class="h-num">6</span> Tjek bagefter</h2>
+          <p>Et estimat, man aldrig tjekker, er bare en salgstale. Fordi vi skrev as-is-tallene ned i løbet af de to dage, har vi et udgangspunkt. Et par uger efter idriftsættelsen måler vi de samme trin igen med samme metode og sammenligner.</p>
+          <p>Ligger resultatet under intervallet, finder vi ud af hvorfor og retter det. Det hører med til at blive efter idriftsættelsen og er ikke noget ekstra.</p>
+          <p>I kan læse resten af, <a href="method.html">hvordan de to dage foregår</a>, eller hvorfor det meste af to-be er almindelige regler og ikke AI, i <a href="when-ai-is-the-wrong-tool.html">Når AI er det forkerte værktøj</a>.</p>
+        </section>
+      </article>
+    </div>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="wrap section contact" id="contact">
+      <div class="contact-head">
+        <h2 class="contact-title">Nysgerrige efter, hvad jeres tal ville være?</h2>
+        <p class="contact-lede">Fortæl os, hvilken proces der sluger mest tid, så fortæller vi, hvordan vi ville måle den.</p>
+      </div>
+      <div class="btn-row contact-cta">
+        <a class="btn btn-dark btn-lg" href="index.html#contact">Book et opkald <span aria-hidden="true">→</span></a>
+        <a class="btn btn-flat btn-lg" href="method.html">Læs metoden</a>
+      </div>
+      <p class="contact-line">
+        <a href="mailto:hello@lanes.dk">hello@lanes.dk</a>
+        <span aria-hidden="true">·</span>
+        <a href="tel:+4530360086">+45 30 36 00 86</a>
+      </p>
+    </section>
+  </main>
+
+
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="sf-row">
+        <a class="sf-brand" href="index.html" aria-label="lanes, forside"><svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg><span>lanes</span></a>
+        <nav class="sf-nav" aria-label="Sidefod">
+          <a href="services.html">Ydelser</a>
+          <a href="method.html">Metode</a>
+          <a href="articles.html">Artikler</a>
+          <a href="index.html#contact">Kontakt</a>
+        </nav>
+      </div>
+      <div class="sf-legal">
+        <span>© <span id="year">2026</span> lanes · Aalborg</span>
+        <span class="sf-links"><a href="../how-we-estimate-time.html" lang="en" hreflang="en">English</a><a href="../terms.html">Generelle vilkår</a><a href="privacy.html">Privatliv</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js?v=18"></script>
+</body>
+</html>

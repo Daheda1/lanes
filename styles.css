@@ -1320,3 +1320,6 @@ svg { display: block; }
 
 /* step numbers on the How it works tiles */
 .step-n { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--clay); font: 600 12px/1 var(--sans); color: var(--clay-ink); font-variant-numeric: tabular-nums; flex: none; }
+
+/* Language switch */
+.pill-lang { padding: 0 12px; font-size: 13px; font-weight: 600; letter-spacing: .04em; color: var(--gray-600); }

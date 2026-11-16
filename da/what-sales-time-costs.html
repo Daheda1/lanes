@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hvad en times salgsarbejde koster · lanes</title>
+  <meta name="description" content="Danmarks Statistiks tal for, hvad salgsfolk tjener pr. præsteret time, rolle for rolle, og hvad det betyder, når timerne går med at taste i stedet for at sælge." />
+  <meta property="og:title" content="Hvad en times salgsarbejde koster" />
+  <meta property="og:image" content="https://daheda1.github.io/lanes/og/da/what-sales-time-costs.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:description" content="Den typiske salgskonsulent i Danmark tjener 405 kr. pr. præsteret time. Her er, hvad det betyder." />
+  <meta name="theme-color" content="#141413" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141413'/%3E%3Crect x='5' y='7.5' width='16' height='4' rx='2' fill='%23FAF9F5'/%3E%3Crect x='10' y='14' width='16' height='4' rx='2' fill='%23D97757'/%3E%3Crect x='5' y='20.5' width='11' height='4' rx='2' fill='%23FAF9F5'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet" />
+  <link rel="canonical" href="https://daheda1.github.io/lanes/da/what-sales-time-costs.html" />
+  <link rel="alternate" hreflang="en" href="https://daheda1.github.io/lanes/what-sales-time-costs.html" />
+  <link rel="alternate" hreflang="da" href="https://daheda1.github.io/lanes/da/what-sales-time-costs.html" />
+  <link rel="alternate" hreflang="x-default" href="https://daheda1.github.io/lanes/what-sales-time-costs.html" />
+  <meta property="og:url" content="https://daheda1.github.io/lanes/da/what-sales-time-costs.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="lanes" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://daheda1.github.io/lanes/da/what-sales-time-costs.html#article",
+  "headline": "Hvad en times salgsarbejde koster",
+  "description": "Danmarks Statistiks tal for, hvad salgsfolk tjener pr. præsteret time, rolle for rolle, og hvad det betyder, når timerne går med at taste i stedet for at sælge.",
+  "url": "https://daheda1.github.io/lanes/da/what-sales-time-costs.html",
+  "mainEntityOfPage": "https://daheda1.github.io/lanes/da/what-sales-time-costs.html",
+  "datePublished": "2026-11-16",
+  "dateModified": "2026-11-16",
+  "inLanguage": "da",
+  "author": {
+    "@type": "Person",
+    "@id": "https://daheda1.github.io/lanes/da/#danni-dahl",
+    "name": "Danni Dahl",
+    "url": "https://daheda1.github.io/lanes/da/#about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://daheda1.github.io/lanes/da/#organization",
+    "name": "lanes",
+    "url": "https://daheda1.github.io/lanes/da/"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://daheda1.github.io/lanes/da/#website"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="../styles.css?v=33" />
+  <style>
+    .calc { margin: 32px 0; padding: 28px; border-radius: 16px; background: var(--gray-100); display: grid; gap: 18px; font-family: var(--sans); }
+    .calc output { font-weight: 600; color: var(--clay-ink); }
+    .calc input[type="range"] { height: auto; padding: 0; border: 0; background: none; accent-color: var(--clay); }
+    .calc-out { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 6px 0 0; }
+    .calc-out div { padding: 16px 18px; border-radius: 12px; background: var(--gray-050); }
+    .calc-out dt { font-size: 13px; color: var(--gray-600); }
+    .calc-out dd { margin: 6px 0 0; font: 400 clamp(24px, 2.4vw, 32px)/1.1 var(--serif); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+    .calc-total dd { color: var(--clay-ink); }
+    .calc-note { font-size: 13.5px; line-height: 1.5; color: var(--gray-600); }
+    @media (max-width: 640px) { .calc { padding: 20px; } .calc-out { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="page-article">
+  <a class="skip-link" href="#main">Gå til hovedindhold</a>
+
+  <header class="site-header on-dark" id="top">
+    <div class="wrap header-inner">
+      <nav class="nav-left" aria-label="Hovedmenu">
+        <a class="pill" href="services.html">Ydelser</a>
+        <a class="pill" href="index.html#about">Om</a>
+        <a class="pill" href="method.html">Metode</a>
+      </nav>
+
+      <a class="brand" href="index.html" aria-label="lanes, forside">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+
+      <div class="nav-right">
+        <a class="pill pill-lang" href="../what-sales-time-costs.html" lang="en" hreflang="en" aria-label="English version">EN</a>
+        <a class="pill" href="articles.html">Artikler</a>
+        <a class="pill pill-dark" href="#contact">Book et opkald</a>
+        <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Åbn menu">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h9" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <div class="wrap">
+        <a href="services.html">Ydelser</a>
+        <a href="index.html#about">Om</a>
+        <a href="method.html">Metode</a>
+        <a href="articles.html">Artikler</a>
+        <a href="#contact">Book et opkald</a>
+        <a href="../what-sales-time-costs.html" lang="en" hreflang="en">English</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="print-head" aria-hidden="true"><span class="print-brand"><svg viewBox="0 0 28 20" aria-hidden="true"><rect x="0" y=".25" width="22" height="4.5" rx="2.25" fill="#141413"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect x="0" y="15.25" width="15" height="4.5" rx="2.25" fill="#141413"/></svg>lanes</span><span>daheda1.github.io/lanes/da/what-sales-time-costs.html</span></div>
+    
+
+    <!-- ============ ARTICLE HERO ============ -->
+    <section class="article-hero grain" data-header-dark>
+      <svg class="two-lines" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <radialGradient id="st-glow" cx="50%" cy="105%" r="70%">
+            <stop offset="0" stop-color="#D97757" stop-opacity=".26" />
+            <stop offset=".6" stop-color="#D97757" stop-opacity=".05" />
+            <stop offset="1" stop-color="#D97757" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <rect width="1440" height="900" fill="url(#st-glow)" />
+        <g transform="translate(1100 160)" fill="none" stroke="#FAF9F5" stroke-opacity=".18" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M-150 0H150M-150 560H150" />
+          <path d="M-130 0H130C130 190 30 250 30 280C30 310 130 370 130 560H-130C-130 370 -30 310 -30 280C-30 250 -130 190 -130 0Z" />
+          <path d="M0 290V430" stroke-dasharray="3 10" />
+        </g>
+        <g transform="translate(1100 160)">
+          <ellipse cx="0" cy="530" rx="90" ry="20" fill="#FAF9F5" fill-opacity=".08" stroke="#FAF9F5" stroke-opacity=".18" stroke-width="2" />
+          <ellipse cx="0" cy="504" rx="90" ry="20" fill="#FAF9F5" fill-opacity=".08" stroke="#FAF9F5" stroke-opacity=".18" stroke-width="2" />
+          <ellipse cx="0" cy="478" rx="90" ry="20" fill="#D97757" />
+        </g>
+      </svg>
+
+      <div class="article-hero-inner wrap">
+        <p class="kicker">Tal · Danni Dahl</p>
+        <h1 class="stagger">
+          <span>Hvad en times</span>
+          <span>salgsarbejde koster.</span>
+        </h1>
+
+        <nav class="toc toc-hero" aria-label="Indhold">
+          <ol>
+            <li><a href="#introduction"><span class="n">1</span><span class="leader" aria-hidden="true"></span><span class="t">Indledning</span></a></li>
+            <li><a href="#by-role"><span class="n">2</span><span class="leader" aria-hidden="true"></span><span class="t">Tallene, rolle for rolle</span></a></li>
+            <li><a href="#per-hour"><span class="n">3</span><span class="leader" aria-hidden="true"></span><span class="t">Hvorfor timen koster mere, end I tror</span></a></li>
+            <li><a href="#where"><span class="n">4</span><span class="leader" aria-hidden="true"></span><span class="t">Hvor timerne bliver af</span></a></li>
+            <li><a href="#saved"><span class="n">5</span><span class="leader" aria-hidden="true"></span><span class="t">Sparet tid er ikke sparede penge</span></a></li>
+            <li><a href="#use"><span class="n">6</span><span class="leader" aria-hidden="true"></span><span class="t">Sådan bruger I tallene</span></a></li>
+            <li><a href="#calculator"><span class="n">7</span><span class="leader" aria-hidden="true"></span><span class="t">Regn på jeres eget team</span></a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="wrap article-grid">
+      <aside class="article-side">
+        <dl class="article-meta">
+          <div><dt>Skrevet af</dt><dd>Danni Dahl</dd></div>
+          <div><dt>Kategori</dt><dd>Tal</dd></div>
+          <div><dt>Opdateret</dt><dd><time datetime="2026-11-16">16. november 2026</time></dd></div>
+          <div><dt>Læsetid</dt><dd>7 min.</dd></div>
+          <div><dt>Kilde</dt><dd>Danmarks Statistik, 2025</dd></div>
+          <div class="pdf-row"><dt>PDF</dt><dd><a class="pdf-link" href="../pdf/da/lanes-what-sales-time-costs.pdf" download>Hent</a></dd></div>
+        </dl>
+        <nav class="side-toc" aria-label="På denne side">
+          <a href="#introduction">Indledning</a>
+          <a href="#by-role">Tallene, rolle for rolle</a>
+          <a href="#per-hour">Hvorfor timen koster mere</a>
+          <a href="#where">Hvor timerne bliver af</a>
+          <a href="#saved">Sparet tid er ikke sparede penge</a>
+          <a href="#use">Sådan bruger I tallene</a>
+          <a href="#calculator">Regn på jeres eget team</a>
+        </nav>
+      </aside>
+
+      <article class="prose">
+        <section id="introduction">
+          <h2 class="sr-only">Indledning</h2>
+          <p class="prose-lede">Alle taler om at spare timer. De færreste team ved, hvad en af de timer faktisk koster. Det ved Danmarks Statistik.</p>
+          <p>Når jeg estimerer, hvor meget tid et team kan få tilbage, er det næste spørgsmål altid, hvad den tid er værd. Man kan gætte, eller man kan slå det op. Danmarks Statistik offentliggør hvert år, hvad folk tjener i timen, rolle for rolle. De nyeste tal dækker 2025.</p>
+          <p>Artiklen gennemgår tallene for dem, der typisk er med i et salg: sælgere, salgschefer og kontorfolkene omkring dem. Nederst er der en beregner til jeres eget team. Derefter ser den på, hvad tallene betyder for et salgsteam.</p>
+        </section>
+
+        <section id="by-role">
+          <h2><span class="h-num">2</span> Tallene, rolle for rolle</h2>
+          <p>Her er, hvad ansatte i danske private virksomheder tjente i 2025. Begge kolonner viser medianen: Halvdelen tjener mere, halvdelen tjener mindre. Pension er regnet med.</p>
+
+          <div class="split-table st-3" role="table" aria-label="Medianløn pr. præsteret time og pr. måned, fordelt på rolle, den private sektor, 2025" style="font-variant-numeric: tabular-nums">
+            <div class="st-row st-head" role="row"><span role="columnheader">Rolle</span><span role="columnheader">Pr. præsteret time</span><span role="columnheader">Pr. måned</span></div>
+            <div class="st-row" role="row"><span role="cell">Salgs- og marketingchefer</span><span role="cell">620 kr.</span><span role="cell">84.400 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">It-sælgere</span><span role="cell">550 kr.</span><span role="cell">74.100 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">Tekniske sælgere</span><span role="cell">531 kr.</span><span role="cell">71.800 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">Salgskonsulenter</span><span role="cell">405 kr.</span><span role="cell">54.800 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">Andet salgsarbejde</span><span role="cell">374 kr.</span><span role="cell">51.100 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">Almindeligt kontorarbejde</span><span role="cell">340 kr.</span><span role="cell">46.700 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">Regnskab og bogføring</span><span role="cell">337 kr.</span><span role="cell">46.300 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">Kundeservice og callcenter</span><span role="cell">279 kr.</span><span role="cell">38.600 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">Kontorarbejde i produktionen</span><span role="cell">278 kr.</span><span role="cell">38.800 kr.</span></div>
+            <div class="st-row st-total" role="row"><span role="cell">Alle lønmodtagere, den private sektor</span><span role="cell">358 kr.</span><span role="cell">49.100 kr.</span></div>
+          </div>
+          <p class="bg-note" style="font-family:var(--sans);font-size:14px;color:var(--gray-600)">Kilde: <a href="https://www.statistikbanken.dk/LONS20">Danmarks Statistik, tabel LONS20</a>, 2025, virksomheder og organisationer, alle lønformer. Månedstallene er Danmarks Statistiks standardberegnede månedsfortjeneste, afrundet til nærmeste 100 kr. Rollenavnene er forkortet.</p>
+
+          <p>Den rolle, de fleste salgsteam er bygget op om, salgskonsulenten, er også den største gruppe: ca. 30.000 fuldtidsansatte i statistikken. Den typiske salgskonsulent tjener <strong>405 kr. pr. præsteret time</strong> eller ca. <strong>54.800 kr. om måneden</strong>.</p>
+        </section>
+
+        <section id="per-hour">
+          <h2><span class="h-num">3</span> Hvorfor timen koster mere, end I tror</h2>
+          <p>Dividerer I en månedsløn med timerne i en måned, får I et lavere tal end det i tabellen. Det er ikke en fejl. De to kolonner svarer på hver sit spørgsmål.</p>
+          <ul class="checks">
+            <li><strong>Pr. måned</strong> fordeler lønnen på alle årets arbejdstimer, også ferie og sygedage.</li>
+            <li><strong>Pr. præsteret time</strong> tæller kun de timer, der faktisk er blevet arbejdet. Feriepenge, pension og bonus er stadig med i lønnen, men de betalte fridage er ikke med i timerne.</li>
+          </ul>
+          <p>Når I spørger, hvad en time brugt på et tilbud koster, mener I en times reelt arbejde. Derfor er det rigtige tal det pr. præsteret time.</p>
+          <p>Selv det tal er i underkanten for virksomheden. Det er, hvad medarbejderen tjener. Arbejdsgiveren betaler også for ting som forsikring, udstyr, skrivebordet og systemerne. De udgifter svinger for meget fra virksomhed til virksomhed til, at man kan sætte tal på, men de trækker kun prisen op.</p>
+        </section>
+
+        <section id="where">
+          <h2><span class="h-num">4</span> Hvor timerne bliver af</h2>
+          <p>Salesforce spørger hvert år tusindvis af salgsfolk, hvordan de bruger deres uge. I 2024-udgaven af rapporten <a href="https://www.salesforce.com/news/stories/sales-ai-statistics-2024/">State of Sales</a> svarede de, at ca. 70 % af deres tid går med andet end at sælge: administration, indtastning, interne møder, at finde oplysninger og at skrive tilbud.</p>
+          <p>Tallet er folks eget skøn, ikke en måling, og det dækker mange lande og brancher. Jeg ville ikke bruge det om jeres team. Men det stemmer med det, jeg ser, når vi tegner en proces: Selve salget fylder en lille del af dagen, og meget af resten går med at flytte oplysninger fra ét sted til et andet.</p>
+
+          <div class="callout">
+            <p class="callout-title">Et eksempel, ikke en statistik</p>
+            <p>Lad os sige, at en sælger bruger en time om dagen på at taste ting ind igen, lede efter oplysninger og rykke for svar, der mangler.</p>
+            <ol class="deliverables">
+              <li><span class="n">1</span><div><strong>405 kr. i timen</strong><span>Medianen for en salgskonsulent, pr. præsteret time.</span></div></li>
+              <li><span class="n">2</span><div><strong>× 5 dage × 46 arbejdsuger</strong><span>En time om dagen i et arbejdsår.</span></div></li>
+              <li><span class="n">3</span><div><strong>≈ 93.150 kr. om året pr. sælger</strong><span>For et team på fem ca. 465.750 kr.</span></div></li>
+            </ol>
+          </div>
+          <p>Timen om dagen er en antagelse. Jeres team mister måske mindre eller meget mere. Pointen er størrelsen. Små daglige gnidninger løber op i et rigtigt tal på et år.</p>
+        </section>
+
+        <section id="saved">
+          <h2><span class="h-num">5</span> Sparet tid er ikke sparede penge</h2>
+          <p>Det er den del, de fleste estimater springer over. Får en sælger en time tilbage, kommer der ikke 405 kr. tilbage på kontoen. Lønnen er den samme uanset hvad.</p>
+          <p>Værdien ligger i, hvad timen bliver brugt til i stedet. En time tilbage er noget værd, når den bliver til:</p>
+          <ul class="checks">
+            <li><strong>Mere tid med kunderne.</strong> Flere opkald, flere besøg, flere tilbud, der bliver fulgt op på.</li>
+            <li><strong>Hurtigere svar.</strong> Et tilbud afsted samme dag i stedet for i næste uge.</li>
+            <li><strong>Vækst uden at ansætte.</strong> Det samme team klarer flere henvendelser, når virksomheden vokser.</li>
+            <li><strong>Mindre overarbejde</strong> og færre aftener, der går med at indhente administration.</li>
+          </ul>
+          <p>Derfor stiller jeg altid estimatet op ved siden af, hvad tiden skal bruges til. Timeprisen fortæller, hvor stor muligheden er. Den fortæller ikke i sig selv, hvad resultatet bliver.</p>
+        </section>
+
+        <section id="use">
+          <h2><span class="h-num">6</span> Sådan bruger I tallene</h2>
+          <ol class="deliverables">
+            <li><span class="n">1</span><div><strong>Brug jeres egne tal, hvis I har dem</strong><span>Jeres lønsystem ved præcis, hvad teamet koster. Statistikken er til, når I ikke har tallene, eller til et hurtigt tjek af, om de ser rimelige ud.</span></div></li>
+            <li><span class="n">2</span><div><strong>Brug medianen, ikke gennemsnittet</strong><span>Nogle få meget høje lønninger trækker gennemsnittet op. Medianen ligger tættere på en typisk medarbejder.</span></div></li>
+            <li><span class="n">3</span><div><strong>Regn med præsterede timer, ikke betalte timer</strong><span>En time brugt på et tilbud er en times reelt arbejde.</span></div></li>
+            <li><span class="n">4</span><div><strong>Angiv et spænd</strong><span>To dage med en proces er nok til at se den klart, men ikke til at tage tid på hvert trin. Vi forklarer hvordan i <a href="how-we-estimate-time.html">Sådan estimerer vi den tid, I får tilbage</a>.</span></div></li>
+          </ol>
+        </section>
+
+        <section id="calculator">
+          <h2><span class="h-num">7</span> Regn på jeres eget team</h2>
+          <p>Vælg en rolle, eller skriv jeres egen timepris. Giv så et bud på, hvor meget tid hver person mister om dagen på at taste ting ind igen, lede og rykke for oplysninger, der mangler.</p>
+
+          <form class="calc" id="calc" onsubmit="return false" aria-label="Beregner: hvad tabt tid koster jeres team">
+            <div class="field">
+              <label for="c-role">Rolle</label>
+              <select id="c-role">
+                <option value="620">Salgs- og marketingchefer · 620 kr.</option>
+                <option value="550">It-sælgere · 550 kr.</option>
+                <option value="531">Tekniske sælgere · 531 kr.</option>
+                <option value="405" selected>Salgskonsulenter · 405 kr.</option>
+                <option value="374">Andet salgsarbejde · 374 kr.</option>
+                <option value="340">Almindeligt kontorarbejde · 340 kr.</option>
+                <option value="337">Regnskab og bogføring · 337 kr.</option>
+                <option value="279">Kundeservice og callcenter · 279 kr.</option>
+                <option value="278">Kontorarbejde i produktionen · 278 kr.</option>
+                <option value="own">Min egen timepris</option>
+              </select>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="c-rate">Pris pr. præsteret time, kr.</label>
+                <input id="c-rate" type="number" inputmode="numeric" min="0" step="1" value="405" />
+              </div>
+              <div class="field">
+                <label for="c-people">Personer på teamet</label>
+                <input id="c-people" type="number" inputmode="numeric" min="1" step="1" value="5" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="c-min">Tabt tid pr. person pr. dag: <output id="c-min-out" for="c-min">1 time</output></label>
+              <input id="c-min" type="range" min="15" max="240" step="15" value="60" />
+            </div>
+
+            <dl class="calc-out" aria-live="polite">
+              <div><dt>Timer om året for teamet</dt><dd id="c-hours">1.150</dd></div>
+              <div><dt>Pr. person om året</dt><dd id="c-person">93.150 kr.</dd></div>
+              <div class="calc-total"><dt>For teamet om året</dt><dd id="c-team">465.750 kr.</dd></div>
+            </dl>
+            <p class="calc-note">Timetallene er medianer pr. præsteret time inkl. pension fra Danmarks Statistik (LONS20, 2025, den private sektor). Vi regner med 5 arbejdsdage om ugen og 46 arbejdsuger om året. Tallet viser, hvad tiden er værd, ikke penge, I får tilbage: Værdien kommer af, hvad timerne bliver brugt til i stedet.</p>
+          </form>
+
+          <p>Vil I vide, hvor mange timer jeres eget team mister, og på hvilke trin, er det dét, de to dage er til. I kan læse, <a href="method.html">hvordan metoden virker</a>.</p>
+        </section>
+      </article>
+    </div>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="wrap section contact" id="contact">
+      <div class="contact-head">
+        <h2 class="contact-title">Hvor mange timer mister jeres team?</h2>
+        <p class="contact-lede">To dage sammen med dem, der udfører arbejdet, og I ved, hvor tiden bliver af, og hvad den er værd.</p>
+      </div>
+      <div class="btn-row contact-cta">
+        <a class="btn btn-dark btn-lg" href="index.html#contact">Book et opkald <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="contact-line">
+        <a href="mailto:hello@lanes.dk">hello@lanes.dk</a>
+        <span aria-hidden="true">·</span>
+        <a href="tel:+4530360086">+45 30 36 00 86</a>
+      </p>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="sf-row">
+        <a class="sf-brand" href="index.html" aria-label="lanes, forside"><svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg><span>lanes</span></a>
+        <nav class="sf-nav" aria-label="Sidefod">
+          <a href="services.html">Ydelser</a>
+          <a href="method.html">Metode</a>
+          <a href="articles.html">Artikler</a>
+          <a href="index.html#contact">Kontakt</a>
+        </nav>
+      </div>
+      <div class="sf-legal">
+        <span>© <span id="year">2026</span> lanes · Aalborg</span>
+        <span class="sf-links"><a href="../what-sales-time-costs.html" lang="en" hreflang="en">English</a><a href="../terms.html">Generelle vilkår</a><a href="privacy.html">Privatliv</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../main.js?v=18"></script>
+  <script>
+  (() => {
+    const DAYS = 5, WEEKS = 46;
+    const $ = (id) => document.getElementById(id);
+    const kr = (n) => `${Math.round(n).toLocaleString("da-DK")} kr.`;
+    const role = $("c-role"), rate = $("c-rate"), people = $("c-people"), min = $("c-min");
+    const render = () => {
+      const r = Math.max(0, +rate.value || 0), p = Math.max(0, Math.round(+people.value || 0)), m = +min.value;
+      const h = m / 60, hoursPerson = h * DAYS * WEEKS;
+      $("c-min-out").textContent = m < 60 ? `${m} minutter` : `${(m / 60).toLocaleString("da-DK")} time${m === 60 ? "" : "r"}`;
+      $("c-hours").textContent = Math.round(hoursPerson * p).toLocaleString("da-DK");
+      $("c-person").textContent = kr(hoursPerson * r);
+      $("c-team").textContent = kr(hoursPerson * r * p);
+    };
+    role.addEventListener("change", () => { if (role.value !== "own") rate.value = role.value; else rate.focus(); render(); });
+    rate.addEventListener("input", () => { const match = [...role.options].find((o) => o.value === rate.value); role.value = match ? match.value : "own"; render(); });
+    [people, min].forEach((el) => el.addEventListener("input", render));
+    render();
+  })();
+  </script>
+</body>
+</html>
