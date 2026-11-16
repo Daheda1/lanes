@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services · lanes</title>
+  <meta name="description" content="What lanes builds: a two-day process analysis, sales automation, AI sales assistants, quotes and proposals, and data and integrations. What each one does and the problem it removes." />
+  <meta property="og:title" content="Services · lanes" />
+  <meta property="og:description" content="Notes on sales processes, automation and AI for small sales teams." />
+  <meta name="theme-color" content="#FAF9F5" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141413'/%3E%3Crect x='5' y='7.5' width='16' height='4' rx='2' fill='%23FAF9F5'/%3E%3Crect x='10' y='14' width='16' height='4' rx='2' fill='%23D97757'/%3E%3Crect x='5' y='20.5' width='11' height='4' rx='2' fill='%23FAF9F5'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet" />
+  <link rel="canonical" href="https://daheda1.github.io/lanes/services.html" />
+  <meta property="og:url" content="https://daheda1.github.io/lanes/services.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="lanes" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://daheda1.github.io/lanes/articles.html",
+  "name": "Articles · lanes",
+  "description": "Notes on sales processes, automation, and where AI does and doesn't belong. Written for small and mid-sized B2B sales teams.",
+  "url": "https://daheda1.github.io/lanes/articles.html",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://daheda1.github.io/lanes/#organization",
+    "name": "lanes"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "url": "https://daheda1.github.io/lanes/draw-your-own-swimlane.html",
+        "name": "How to draw your own swimlane in an afternoon"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "url": "https://daheda1.github.io/lanes/how-we-estimate-time.html",
+        "name": "How we estimate the time you'll get back"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "url": "https://daheda1.github.io/lanes/when-ai-is-the-wrong-tool.html",
+        "name": "When AI is the wrong tool"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "url": "https://daheda1.github.io/lanes/method.html",
+        "name": "The lanes method"
+      }
+    ]
+  }
+}
+  </script>
+  <link rel="stylesheet" href="styles.css?v=31" />
+  <style>
+    .svc-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .svc-nav a { height: 36px; display: inline-flex; align-items: center; padding: 0 16px; border-radius: 999px; border: 1px solid var(--gray-250); font-size: 14px; }
+    .svc-nav a:hover { background: var(--gray-150); }
+    .svc { padding-top: clamp(56px, 7vw, 96px); scroll-margin-top: 80px; }
+    .svc + .svc { border-top: 1px solid var(--gray-200); margin-top: clamp(56px, 7vw, 96px); }
+    .svc-head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px clamp(32px, 6vw, 96px); }
+    .svc-head h2 { font: 400 clamp(34px, 3.6vw, 52px)/1.05 var(--serif); letter-spacing: -.025em; margin-top: 14px; }
+    .svc-promise { margin-top: 10px; font-size: 17px; color: var(--gray-600); }
+    .svc-problem { font: 400 clamp(22px, 2vw, 28px)/1.3 var(--serif); letter-spacing: -.01em; margin-bottom: 22px; }
+    .svc-body { font-size: 17px; line-height: 1.6; max-width: 38em; }
+    .svc-body p + p { margin-top: 1em; }
+    .svc-note { margin-top: 18px; font-size: 15px; color: var(--gray-600); max-width: 40em; }
+    .svc-links { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 20px; }
+    @media (max-width: 900px) { .svc-head { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <nav class="nav-left" aria-label="Main">
+        <a class="pill" href="services.html">Services</a>
+        <a class="pill" href="index.html#about">About</a>
+        <a class="pill" href="method.html">Method</a>
+      </nav>
+
+      <a class="brand" href="index.html" aria-label="lanes, home">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+
+      <div class="nav-right">
+        <a class="pill" href="articles.html" aria-current="page">Articles</a>
+        <a class="pill pill-dark" href="#contact">Book a call</a>
+        <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h9" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <div class="wrap">
+        <a href="services.html">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="method.html">Method</a>
+        <a href="articles.html" aria-current="page">Articles</a>
+        <a href="#contact">Book a call</a>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="wrap articles-head">
+      <h1 class="statement"><strong>Services.</strong> What we build, and the boring part each one takes away.</h1>
+      <nav class="svc-nav" aria-label="Services"><a href="#analysis">Two-day process analysis</a><a href="#automation">Sales automation</a><a href="#assistants">AI sales assistants</a><a href="#quotes">Quotes and proposals</a><a href="#integrations">Data and integrations</a></nav>
+    </section>
+
+    <section class="wrap svc" id="analysis">
+      <div class="svc-head">
+        <div>
+          <span class="step-n">1</span>
+          <h2>Two-day process analysis</h2>
+          <p class="svc-promise">As-is, to-be and a time estimate.</p>
+        </div>
+        <div>
+          <p class="svc-problem">“Only Kim knows how it works.”</p>
+          <div class="svc-body"><p>Everything we build starts here. We spend two days with the people who do the work and follow real cases, from the first email to the invoice. Not the process in the manual, the one that actually runs, with its handovers, waiting and retyping.</p><p>You get two drawings and a number. The first shows how the work runs today. The second shows how it could run, with each step given to the right lane: AI, fixed rules or a person. The number is our estimate of the hours you get back, and what it takes to build.</p><p>Sometimes the answer is a better checklist, not software. Then we say so.</p></div>
+          <p class="svc-note">If the two days don’t turn up anything worth fixing, you don’t pay for them.</p>
+          <div class="svc-links"><a class="text-link" href="method.html">The lanes method <span aria-hidden="true">→</span></a><a class="text-link" href="how-we-estimate-time.html">How we estimate the time you’ll get back <span aria-hidden="true">→</span></a><a class="text-link" href="draw-your-own-swimlane.html">Draw your own swimlane <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap svc" id="automation">
+      <div class="svc-head">
+        <div>
+          <span class="step-n">2</span>
+          <h2>Sales automation</h2>
+          <p class="svc-promise">Routing, follow-up and CRM hygiene.</p>
+        </div>
+        <div>
+          <p class="svc-problem">“New leads sit in an inbox all weekend.”</p>
+          <div class="svc-body"><p>Most of the time lost in sales isn’t selling. It’s working out who should take an enquiry, chasing the details that were missing, and remembering to follow up on the quote that went quiet.</p><p>We set up rules that do this for you. New enquiries go to the right person straight away. The customer gets a first reply that asks only for what they haven’t told you yet. Quiet quotes get a reminder, and duplicates and empty fields are cleaned up as they happen.</p><p>This is mostly rules, not AI, and it runs in the systems you already use. You can read the rules and change them yourself.</p></div>
+          
+          <div class="svc-links"><a class="text-link" href="ask-the-questions-first.html">Ask the questions before you quote <span aria-hidden="true">→</span></a><a class="text-link" href="the-first-hour.html">The first hour <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap svc" id="assistants">
+      <div class="svc-head">
+        <div>
+          <span class="step-n">3</span>
+          <h2>AI sales assistants</h2>
+          <p class="svc-promise">Research, call prep and first drafts.</p>
+        </div>
+        <div>
+          <p class="svc-problem">“Our sellers spend the morning researching instead of calling.”</p>
+          <div class="svc-body"><p>This is where AI earns its place: reading a lot and writing a first version. Before the first call of the day, each seller has a short brief on the account. After the call, the notes are summarised and logged in the CRM with the next steps.</p><p>Replies and follow-ups arrive as drafts. A seller reads them, edits what needs editing, and sends them. Nothing goes to a customer without a person deciding it should.</p></div>
+          
+          <div class="svc-links"><a class="text-link" href="when-ai-is-the-wrong-tool.html">When AI is the wrong tool <span aria-hidden="true">→</span></a><a class="text-link" href="a-third-of-sales-work.html">A third of sales work could run itself <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap svc" id="quotes">
+      <div class="svc-head">
+        <div>
+          <span class="step-n">4</span>
+          <h2>Quotes and proposals</h2>
+          <p class="svc-promise">Priced proposals the same day.</p>
+        </div>
+        <div>
+          <p class="svc-problem">“Quotes take two days because the pricing lives in one person’s head.”</p>
+          <div class="svc-body"><p>A quote is often the slowest step in the whole sale, because the prices, discounts and exceptions live in one person’s head. We help that person write them down as rules, in one place.</p><p>From there, a quote is drafted from the call notes, the email or the drawings. A seller checks it and sends it, and the ERP is updated when it goes out. The person who knows the prices still sets the rules and handles the exceptions; they just stop typing the same quote again.</p></div>
+          
+          <div class="svc-links"><a class="text-link" href="what-sales-time-costs.html">What an hour of sales time costs <span aria-hidden="true">→</span></a><a class="text-link" href="ask-the-questions-first.html">Ask the questions before you quote <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap svc" id="integrations">
+      <div class="svc-head">
+        <div>
+          <span class="step-n">5</span>
+          <h2>Data and integrations</h2>
+          <p class="svc-promise">CRM, ERP, email and calendar in sync.</p>
+        </div>
+        <div>
+          <p class="svc-problem">“Every order gets typed in twice.”</p>
+          <div class="svc-body"><p>When systems don’t talk to each other, people do the talking for them, by copying. Orders are read straight from the email or PDF and proposed in the ERP, ready for someone to approve. The CRM fills in as calls, emails and orders happen, not on Friday afternoon.</p><p>We work with the common CRMs (HubSpot, Salesforce, Pipedrive, Microsoft Dynamics), Microsoft 365 and Google Workspace, Slack and Teams. If you run something else, we’ll tell you honestly whether we’re a good fit.</p></div>
+          
+          <div class="svc-links"><a class="text-link" href="a-third-of-sales-work.html">A third of sales work could run itself <span aria-hidden="true">→</span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section contact" id="contact">
+      <div class="contact-head">
+        <h2 class="contact-title">Not sure which one you need?</h2>
+        <p class="contact-lede">Most customers start with the two days. Then you know which of these is worth building.</p>
+      </div>
+      <div class="btn-row contact-cta">
+        <a class="btn btn-dark btn-lg" href="index.html#contact">Book a call <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="contact-line">
+        <a href="mailto:hello@lanes.dk">hello@lanes.dk</a>
+        <span aria-hidden="true">·</span>
+        <a href="tel:+4530360086">+45 30 36 00 86</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="sf-row">
+        <a class="sf-brand" href="index.html" aria-label="lanes, home"><svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg><span>lanes</span></a>
+        <nav class="sf-nav" aria-label="Footer">
+          <a href="services.html">Services</a>
+          <a href="method.html">Method</a>
+          <a href="articles.html">Articles</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+      <div class="sf-legal">
+        <span>© <span id="year">2026</span> lanes · Aalborg</span>
+        <span class="sf-links"><a href="terms.html">General terms</a><a href="privacy.html">Privacy</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js?v=16"></script>
+</body>
+</html>

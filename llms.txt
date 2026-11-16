@@ -11,6 +11,7 @@ Contact: hello@lanes.dk, +45 30 36 00 86.
 ## Pages
 
 - [Home](https://daheda1.github.io/lanes/): what lanes does, how the two days work, common problems, the founder and contact form
+- [Services](https://daheda1.github.io/lanes/services.html): the five services, what each one does and the problem it removes
 - [The lanes method](https://daheda1.github.io/lanes/method.html): the two-day analysis step by step, the deliverable, and what happens if you go ahead
 
 ## Articles

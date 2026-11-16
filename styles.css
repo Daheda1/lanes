@@ -363,12 +363,11 @@ svg { display: block; }
 .section { padding-top: clamp(64px, 8vw, 112px); }
 
 .label-bar {
-  border-top: 1px solid var(--gray-250);
-  border-bottom: 1px solid var(--gray-250);
-  padding: 14px 0;
-  margin-bottom: clamp(24px, 3vw, 40px);
+  margin-bottom: clamp(20px, 2.4vw, 32px);
 }
-.label-bar h2 { font: 700 13px/1.5 var(--sans); letter-spacing: .01em; }
+.label-bar h2 { display: inline-flex; align-items: center; gap: 12px; font: 600 14px/1.4 var(--sans); letter-spacing: .01em; color: var(--gray-700); }
+.label-bar h2::before { content: ""; width: 22px; height: 6px; border-radius: 3px; background: var(--clay); flex: none; }
+.dark .label-bar h2 { color: var(--gray-300); }
 
 .section-lead { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; margin-bottom: clamp(32px, 4vw, 56px); }
 
@@ -1271,3 +1270,51 @@ svg { display: block; }
   .articles-head .statement { font-size: 24pt; }
   .ver { appearance: none; -webkit-appearance: none; border: 0; background: none; padding: 0; font-size: 11px; }
 }
+
+/* Who you'll work with: a short quote band */
+.about-band {
+  position: relative; z-index: 4;
+  display: flex; align-items: center; gap: clamp(28px, 4vw, 48px);
+  max-width: 1100px;
+  padding-top: clamp(56px, 7vw, 88px);
+  padding-bottom: clamp(56px, 7vw, 88px);
+}
+.about-photo { flex: none; width: clamp(96px, 10vw, 136px); aspect-ratio: 1; margin: 0; border-radius: 50%; overflow: hidden; border: 1px solid var(--gray-750); background: var(--gray-850); }
+.about-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 43% 30%; }
+.about-band .kicker { margin-bottom: 14px; }
+.about-band-quote { margin: 0; }
+.about-band-quote p { font: 400 clamp(28px, 3vw, 42px)/1.15 var(--serif); letter-spacing: -.015em; color: var(--gray-050); text-wrap: balance; }
+.about-band-who { margin: 16px 0 14px; font-size: 15px; color: var(--gray-400); }
+.about-band-who b { color: var(--gray-100); font-weight: 600; }
+.about-band .about-read { margin: 0; }
+@media (max-width: 640px) { .about-band { flex-direction: column; align-items: flex-start; } }
+
+/* Sound familiar, compact: six cards under the hero; an opened card spans the row to show its swimlane */
+.fam-section { padding-top: clamp(40px, 5vw, 72px); }
+.fam-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 4px; }
+.fam-grid .fam-item { border: 0; border-radius: 16px; background: var(--gray-100); transition: background-color .15s ease; }
+.fam-grid .fam-item:hover { background: var(--gray-150); }
+.fam-grid .fam-item:has(details[open]) { grid-column: 1 / -1; background: var(--gray-100); }
+.fam-grid .fam-row, .fam-grid .fam-item:first-child .fam-row { display: flex; flex-direction: column; gap: 10px; padding: 20px 22px 18px; height: 100%; }
+.fam-grid .fam { height: 100%; }
+.fam-grid .fam-q { font-size: clamp(19px, 1.5vw, 22px); line-height: 1.3; }
+.fam-grid .fam-a { gap: 6px; margin-top: auto; }
+.fam-grid .fam-a p { font-size: 14.5px; line-height: 1.45; padding-left: 22px; }
+.fam-grid .fam-tag { display: none; }
+.fam-grid .fam-toggle { padding-left: 22px; margin-top: 4px; font-size: 13px; color: var(--gray-600); }
+.fam-grid .fam-toggle i { width: 16px; height: 16px; }
+.fam-grid .fam-lanes { padding: 0 22px 22px; }
+.fam-grid .fam[open], .fam-grid .fam[open] .fam-row { height: auto; }
+.fam-grid .fam[open] .fam-row { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 10px 48px; align-items: baseline; }
+.fam-grid .fam[open] .fam-a { margin-top: 0; }
+@media (max-width: 760px) { .fam-grid .fam[open] .fam-row { grid-template-columns: 1fr; } }
+.fam-section .fam-foot { margin-top: 18px; }
+.fam-section .fam-foot p { font-size: 15.5px; }
+@media (max-width: 960px) { .fam-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .fam-grid { grid-template-columns: 1fr; } }
+
+/* the guarantee, as one quiet line under How it works */
+.how-note { margin-top: 24px; font-size: 15px; color: var(--gray-600); }
+
+/* step numbers on the How it works tiles */
+.step-n { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--clay); font: 600 12px/1 var(--sans); color: var(--clay-ink); font-variant-numeric: tabular-nums; flex: none; }

@@ -888,10 +888,10 @@
     return parts.join(" · ");
   };
 
-  const buildFamiliar = (details) => {
-    const ex = FAMILIAR[details.dataset.example];
-    const host = $(".fam-lanes", details);
-    if (!ex || host.childElementCount) return;
+  const buildFamiliar = (details) => buildLanes(FAMILIAR[details.dataset.example], $(".fam-lanes", details));
+
+  const buildLanes = (ex, host) => {
+    if (!ex || !host || host.childElementCount) return;
     const cols = Math.max(ex.asis.length, ex.tobe.length, 5);
     ["asis", "tobe"].forEach((mode) => {
       const card = document.createElement("div");
@@ -918,6 +918,9 @@
   $$("details.fam").forEach((det) => {
     det.addEventListener("toggle", () => { if (det.open) buildFamiliar(det); });
   });
+
+  // swimlanes shown directly on a page, e.g. the Services page
+  $$("[data-lanes]").forEach((el) => buildLanes(FAMILIAR[el.dataset.lanes], el));
 
   /* ---------- Contact form ---------- */
   const form = $("#contact-form");
