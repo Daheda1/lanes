@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://daheda1.github.io/lanes/sitemap.xml

@@ -6,7 +6,11 @@
   <title>Services · lanes</title>
   <meta name="description" content="What lanes builds: a two-day process analysis, sales automation, AI sales assistants, quotes and proposals, and data and integrations. What each one does and the problem it removes." />
   <meta property="og:title" content="Services · lanes" />
-  <meta property="og:description" content="Notes on sales processes, automation and AI for small sales teams." />
+  <meta property="og:image" content="https://daheda1.github.io/lanes/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:description" content="What we build, and the boring part each one takes away." />
   <meta name="theme-color" content="#FAF9F5" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141413'/%3E%3Crect x='5' y='7.5' width='16' height='4' rx='2' fill='%23FAF9F5'/%3E%3Crect x='10' y='14' width='16' height='4' rx='2' fill='%23D97757'/%3E%3Crect x='5' y='20.5' width='11' height='4' rx='2' fill='%23FAF9F5'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,10 +24,10 @@
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "@id": "https://daheda1.github.io/lanes/articles.html",
-  "name": "Articles · lanes",
-  "description": "Notes on sales processes, automation, and where AI does and doesn't belong. Written for small and mid-sized B2B sales teams.",
-  "url": "https://daheda1.github.io/lanes/articles.html",
+  "@id": "https://daheda1.github.io/lanes/services.html",
+  "name": "Services · lanes",
+  "description": "What lanes builds: a two-day process analysis, sales automation, AI sales assistants, quotes and proposals, and data and integrations.",
+  "url": "https://daheda1.github.io/lanes/services.html",
   "publisher": {
     "@type": "Organization",
     "@id": "https://daheda1.github.io/lanes/#organization",
@@ -35,26 +39,67 @@
       {
         "@type": "ListItem",
         "position": 1,
-        "url": "https://daheda1.github.io/lanes/draw-your-own-swimlane.html",
-        "name": "How to draw your own swimlane in an afternoon"
+        "item": {
+          "@type": "Service",
+          "name": "Two-day process analysis",
+          "description": "As-is, to-be and a time estimate.",
+          "url": "https://daheda1.github.io/lanes/services.html#analysis",
+          "provider": {
+            "@id": "https://daheda1.github.io/lanes/#organization"
+          }
+        }
       },
       {
         "@type": "ListItem",
         "position": 2,
-        "url": "https://daheda1.github.io/lanes/how-we-estimate-time.html",
-        "name": "How we estimate the time you'll get back"
+        "item": {
+          "@type": "Service",
+          "name": "Sales automation",
+          "description": "Routing, follow-up and CRM hygiene.",
+          "url": "https://daheda1.github.io/lanes/services.html#automation",
+          "provider": {
+            "@id": "https://daheda1.github.io/lanes/#organization"
+          }
+        }
       },
       {
         "@type": "ListItem",
         "position": 3,
-        "url": "https://daheda1.github.io/lanes/when-ai-is-the-wrong-tool.html",
-        "name": "When AI is the wrong tool"
+        "item": {
+          "@type": "Service",
+          "name": "AI sales assistants",
+          "description": "Research, call prep and first drafts.",
+          "url": "https://daheda1.github.io/lanes/services.html#assistants",
+          "provider": {
+            "@id": "https://daheda1.github.io/lanes/#organization"
+          }
+        }
       },
       {
         "@type": "ListItem",
         "position": 4,
-        "url": "https://daheda1.github.io/lanes/method.html",
-        "name": "The lanes method"
+        "item": {
+          "@type": "Service",
+          "name": "Quotes and proposals",
+          "description": "Priced proposals the same day.",
+          "url": "https://daheda1.github.io/lanes/services.html#quotes",
+          "provider": {
+            "@id": "https://daheda1.github.io/lanes/#organization"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "Service",
+          "name": "Data and integrations",
+          "description": "CRM, ERP, email and calendar in sync.",
+          "url": "https://daheda1.github.io/lanes/services.html#integrations",
+          "provider": {
+            "@id": "https://daheda1.github.io/lanes/#organization"
+          }
+        }
       }
     ]
   }
