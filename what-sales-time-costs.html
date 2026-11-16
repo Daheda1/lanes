@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What an hour of sales time costs · lanes</title>
+  <meta name="description" content="Statistics Denmark's figures for what sales staff earn per hour worked, role by role, and what that means when the hours go on typing instead of selling." />
+  <meta property="og:title" content="What an hour of sales time costs" />
+  <meta property="og:description" content="The typical sales representative in Denmark earns 405 kr. per hour worked. Here is what that means." />
+  <meta name="theme-color" content="#141413" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141413'/%3E%3Crect x='5' y='7.5' width='16' height='4' rx='2' fill='%23FAF9F5'/%3E%3Crect x='10' y='14' width='16' height='4' rx='2' fill='%23D97757'/%3E%3Crect x='5' y='20.5' width='11' height='4' rx='2' fill='%23FAF9F5'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet" />
+  <link rel="canonical" href="https://daheda1.github.io/lanes/what-sales-time-costs.html" />
+  <meta property="og:url" content="https://daheda1.github.io/lanes/what-sales-time-costs.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="lanes" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://daheda1.github.io/lanes/what-sales-time-costs.html#article",
+  "headline": "What an hour of sales time costs",
+  "description": "Statistics Denmark's figures for what sales staff earn per hour worked, role by role, and what that means when the hours go on typing instead of selling.",
+  "url": "https://daheda1.github.io/lanes/what-sales-time-costs.html",
+  "mainEntityOfPage": "https://daheda1.github.io/lanes/what-sales-time-costs.html",
+  "datePublished": "2026-11-16",
+  "dateModified": "2026-11-16",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "@id": "https://daheda1.github.io/lanes/#danni-dahl",
+    "name": "Danni Dahl",
+    "url": "https://daheda1.github.io/lanes/#about"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://daheda1.github.io/lanes/#organization",
+    "name": "lanes",
+    "url": "https://daheda1.github.io/lanes/"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://daheda1.github.io/lanes/#website"
+  }
+}
+  </script>
+  <link rel="stylesheet" href="styles.css?v=23" />
+  <style>
+    .calc { margin: 32px 0; padding: 28px; border-radius: 16px; background: var(--gray-100); display: grid; gap: 18px; font-family: var(--sans); }
+    .calc output { font-weight: 600; color: var(--clay-ink); }
+    .calc input[type="range"] { height: auto; padding: 0; border: 0; background: none; accent-color: var(--clay); }
+    .calc-out { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 6px 0 0; }
+    .calc-out div { padding: 16px 18px; border-radius: 12px; background: var(--gray-050); }
+    .calc-out dt { font-size: 13px; color: var(--gray-600); }
+    .calc-out dd { margin: 6px 0 0; font: 400 clamp(24px, 2.4vw, 32px)/1.1 var(--serif); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+    .calc-total dd { color: var(--clay-ink); }
+    .calc-note { font-size: 13.5px; line-height: 1.5; color: var(--gray-600); }
+    @media (max-width: 640px) { .calc { padding: 20px; } .calc-out { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="page-article">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header on-dark" id="top">
+    <div class="wrap header-inner">
+      <nav class="nav-left" aria-label="Main">
+        <a class="pill" href="index.html#how">How it works</a>
+        <a class="pill" href="index.html#services">Services</a>
+        <a class="pill" href="index.html#about">About</a>
+        <a class="pill" href="method.html">Method</a>
+      </nav>
+
+      <a class="brand" href="index.html" aria-label="lanes, home">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+
+      <div class="nav-right">
+        <a class="pill" href="articles.html">Articles</a>
+        <a class="pill pill-dark" href="#contact">Book a call</a>
+        <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h14M3 10h14M3 14h9" /></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" hidden>
+      <div class="wrap">
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="method.html">Method</a>
+        <a href="articles.html">Articles</a>
+        <a href="#contact">Book a call</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ ARTICLE HERO ============ -->
+    <section class="article-hero grain" data-header-dark>
+      <svg class="two-lines" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <radialGradient id="st-glow" cx="50%" cy="105%" r="70%">
+            <stop offset="0" stop-color="#D97757" stop-opacity=".26" />
+            <stop offset=".6" stop-color="#D97757" stop-opacity=".05" />
+            <stop offset="1" stop-color="#D97757" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <rect width="1440" height="900" fill="url(#st-glow)" />
+        <rect x="740" y="150" width="620" height="22" rx="11" fill="#FAF9F5" fill-opacity=".12" /><rect x="810" y="212" width="550" height="22" rx="11" fill="#FAF9F5" fill-opacity=".12" /><rect x="829" y="274" width="531" height="22" rx="11" fill="#FAF9F5" fill-opacity=".12" /><rect x="955" y="336" width="405" height="22" rx="11" fill="#D97757" /><rect x="978" y="398" width="382" height="22" rx="11" fill="#FAF9F5" fill-opacity=".12" /><rect x="1020" y="460" width="340" height="22" rx="11" fill="#FAF9F5" fill-opacity=".12" /><rect x="1081" y="522" width="279" height="22" rx="11" fill="#FAF9F5" fill-opacity=".12" />
+        <g font-family="Figtree, sans-serif" font-size="14" fill="#FAF9F5" fill-opacity=".45">
+          <text x="955" y="326">405 kr. per hour worked</text>
+        </g>
+      </svg>
+
+      <div class="article-hero-inner wrap">
+        <p class="kicker">Numbers · Danni Dahl</p>
+        <h1 class="stagger">
+          <span>What an hour of</span>
+          <span>sales time costs.</span>
+        </h1>
+
+        <nav class="toc toc-hero" aria-label="Contents">
+          <ol>
+            <li><a href="#introduction"><span class="n">1</span><span class="leader" aria-hidden="true"></span><span class="t">Introduction</span></a></li>
+            <li><a href="#by-role"><span class="n">2</span><span class="leader" aria-hidden="true"></span><span class="t">The numbers, role by role</span></a></li>
+            <li><a href="#per-hour"><span class="n">3</span><span class="leader" aria-hidden="true"></span><span class="t">Why the hour costs more than you think</span></a></li>
+            <li><a href="#where"><span class="n">4</span><span class="leader" aria-hidden="true"></span><span class="t">Where the hours go</span></a></li>
+            <li><a href="#saved"><span class="n">5</span><span class="leader" aria-hidden="true"></span><span class="t">Saved time is not saved money</span></a></li>
+            <li><a href="#use"><span class="n">6</span><span class="leader" aria-hidden="true"></span><span class="t">How to use the numbers</span></a></li>
+            <li><a href="#calculator"><span class="n">7</span><span class="leader" aria-hidden="true"></span><span class="t">Work it out for your team</span></a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ ARTICLE ============ -->
+    <div class="wrap article-grid">
+      <aside class="article-side">
+        <dl class="article-meta">
+          <div><dt>Written by</dt><dd>Danni Dahl</dd></div>
+          <div><dt>Category</dt><dd>Numbers</dd></div>
+          <div><dt>Updated</dt><dd><time datetime="2026-11-16">16 November 2026</time></dd></div>
+          <div><dt>Reading time</dt><dd>7 min</dd></div>
+          <div><dt>Source</dt><dd>Statistics Denmark, 2025</dd></div>
+        </dl>
+        <nav class="side-toc" aria-label="On this page">
+          <a href="#introduction">Introduction</a>
+          <a href="#by-role">The numbers, role by role</a>
+          <a href="#per-hour">Why the hour costs more</a>
+          <a href="#where">Where the hours go</a>
+          <a href="#saved">Saved time is not saved money</a>
+          <a href="#use">How to use the numbers</a>
+          <a href="#calculator">Work it out for your team</a>
+        </nav>
+      </aside>
+
+      <article class="prose">
+        <section id="introduction">
+          <h2 class="sr-only">Introduction</h2>
+          <p class="prose-lede">Everyone talks about saving hours. Very few teams know what one of those hours actually costs. Statistics Denmark does.</p>
+          <p>When I estimate the time a team would get back, the next question is always what that time is worth. You can guess, or you can look it up. Statistics Denmark publishes what people earn per hour, role by role, every year. The latest figures cover 2025.</p>
+          <p>This article goes through those numbers for the people who usually touch a sale: sellers, sales managers and the office staff around them. At the bottom is a calculator for your own team. Then it looks at what they mean for a sales team.</p>
+        </section>
+
+        <section id="by-role">
+          <h2><span class="h-num">2</span> The numbers, role by role</h2>
+          <p>Here is what people in Danish private companies earned in 2025. Both columns are the median: half earn more, half earn less. Pension is included.</p>
+
+          <div class="split-table st-3" role="table" aria-label="Median earnings per hour worked and per month, by role, private sector, 2025" style="font-variant-numeric: tabular-nums">
+            <div class="st-row st-head" role="row"><span role="columnheader">Role</span><span role="columnheader">Per hour worked</span><span role="columnheader">Per month</span></div>
+            <div class="st-row" role="row"><span role="cell">Sales and marketing managers</span><span role="cell">620 kr.</span><span role="cell">84,400 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">ICT sales professionals</span><span role="cell">550 kr.</span><span role="cell">74,100 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">Technical sales professionals</span><span role="cell">531 kr.</span><span role="cell">71,800 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">Commercial sales representatives</span><span role="cell">405 kr.</span><span role="cell">54,800 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">Other sales workers</span><span role="cell">374 kr.</span><span role="cell">51,100 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">General office clerks</span><span role="cell">340 kr.</span><span role="cell">46,700 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">Accounting and bookkeeping clerks</span><span role="cell">337 kr.</span><span role="cell">46,300 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">Contact centre clerks</span><span role="cell">279 kr.</span><span role="cell">38,600 kr.</span></div>
+            <div class="st-row" role="row"><span role="cell">Production clerks</span><span role="cell">278 kr.</span><span role="cell">38,800 kr.</span></div>
+            <div class="st-row st-total" role="row"><span role="cell">All employees, private sector</span><span role="cell">358 kr.</span><span role="cell">49,100 kr.</span></div>
+          </div>
+          <p class="bg-note" style="font-family:var(--sans);font-size:14px;color:var(--gray-600)">Source: <a href="https://www.statistikbanken.dk/LONS20">Statistics Denmark, table LONS20</a>, 2025, private companies and organisations, all forms of pay. Monthly figures are Statistics Denmark’s standardised monthly earnings, rounded to the nearest 100 kr. Role names are shortened.</p>
+
+          <p>The role most sales teams are built around, the commercial sales representative, is also the biggest group: about 30,000 full-time employees in the statistic. The typical one earns <strong>405 kr. per hour worked</strong>, or about <strong>54,800 kr. a month</strong>.</p>
+        </section>
+
+        <section id="per-hour">
+          <h2><span class="h-num">3</span> Why the hour costs more than you think</h2>
+          <p>Divide a monthly salary by the hours in a month, and you get a lower number than the one in the table. That isn’t a mistake. The two columns answer different questions.</p>
+          <ul class="checks">
+            <li><strong>Per month</strong> spreads the pay over every working hour in the year, including holidays and sick days.</li>
+            <li><strong>Per hour worked</strong> counts only the hours someone actually spent working. Holiday pay, pension and bonuses are still in the pay, but the paid days off are not in the hours.</li>
+          </ul>
+          <p>When you ask what an hour spent on a quote costs, you mean an hour of real work. So the right number is the one per hour worked.</p>
+          <p>Even that is on the low side for the company. It is what the employee earns. The employer also pays for things like insurance, equipment, the desk and the systems. Those costs vary too much between companies to put a number on, but they only push the cost up.</p>
+        </section>
+
+        <section id="where">
+          <h2><span class="h-num">4</span> Where the hours go</h2>
+          <p>Salesforce asks thousands of sales people every year how they spend their week. In the 2024 edition of its <a href="https://www.salesforce.com/news/stories/sales-ai-statistics-2024/">State of Sales</a> report, they said about 70% of their time goes to things other than selling: admin, data entry, internal meetings, finding information, writing quotes.</p>
+          <p>That figure is people’s own estimate, not a measurement, and it covers many countries and industries. I wouldn’t use it for your team. But it agrees with what I see when we draw a process: the selling itself is a small part of the day, and a lot of the rest is moving information from one place to another.</p>
+
+          <div class="callout">
+            <p class="callout-title">An example, not a statistic</p>
+            <p>Say a seller spends one hour a day retyping, searching for information and chasing missing answers.</p>
+            <ol class="deliverables">
+              <li><span class="n">1</span><div><strong>405 kr. an hour</strong><span>The median for a commercial sales representative, per hour worked.</span></div></li>
+              <li><span class="n">2</span><div><strong>× 5 days × 46 working weeks</strong><span>One hour a day, for a working year.</span></div></li>
+              <li><span class="n">3</span><div><strong>≈ 93,150 kr. a year, per seller</strong><span>For a team of five, about 465,750 kr.</span></div></li>
+            </ol>
+          </div>
+          <p>The hour a day is an assumption; your team might lose less, or a lot more. The point is the size of it. Small daily friction adds up to a real number over a year.</p>
+        </section>
+
+        <section id="saved">
+          <h2><span class="h-num">5</span> Saved time is not saved money</h2>
+          <p>This is the part most estimates leave out. Giving a seller an hour back doesn’t put 405 kr. back in the bank. Their salary is the same either way.</p>
+          <p>The value is in what the hour is used for instead. An hour back is worth something when it turns into:</p>
+          <ul class="checks">
+            <li><strong>More customer time.</strong> More calls, more visits, more quotes followed up.</li>
+            <li><strong>Faster answers.</strong> A quote out the same day instead of next week.</li>
+            <li><strong>Growth without hiring.</strong> The same team handles more requests as the company grows.</li>
+            <li><strong>Less overtime</strong>, and fewer evenings spent catching up on admin.</li>
+          </ul>
+          <p>That’s why I always put the estimate next to what the time would be used for. The hourly cost tells you how big the opportunity is. It doesn’t tell you the result on its own.</p>
+        </section>
+
+        <section id="use">
+          <h2><span class="h-num">6</span> How to use the numbers</h2>
+          <ol class="deliverables">
+            <li><span class="n">1</span><div><strong>Use your own numbers if you have them</strong><span>Your payroll knows exactly what your team costs. The statistics are for when you don’t, or for a quick sense check.</span></div></li>
+            <li><span class="n">2</span><div><strong>Use the median, not the average</strong><span>A few very high salaries pull the average up. The median is closer to a typical person.</span></div></li>
+            <li><span class="n">3</span><div><strong>Count hours worked, not hours paid</strong><span>An hour spent on a quote is an hour of real work.</span></div></li>
+            <li><span class="n">4</span><div><strong>Give a range</strong><span>Two days of looking at a process are enough to see it clearly, not to time every step. We explain how in <a href="how-we-estimate-time.html">how we estimate the time you’ll get back</a>.</span></div></li>
+          </ol>
+        </section>
+
+        <section id="calculator">
+          <h2><span class="h-num">7</span> Work it out for your team</h2>
+          <p>Pick a role, or type in your own hourly cost. Then guess how much time each person loses a day to retyping, searching and chasing missing information.</p>
+
+          <form class="calc" id="calc" onsubmit="return false" aria-label="Calculator: what lost time costs your team">
+            <div class="field">
+              <label for="c-role">Role</label>
+              <select id="c-role">
+                <option value="620">Sales and marketing managers · 620 kr.</option>
+                <option value="550">ICT sales professionals · 550 kr.</option>
+                <option value="531">Technical sales professionals · 531 kr.</option>
+                <option value="405" selected>Commercial sales representatives · 405 kr.</option>
+                <option value="374">Other sales workers · 374 kr.</option>
+                <option value="340">General office clerks · 340 kr.</option>
+                <option value="337">Accounting and bookkeeping clerks · 337 kr.</option>
+                <option value="279">Contact centre clerks · 279 kr.</option>
+                <option value="278">Production clerks · 278 kr.</option>
+                <option value="own">My own hourly cost</option>
+              </select>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="c-rate">Cost per hour worked, kr.</label>
+                <input id="c-rate" type="number" inputmode="numeric" min="0" step="1" value="405" />
+              </div>
+              <div class="field">
+                <label for="c-people">People on the team</label>
+                <input id="c-people" type="number" inputmode="numeric" min="1" step="1" value="5" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="c-min">Time lost per person, per day: <output id="c-min-out" for="c-min">60 minutes</output></label>
+              <input id="c-min" type="range" min="15" max="240" step="15" value="60" />
+            </div>
+
+            <dl class="calc-out" aria-live="polite">
+              <div><dt>Hours a year, for the team</dt><dd id="c-hours">1,150</dd></div>
+              <div><dt>Per person, a year</dt><dd id="c-person">93,150 kr.</dd></div>
+              <div class="calc-total"><dt>For the team, a year</dt><dd id="c-team">465,750 kr.</dd></div>
+            </dl>
+            <p class="calc-note">Hourly figures are medians per hour worked, pension included, from Statistics Denmark (LONS20, 2025, private sector). We count 5 working days a week and 46 working weeks a year. This is what the time is worth, not money you’ll get back: the value comes from what the hours are used for instead.</p>
+          </form>
+
+          <p>If you’d like to know how many hours your own team loses, and to which steps, that’s what the two days are for. You can read <a href="method.html">how the method works</a>.</p>
+        </section>
+      </article>
+    </div>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="wrap section contact" id="contact">
+      <div class="contact-head">
+        <h2 class="contact-title">How many hours does your team lose?</h2>
+        <p class="contact-lede">Two days with the people who do the work, and you’ll know where the time goes and what it’s worth.</p>
+      </div>
+      <div class="btn-row contact-cta">
+        <a class="btn btn-dark btn-lg" href="index.html#contact">Book a call <span aria-hidden="true">→</span></a>
+      </div>
+      <p class="contact-line">
+        <a href="mailto:hello@lanes.dk">hello@lanes.dk</a>
+        <span aria-hidden="true">·</span>
+        <a href="tel:+4530360086">+45 30 36 00 86</a>
+      </p>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <a class="brand brand-lg brand-light" href="index.html" aria-label="lanes, home">
+        <svg class="mark" viewBox="0 0 28 20" aria-hidden="true"><rect class="mark-bar" x="0" y=".25" width="22" height="4.5" rx="2.25"/><rect x="6" y="7.75" width="22" height="4.5" rx="2.25" fill="#D97757"/><rect class="mark-bar" x="0" y="15.25" width="15" height="4.5" rx="2.25"/></svg>
+        <span class="brand-text" aria-hidden="true">lanes</span>
+      </a>
+      <nav class="footer-rows" aria-label="Footer">
+        <a href="index.html#how">How it works <span aria-hidden="true">→</span></a>
+        <a href="index.html#services">Services <span aria-hidden="true">→</span></a>
+        <a href="index.html#about">About <span aria-hidden="true">→</span></a>
+        <a href="method.html">The lanes method <span aria-hidden="true">→</span></a>
+        <a href="articles.html">Articles <span aria-hidden="true">→</span></a>
+        <a href="index.html#contact">Contact <span aria-hidden="true">→</span></a>
+      </nav>
+      <div class="footer-meta">
+        <p>© <span id="year">2026</span> lanes</p>
+        <p class="footer-mission"><strong>What we do</strong><br />Process analysis, AI tools and automation for small and mid-sized B2B sales teams.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js?v=15"></script>
+  <script>
+  (() => {
+    const DAYS = 5, WEEKS = 46;
+    const $ = (id) => document.getElementById(id);
+    const kr = (n) => `${Math.round(n).toLocaleString("en-GB")} kr.`;
+    const role = $("c-role"), rate = $("c-rate"), people = $("c-people"), min = $("c-min");
+    const render = () => {
+      const r = Math.max(0, +rate.value || 0), p = Math.max(0, Math.round(+people.value || 0)), m = +min.value;
+      const h = m / 60, hoursPerson = h * DAYS * WEEKS;
+      $("c-min-out").textContent = m < 60 ? `${m} minutes` : `${(m / 60).toLocaleString("en-GB")} hour${m === 60 ? "" : "s"}`;
+      $("c-hours").textContent = Math.round(hoursPerson * p).toLocaleString("en-GB");
+      $("c-person").textContent = kr(hoursPerson * r);
+      $("c-team").textContent = kr(hoursPerson * r * p);
+    };
+    role.addEventListener("change", () => { if (role.value !== "own") rate.value = role.value; else rate.focus(); render(); });
+    rate.addEventListener("input", () => { const match = [...role.options].find((o) => o.value === rate.value); role.value = match ? match.value : "own"; render(); });
+    [people, min].forEach((el) => el.addEventListener("input", render));
+    render();
+  })();
+  </script>
+</body>
+</html>
