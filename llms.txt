@@ -17,4 +17,5 @@ Contact: hello@lanes.dk, +45 30 36 00 86.
 
 - [How to draw your own swimlane in an afternoon](https://daheda1.github.io/lanes/draw-your-own-swimlane.html): a practical guide a small team can follow on its own
 - [How we estimate the time you'll get back](https://daheda1.github.io/lanes/how-we-estimate-time.html): touch time, frequency and waiting, with a worked example
+- [Ask the questions before you quote](https://daheda1.github.io/lanes/ask-the-questions-first.html): why a fixed automatic first reply with your standard questions saves days on every quote, with an example reply
 - [When AI is the wrong tool](https://daheda1.github.io/lanes/when-ai-is-the-wrong-tool.html): where rules win, where AI earns its place, and a four-question test
