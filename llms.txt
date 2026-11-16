@@ -17,6 +17,7 @@ Contact: hello@lanes.dk, +45 30 36 00 86.
 
 - [How to draw your own swimlane in an afternoon](https://daheda1.github.io/lanes/draw-your-own-swimlane.html): a practical guide a small team can follow on its own
 - [How we estimate the time you'll get back](https://daheda1.github.io/lanes/how-we-estimate-time.html): touch time, frequency and waiting, with a worked example
+- [The first hour](https://daheda1.github.io/lanes/the-first-hour.html): what the 2011 Harvard Business Review study on lead response time found, its limits, and what it means for B2B quote requests
 - [What an hour of sales time costs](https://daheda1.github.io/lanes/what-sales-time-costs.html): Statistics Denmark's 2025 figures for what sales and office roles earn per hour worked, and how to use them in an estimate
 - [Ask the questions before you quote](https://daheda1.github.io/lanes/ask-the-questions-first.html): why a fixed automatic first reply with your standard questions saves days on every quote, with an example reply
 - [When AI is the wrong tool](https://daheda1.github.io/lanes/when-ai-is-the-wrong-tool.html): where rules win, where AI earns its place, and a four-question test
